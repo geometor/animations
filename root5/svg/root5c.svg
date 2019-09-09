@@ -13,6 +13,8 @@
   fill-rule: nonzero;
   stroke-linejoin: round;
   stroke-width: 0.1em;
+  stroke-linecap: butt;
+
 }
 
 text {
