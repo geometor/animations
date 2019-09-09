@@ -31,7 +31,7 @@ then
     -e 's/layer7/graphics/' \
     -e 's/layer8/sections/' \
     -e 's/layer9/points/' \
-    -e 's/ fill-opacity="1.0000" font-style="normal" font-family="Helvetica" font-weight="normal" stroke="none" fill="#.*" font-size="12.000" x="0" y="0"//' \
+    -e 's/ fill-opacity="1.0000" font-style="normal" font-family="Helvetica" font-weight="normal" stroke="none" fill="#.*" font-size=".*" x="0" y="0"//' \
     -e '
       # remove font glyphs
       /<defs>/ , /<\/defs>/  d

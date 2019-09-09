@@ -85,6 +85,10 @@ path {
   stroke-width: 5;
   stroke-linecap: round;
   stroke-opacity: 0.3;
+
+  stroke: #C90;
+  stroke-opacity: 0;
+  fill-opacity: 0;
   opacity: 0;
 }
 .a path {
@@ -100,11 +104,6 @@ path {
   stroke-width: 13;
 }
 
-.segment path {
-  stroke: #C90;
-  stroke-opacity: 0;
-  fill-opacity: 0;
-}
 .golden path {
   stroke-opacity: 0.8;
 }
