@@ -62,7 +62,7 @@ path {
 
   fill: #CCC;
   fill-opacity: 0.3;
-  opacity: 0;
+  opacity: 1;
 }
 .bisector {
   stroke-dasharray: 13, 5, 3, 5;
