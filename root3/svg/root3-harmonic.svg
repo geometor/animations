@@ -1,0 +1,1507 @@
+<svg version="1.1" baseProfile="full" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:ev="http://www.w3.org/2001/xml-events" viewBox="0 0 1349 822">
+  <title></title>
+  <style>
+    * {
+      fill-rule: nonzero;
+      stroke-linejoin: round;
+      stroke-width: 0.1em;
+    }
+
+    text {
+      fill-opacity: 1.0000;
+      font-style: normal;
+      font-family: Helvetica;
+      font-weight: normal;
+      stroke: none;
+      fill: #ffcc66;
+      font-size: 1em;
+      opacity: 0;
+      x: 0;
+      y: 0;
+    }
+    path {
+      stroke-opacity: 0.5;
+    }
+
+    .point path {
+      stroke: black;
+      stroke-width: 2;
+      stroke-opacity: 1;
+      fill: white;
+      fill-opacity: 1;
+    }
+
+    .point.bottom path {
+      stroke: #FC0;
+      stroke-width: 8;
+      stroke-opacity: 0;
+    }
+
+    .line {
+      stroke: #FFF;
+      stroke-dasharray: 1.5 3;
+      stroke-linejoin: round;
+      stroke-linecap: butt;
+    }
+    .line > path {
+      /* stroke-opacity: 0.5; */
+    }
+
+    .circle {
+      stroke: #808080;
+      stroke-width: 3;
+      /* stroke-opacity: 0.3; */
+      stroke-linejoin: round;
+      stroke-linecap: butt;
+
+      fill: none;
+    }
+
+    .polygon {
+      stroke-width: 5;
+
+      stroke-linejoin: round;
+      stroke-linecap: butt;
+
+      fill: #CCC;
+      fill-opacity: 0.3;
+      opacity: 0;
+    }
+    .bisector {
+      stroke-dasharray: 13, 5, 3, 5;
+
+    }
+    .segment path {
+      stroke-width: 5;
+      stroke-linecap: round;
+      stroke-opacity: 0.3;
+      opacity: 0;
+    }
+    .a path {
+      stroke-width: 3;
+    }
+    .b path {
+      stroke-width: 5;
+    }
+    [class~="a+b"] path {
+      stroke-width: 8;
+    }
+    [class~="a+2b"] path {
+      stroke-width: 13;
+    }
+
+    .segment path {
+      stroke: #C90;
+      stroke-opacity: 0;
+      fill-opacity: 0;
+    }
+    .golden path {
+      stroke-opacity: 0.8;
+    }
+
+    .golden text {
+      opacity: 0.8;
+    }
+
+    .s-ff6699 path {
+      stroke: #ff6699;
+      stroke-dasharray: none;
+    }
+
+    .s-66ccff path {
+      stroke: #66ccff;
+    }
+
+    .s-cc66ff path {
+      stroke: #cc66ff;
+    }
+
+    #c-d path {
+      /* stroke: none; */
+    }
+
+    [id^="sg-g001"] .segment path {
+      stroke-opacity: 0.8;
+      opacity: 0.8;
+    }
+    [id^="sg-g001"] text {
+      stroke-opacity: 0.8;
+      opacity: 0.8;
+    }
+
+    #pt-U .bottom path {
+      stroke-opacity: 0.8;
+      opacity: 0.8;
+    }
+    #pt-V .bottom path {
+      stroke-opacity: 0.8;
+      opacity: 0.8;
+    }
+  </style>
+  <g stroke-linejoin="miter" stroke-dashoffset="0.0000" stroke-dasharray="none" stroke-width="1.0000" stroke-miterlimit="10.000" stroke-linecap="square">
+    <g>
+      <g fill-opacity="1.0000" fill-rule="nonzero" stroke="none" fill="#000000">
+        <path d="M 0.0000 0.0000 L 1349.0 0.0000 L 1349.0 823.00 L 0.0000 823.00 L 0.0000 0.0000 z"/>
+      </g>
+    </g>
+    <g id="misc"></g>
+    <g id="base">
+      <g id="c-c">
+        <g class="circle s-808080">
+          <path d="M 674.18 404.91 C 674.18 470.93 620.67 524.44 554.65 524.44 C 488.64 524.44 435.12 470.93 435.12 404.91 C 435.12 338.90 488.64 285.38 554.65 285.38 C 620.67 285.38 674.18 338.90 674.18 404.91 z"/>
+          <title>Circle c</title>
+          <desc>Circle c: Circle through B with center A</desc>
+        </g>
+      </g>
+      <g id="c-d">
+        <g class="circle s-808080">
+          <path d="M 793.71 404.91 C 793.71 470.93 740.20 524.44 674.18 524.44 C 608.17 524.44 554.65 470.93 554.65 404.91 C 554.65 338.90 608.17 285.38 674.18 285.38 C 740.20 285.38 793.71 338.90 793.71 404.91 z"/>
+          <title>Circle d</title>
+          <desc>Circle d: Circle through A with center B</desc>
+        </g>
+      </g>
+      <g id="i-a">
+        <g class="line s-ff6699">
+          <path d="M -5.0000 404.91 L 1354.0 404.91"/>
+          <title>Line a</title>
+          <desc>Line a: Line A, B</desc>
+        </g>
+      </g>
+      <g id="i-b">
+        <g class="line s-808080">
+          <path d="M 614.42 828.00 L 614.42 -5.0000"/>
+          <title>Line b</title>
+          <desc>Line b: Line D, C</desc>
+        </g>
+      </g>
+    </g>
+    <g id="layer1">
+      <g id="c-e">
+        <g class="circle s-ff6699">
+          <path d="M 752.44 439.42 C 752.44 515.64 690.64 577.44 614.42 577.44 C 538.19 577.44 476.40 515.64 476.40 439.42 C 476.40 363.19 538.19 301.39 614.42 301.39 C 690.64 301.39 752.44 363.19 752.44 439.42 z"/>
+          <title>Circle e</title>
+          <desc>Circle e: Circle through K with center L</desc>
+        </g>
+      </g>
+      <g id="i-f">
+        <g class="line s-ff6699">
+          <path d="M 310.38 828.00 L 791.31 -5.0000"/>
+          <title>Line f</title>
+          <desc>Line f: Line A, D</desc>
+        </g>
+      </g>
+      <g id="i-g">
+        <g class="line s-ff6699">
+          <path d="M 918.45 828.00 L 437.52 -5.0000"/>
+          <title>Line g</title>
+          <desc>Line g: Line B, D</desc>
+        </g>
+      </g>
+      <g id="i-h">
+        <g class="line s-ff6699">
+          <path d="M 798.92 828.00 L 317.99 -5.0000"/>
+          <title>Line h</title>
+          <desc>Line h: Line A, C</desc>
+        </g>
+      </g>
+      <g id="i-i">
+        <g class="line s-ff6699">
+          <path d="M 429.91 828.00 L 910.84 -5.0000"/>
+          <title>Line i</title>
+          <desc>Line i: Line B, C</desc>
+        </g>
+      </g>
+      <g id="i-j">
+        <g class="line s-ff6699">
+          <path d="M -5.0000 508.43 L 1354.0 508.43"/>
+          <title>Line j</title>
+          <desc>Line j: Line J, K</desc>
+        </g>
+      </g>
+      <g id="i-k">
+        <g class="line s-ff6699">
+          <path d="M -5.0000 301.39 L 1354.0 301.39"/>
+          <title>Line k</title>
+          <desc>Line k: Line H, I</desc>
+        </g>
+      </g>
+      <g id="i-l">
+        <g class="line s-808080">
+          <path d="M -5.0000 797.04 L 1354.0 12.417"/>
+          <title>Line l</title>
+          <desc>Line l: Line J, B</desc>
+        </g>
+      </g>
+      <g id="i-m">
+        <g class="line s-808080">
+          <path d="M -5.0000 81.795 L 1287.5 828.00"/>
+          <title>Line m</title>
+          <desc>Line m: Line K, A</desc>
+        </g>
+      </g>
+    </g>
+    <g id="layer2">
+      <g id="i-n">
+        <g class="line s-66ccff">
+          <path d="M -5.0000 554.66 L 1354.0 -1.0075"/>
+          <title>Line n</title>
+          <desc>Line n: Line D, O</desc>
+        </g>
+      </g>
+      <g id="i-p">
+        <g class="line s-66ccff">
+          <path d="M -5.0000 781.19 L 1010.0 -5.0000"/>
+          <title>Line p</title>
+          <desc>Line p: Line D, M</desc>
+        </g>
+      </g>
+      <g id="i-q">
+        <g class="line s-66ccff">
+          <path d="M 542.64 828.00 L 656.18 -5.0000"/>
+          <title>Line q</title>
+          <desc>Line q: Line D, R</desc>
+        </g>
+      </g>
+      <g id="i-r">
+        <g class="line s-66ccff">
+          <path d="M 686.19 828.00 L 572.66 -5.0000"/>
+          <title>Line r</title>
+          <desc>Line r: Line D, P</desc>
+        </g>
+      </g>
+      <g id="i-s">
+        <g class="line s-66ccff">
+          <path d="M 218.86 -5.0000 L 1294.3 828.00"/>
+          <title>Line s</title>
+          <desc>Line s: Line D, N</desc>
+        </g>
+      </g>
+      <g id="i-t">
+        <g class="line s-66ccff">
+          <path d="M -5.0000 48.126 L 1354.0 603.80"/>
+          <title>Line t</title>
+          <desc>Line t: Line D, Q</desc>
+        </g>
+      </g>
+    </g>
+    <g id="layer3">
+      <g id="i-d_1">
+        <g class="line s-cc66ff">
+          <path d="M 690.39 828.00 L 803.92 -5.0000"/>
+          <title>Line d_1</title>
+          <desc>Line d_1: Line K, N</desc>
+        </g>
+      </g>
+      <g id="i-e_1">
+        <g class="line s-cc66ff">
+          <path d="M 777.50 828.00 L 663.97 -5.0000"/>
+          <title>Line e_1</title>
+          <desc>Line e_1: Line K, Q</desc>
+        </g>
+      </g>
+      <g id="i-g_2">
+        <g class="line s-cc66ff">
+          <path d="M -5.0000 206.28 L 1354.0 761.95"/>
+          <title>Line g_2</title>
+          <desc>Line g_2: Line K, M</desc>
+        </g>
+      </g>
+      <g id="i-h_2">
+        <g class="line s-cc66ff">
+          <path d="M -5.0000 810.57 L 1354.0 254.90"/>
+          <title>Line h_2</title>
+          <desc>Line h_2: Line K, R</desc>
+        </g>
+      </g>
+      <g id="i-i_2">
+        <g class="line s-cc66ff">
+          <path d="M 321.38 828.00 L 1354.0 28.135"/>
+          <title>Line i_2</title>
+          <desc>Line i_2: Line K, P</desc>
+        </g>
+      </g>
+      <g id="i-f_2">
+        <g class="line s-cc66ff">
+          <path d="M 71.116 -5.0000 L 1146.5 828.00"/>
+          <title>Line f_2</title>
+          <desc>Line f_2: Line K, O</desc>
+        </g>
+      </g>
+    </g>
+    <g id="layer4">
+      <g id="i-t_1">
+        <g class="line s-99ff00">
+          <path d="M 82.319 828.00 L 1157.7 -5.0000"/>
+          <title>Line t_1</title>
+          <desc>Line t_1: Line J, Q</desc>
+        </g>
+      </g>
+      <g id="i-s_1">
+        <g class="line s-99ff00">
+          <path d="M 451.33 828.00 L 564.86 -5.0000"/>
+          <title>Line s_1</title>
+          <desc>Line s_1: Line J, O</desc>
+        </g>
+      </g>
+      <g id="i-r_1">
+        <g class="line s-99ff00">
+          <path d="M 538.44 828.00 L 424.91 -5.0000"/>
+          <title>Line r_1</title>
+          <desc>Line r_1: Line J, M</desc>
+        </g>
+      </g>
+      <g id="i-c_1">
+        <g class="line s-99ff00">
+          <path d="M -5.0000 121.22 L 907.45 828.00"/>
+          <title>Line c_1</title>
+          <desc>Line c_1: Line J, R</desc>
+        </g>
+      </g>
+      <g id="i-b_1">
+        <g class="line s-99ff00">
+          <path d="M -5.0000 304.03 L 1276.5 828.00"/>
+          <title>Line b_1</title>
+          <desc>Line b_1: Line J, P</desc>
+        </g>
+      </g>
+      <g id="i-a_1">
+        <g class="line s-99ff00">
+          <path d="M -5.0000 712.82 L 1354.0 157.15"/>
+          <title>Line a_1</title>
+          <desc>Line a_1: Line J, N</desc>
+        </g>
+      </g>
+    </g>
+    <g id="layer5"></g>
+    <g id="layer6">
+      <g id="i-m_1">
+        <g class="line s-ff6699">
+          <path d="M 725.05 828.00 L 244.12 -5.0000"/>
+          <title>Line m_1</title>
+          <desc>Line m_1: Line R, M</desc>
+        </g>
+      </g>
+      <g id="i-n_1">
+        <g class="line s-ff6699">
+          <path d="M 503.78 828.00 L 984.72 -5.0000"/>
+          <title>Line n_1</title>
+          <desc>Line n_1: Line N, P</desc>
+        </g>
+      </g>
+      <g id="i-p_1">
+        <g class="line s-808080">
+          <path d="M -5.0000 195.75 L 1354.0 573.21"/>
+          <title>Line p_1</title>
+          <desc>Line p_1: Line O, N</desc>
+        </g>
+      </g>
+      <g id="i-q_1">
+        <g class="line s-808080">
+          <path d="M -5.0000 539.83 L 1354.0 162.38"/>
+          <title>Line q_1</title>
+          <desc>Line q_1: Line Q, M</desc>
+        </g>
+      </g>
+    </g>
+    <g id="graphics">
+      <g id="y-t1">
+        <g class="polygon s-ff6699">
+          <path d="M 614.42 301.39 L 494.89 508.43 L 733.95 508.43 z"/>
+          <title>Triangle t1</title>
+          <desc>Triangle t1: Polygon D, J, K</desc>
+        </g>
+      </g>
+      <g id="y-y9">
+        <g class="polygon s-66ccff">
+          <path d="M 614.42 301.39 L 517.72 340.93 L 480.78 404.91 L 494.89 508.43 L 577.48 572.40 L 651.35 572.40 L 733.95 508.43 L 748.06 404.91 L 711.12 340.93 z"/>
+          <title>Polygon y9</title>
+          <desc>Polygon y9: Polygon D, O, M, J, R, P, K, N, Q</desc>
+        </g>
+      </g>
+      <g id="sg-t1b">
+        <g class="segment s-ff6699">
+          <path d="M 614.42 301.39 L 494.89 508.43"/>
+          <title>Segment t1b</title>
+          <desc>Segment t1b: Segment D, J</desc>
+        </g>
+      </g>
+      <g id="sg-t1c">
+        <g class="segment s-ff6699">
+          <path d="M 494.89 508.43 L 733.95 508.43"/>
+          <title>Segment t1c</title>
+          <desc>Segment t1c: Segment J, K</desc>
+        </g>
+      </g>
+      <g id="sg-t1a">
+        <g class="segment s-ff6699">
+          <path d="M 733.95 508.43 L 614.42 301.39"/>
+          <title>Segment t1a</title>
+          <desc>Segment t1a: Segment K, D</desc>
+        </g>
+      </g>
+      <g id="sg-y9a">
+        <g class="segment s-66ccff">
+          <path d="M 614.42 301.39 L 517.72 340.93"/>
+          <title>Segment y9a</title>
+          <desc>Segment y9a: Segment D, O</desc>
+        </g>
+      </g>
+      <g id="sg-y9b">
+        <g class="segment s-66ccff">
+          <path d="M 517.72 340.93 L 480.78 404.91"/>
+          <title>Segment y9b</title>
+          <desc>Segment y9b: Segment O, M</desc>
+        </g>
+      </g>
+      <g id="sg-y9c">
+        <g class="segment s-66ccff">
+          <path d="M 480.78 404.91 L 494.89 508.43"/>
+          <title>Segment y9c</title>
+          <desc>Segment y9c: Segment M, J</desc>
+        </g>
+      </g>
+      <g id="sg-y9d">
+        <g class="segment s-66ccff">
+          <path d="M 494.89 508.43 L 577.48 572.40"/>
+          <title>Segment y9d</title>
+          <desc>Segment y9d: Segment J, R</desc>
+        </g>
+      </g>
+      <g id="sg-y9e">
+        <g class="segment s-66ccff">
+          <path d="M 577.48 572.40 L 651.35 572.40"/>
+          <title>Segment y9e</title>
+          <desc>Segment y9e: Segment R, P</desc>
+        </g>
+      </g>
+      <g id="sg-y9f">
+        <g class="segment s-66ccff">
+          <path d="M 651.35 572.40 L 733.95 508.43"/>
+          <title>Segment y9f</title>
+          <desc>Segment y9f: Segment P, K</desc>
+        </g>
+      </g>
+      <g id="sg-y9g">
+        <g class="segment s-66ccff">
+          <path d="M 733.95 508.43 L 748.06 404.91"/>
+          <title>Segment y9g</title>
+          <desc>Segment y9g: Segment K, N</desc>
+        </g>
+      </g>
+      <g id="sg-y8h">
+        <g class="segment s-66ccff">
+          <path d="M 748.06 404.91 L 711.12 340.93"/>
+          <title>Segment y8h</title>
+          <desc>Segment y8h: Segment N, Q</desc>
+        </g>
+      </g>
+      <g id="sg-y9i">
+        <g class="segment s-66ccff">
+          <path d="M 711.12 340.93 L 614.42 301.39"/>
+          <title>Segment y9i</title>
+          <desc>Segment y9i: Segment Q, D</desc>
+        </g>
+      </g>
+      <g id="sg-ch_a1">
+        <g class="segment s-66ccff">
+          <path d="M 614.42 301.39 L 517.72 340.93"/>
+          <title>Segment ch_a1</title>
+          <desc>Segment ch_a1: Segment D, O</desc>
+        </g>
+      </g>
+      <g id="sg-ch_b1">
+        <g class="segment s-66ccff">
+          <path d="M 614.42 301.39 L 480.78 404.91"/>
+          <title>Segment ch_b1</title>
+          <desc>Segment ch_b1: Segment D, M</desc>
+        </g>
+      </g>
+      <g id="sg-ch_c1">
+        <g class="segment s-66ccff">
+          <path d="M 614.42 301.39 L 494.89 508.43"/>
+          <title>Segment ch_c1</title>
+          <desc>Segment ch_c1: Segment D, J</desc>
+        </g>
+      </g>
+      <g id="sg-ch_d1">
+        <g class="segment s-66ccff">
+          <path d="M 614.42 301.39 L 577.48 572.40"/>
+          <title>Segment ch_d1</title>
+          <desc>Segment ch_d1: Segment D, R</desc>
+        </g>
+      </g>
+      <g id="sg-ch_d2">
+        <g class="segment s-66ccff">
+          <path d="M 614.42 301.39 L 651.35 572.40"/>
+          <title>Segment ch_d2</title>
+          <desc>Segment ch_d2: Segment D, P</desc>
+        </g>
+      </g>
+      <g id="sg-ch_c2">
+        <g class="segment s-66ccff">
+          <path d="M 614.42 301.39 L 733.95 508.43"/>
+          <title>Segment ch_c2</title>
+          <desc>Segment ch_c2: Segment D, K</desc>
+        </g>
+      </g>
+      <g id="sg-ch_b2">
+        <g class="segment s-66ccff">
+          <path d="M 614.42 301.39 L 748.06 404.91"/>
+          <title>Segment ch_b2</title>
+          <desc>Segment ch_b2: Segment D, N</desc>
+        </g>
+      </g>
+      <g id="sg-ch_a2">
+        <g class="segment s-66ccff">
+          <path d="M 614.42 301.39 L 711.12 340.93"/>
+          <title>Segment ch_a2</title>
+          <desc>Segment ch_a2: Segment D, Q</desc>
+        </g>
+      </g>
+    </g>
+    <g id="sections">
+      <g id="sg-g000a_1">
+        <g class="segment s-ffcc66 a">
+          <path d="M 480.78 404.91 L 554.65 404.91"/>
+          <title>Segment g000a_1</title>
+          <desc>Segment g000a_1: sectionABA(M, A, B, N)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 515.00, 391.00)">
+          <text>a</text>
+        </g>
+      </g>
+      <g id="sg-g000b">
+        <g class="segment s-ffcc66 b">
+          <path d="M 554.65 404.91 L 674.18 404.91"/>
+          <title>Segment g000b</title>
+          <desc>Segment g000b: sectionABA(M, A, B, N)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 618.00, 391.00)">
+          <text>b</text>
+        </g>
+      </g>
+      <g id="sg-g000a_2">
+        <g class="segment s-ffcc66 a">
+          <path d="M 674.18 404.91 L 748.06 404.91"/>
+          <title>Segment g000a_2</title>
+          <desc>Segment g000a_2: sectionABA(M, A, B, N)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 709.00, 392.00)">
+          <text>a</text>
+        </g>
+      </g>
+      <g id="sg-gc001a_1">
+        <g class="segment s-ffcc66 a">
+          <path d="M 517.72 340.93 L 614.42 301.39"/>
+          <title>Segment gc001a_1</title>
+          <desc>Segment gc001a_1: sectionAB(O, D, M)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 547.00, 307.00)">
+          <text>a</text>
+        </g>
+      </g>
+      <g id="sg-gc001b_1">
+        <g class="segment s-ffcc66 b">
+          <path d="M 614.42 301.39 L 480.78 404.91"/>
+          <title>Segment gc001b_1</title>
+          <desc>Segment gc001b_1: sectionAB(O, D, M)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 502.00, 370.00)">
+          <text>b</text>
+        </g>
+      </g>
+      <g id="sg-gc001a_2">
+        <g class="segment s-ffcc66 a">
+          <path d="M 711.12 340.93 L 614.42 301.39"/>
+          <title>Segment gc001a_2</title>
+          <desc>Segment gc001a_2: sectionAB(Q, D, N)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 673.00, 306.00)">
+          <text>a</text>
+        </g>
+      </g>
+      <g id="sg-gc001b_2">
+        <g class="segment s-ffcc66 b">
+          <path d="M 614.42 301.39 L 748.06 404.91"/>
+          <title>Segment gc001b_2</title>
+          <desc>Segment gc001b_2: sectionAB(Q, D, N)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 720.00, 368.00)">
+          <text>b</text>
+        </g>
+      </g>
+      <g id="sg-gc002a_1">
+        <g class="segment s-ffcc66">
+          <path d="M 480.78 404.91 L 614.42 301.39"/>
+          <title>Segment gc002a_1</title>
+          <desc>Segment gc002a_1: sectionAB(M, D, R)</desc>
+        </g>
+      </g>
+      <g id="sg-gc002b_1">
+        <g class="segment s-ffcc66">
+          <path d="M 614.42 301.39 L 577.48 572.40"/>
+          <title>Segment gc002b_1</title>
+          <desc>Segment gc002b_1: sectionAB(M, D, R)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 561.00, 442.00)">
+          <text>a+b</text>
+        </g>
+      </g>
+      <g id="sg-gc002a_2">
+        <g class="segment s-ffcc66">
+          <path d="M 748.06 404.91 L 614.42 301.39"/>
+          <title>Segment gc002a_2</title>
+          <desc>Segment gc002a_2: sectionAB(N, D, P)</desc>
+        </g>
+      </g>
+      <g id="sg-gc002b_2">
+        <g class="segment s-ffcc66">
+          <path d="M 614.42 301.39 L 651.35 572.40"/>
+          <title>Segment gc002b_2</title>
+          <desc>Segment gc002b_2: sectionAB(N, D, P)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 646.00, 442.00)">
+          <text>a+b</text>
+        </g>
+      </g>
+      <g id="sg-g001c_1">
+        <g class="segment s-ffcc66 a+b">
+          <path d="M 494.89 508.43 L 347.14 508.43"/>
+          <title>Segment g001c_1</title>
+          <desc>Segment g001c_1: sectionAB(J, T, S)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 416.00, 498.00)">
+          <text>a+b</text>
+        </g>
+      </g>
+      <g id="sg-g001d_1">
+        <g class="segment s-ffcc66 a+2b">
+          <path d="M 347.14 508.43 L 108.08 508.43"/>
+          <title>Segment g001d_1</title>
+          <desc>Segment g001d_1: sectionAB(J, T, S)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 211.00, 494.00)">
+          <text>a+2b</text>
+        </g>
+      </g>
+      <g id="sg-g001c_2">
+        <g class="segment s-ffcc66 a+b">
+          <path d="M 733.95 508.43 L 881.69 508.43"/>
+          <title>Segment g001c_2</title>
+          <desc>Segment g001c_2: sectionAB(K, Z, A_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 798.00, 497.00)">
+          <text>a+b</text>
+        </g>
+      </g>
+      <g id="sg-g001d_2">
+        <g class="segment s-ffcc66 a+2b">
+          <path d="M 881.69 508.43 L 1120.8 508.43"/>
+          <title>Segment g001d_2</title>
+          <desc>Segment g001d_2: sectionAB(K, Z, A_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 978.00, 497.00)">
+          <text>a+2b</text>
+        </g>
+      </g>
+      <g id="sg-g001b_1">
+        <g class="segment s-ffcc66 b">
+          <path d="M 494.89 508.43 L 586.20 508.43"/>
+          <title>Segment g001b_1</title>
+          <desc>Segment g001b_1: sectionBAB(J, U, V, K)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 555.00, 498.00)">
+          <text>b</text>
+        </g>
+      </g>
+      <g id="sg-g001a">
+        <g class="segment s-ffcc66 a">
+          <path d="M 586.20 508.43 L 642.63 508.43"/>
+          <title>Segment g001a</title>
+          <desc>Segment g001a: sectionBAB(J, U, V, K)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 611.00, 497.00)">
+          <text>a</text>
+        </g>
+      </g>
+      <g id="sg-g001b_2">
+        <g class="segment s-ffcc66 b">
+          <path d="M 642.63 508.43 L 733.95 508.43"/>
+          <title>Segment g001b_2</title>
+          <desc>Segment g001b_2: sectionBAB(J, U, V, K)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 674.00, 498.00)">
+          <text>b</text>
+        </g>
+      </g>
+      <g id="sg-g002c_1">
+        <g class="segment s-ffcc66 a+b">
+          <path d="M 674.18 404.91 L 637.25 468.89"/>
+          <title>Segment g002c_1</title>
+          <desc>Segment g002c_1: sectionAB(B, D_1, R)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 670.00, 459.00)">
+          <text>a+b</text>
+        </g>
+      </g>
+      <g id="sg-g002d_1">
+        <g class="segment s-ffcc66 a+2b">
+          <path d="M 637.25 468.89 L 577.48 572.40"/>
+          <title>Segment g002d_1</title>
+          <desc>Segment g002d_1: sectionAB(B, D_1, R)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 618.00, 541.00)">
+          <text>a+2b</text>
+        </g>
+      </g>
+      <g id="sg-g002c_2">
+        <g class="segment s-ffcc66 a+b">
+          <path d="M 733.95 301.39 L 770.88 237.42"/>
+          <title>Segment g002c_2</title>
+          <desc>Segment g002c_2: sectionAB(I, B_1, W)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 766.00, 277.00)">
+          <text>a+b</text>
+        </g>
+      </g>
+      <g id="sg-g002d_2">
+        <g class="segment s-ffcc66 a+2b">
+          <path d="M 770.88 237.42 L 830.65 133.90"/>
+          <title>Segment g002d_2</title>
+          <desc>Segment g002d_2: sectionAB(I, B_1, W)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 814.00, 193.00)">
+          <text>a+2b</text>
+        </g>
+      </g>
+      <g id="sg-g002b_1">
+        <g class="segment s-ffcc66 b">
+          <path d="M 674.18 404.91 L 697.01 365.37"/>
+          <title>Segment g002b_1</title>
+          <desc>Segment g002b_1: sectionBAB(B, C_1, Q, I)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 701.00, 396.00)">
+          <text>b</text>
+        </g>
+      </g>
+      <g id="sg-g002a">
+        <g class="segment s-ffcc66 a">
+          <path d="M 697.01 365.37 L 711.12 340.93"/>
+          <title>Segment g002a</title>
+          <desc>Segment g002a: sectionBAB(B, C_1, Q, I)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 715.00, 369.00)">
+          <text>a</text>
+        </g>
+      </g>
+      <g id="sg-g002b_2">
+        <g class="segment s-ffcc66 b">
+          <path d="M 711.12 340.93 L 733.95 301.39"/>
+          <title>Segment g002b_2</title>
+          <desc>Segment g002b_2: sectionBAB(B, C_1, Q, I)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 736.00, 334.00)">
+          <text>b</text>
+        </g>
+      </g>
+      <g id="sg-g003a_1">
+        <g class="segment s-ffcc66 a">
+          <path d="M 494.89 508.43 L 594.00 451.20"/>
+          <title>Segment g003a_1</title>
+          <desc>Segment g003a_1: sectionABA(J, E_1, H_1, I_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 552.00, 493.00)">
+          <text>a</text>
+        </g>
+      </g>
+      <g id="sg-g003b">
+        <g class="segment s-ffcc66 b">
+          <path d="M 594.00 451.20 L 754.36 358.62"/>
+          <title>Segment g003b</title>
+          <desc>Segment g003b: sectionABA(J, E_1, H_1, I_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 692.00, 423.00)">
+          <text>b</text>
+        </g>
+      </g>
+      <g id="sg-g003a_2">
+        <g class="segment s-ffcc66 a">
+          <path d="M 754.36 358.62 L 853.48 301.39"/>
+          <title>Segment g003a_2</title>
+          <desc>Segment g003a_2: sectionABA(J, E_1, H_1, I_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 811.00, 343.00)">
+          <text>a</text>
+        </g>
+      </g>
+      <g id="sg-g004b_1">
+        <g class="segment s-ffcc66 b">
+          <path d="M 494.89 508.43 L 631.86 429.35"/>
+          <title>Segment g004b_1</title>
+          <desc>Segment g004b_1: sectionBAB(J, F_1, G_1, I_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 571.00, 482.00)">
+          <text>b</text>
+        </g>
+      </g>
+      <g id="sg-g004a">
+        <g class="segment s-ffcc66 a">
+          <path d="M 631.86 429.35 L 716.51 380.47"/>
+          <title>Segment g004a</title>
+          <desc>Segment g004a: sectionBAB(J, F_1, G_1, I_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 682.00, 418.00)">
+          <text>a</text>
+        </g>
+      </g>
+      <g id="sg-g004b_2">
+        <g class="segment s-ffcc66 b">
+          <path d="M 716.51 380.47 L 853.48 301.39"/>
+          <title>Segment g004b_2</title>
+          <desc>Segment g004b_2: sectionBAB(J, F_1, G_1, I_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 792.00, 354.00)">
+          <text>b</text>
+        </g>
+      </g>
+      <g id="sg-g005b_1">
+        <g class="segment s-ffcc66 b">
+          <path d="M 494.89 508.43 L -5.0000 797.04"/>
+          <title>Segment g005b_1</title>
+          <desc>Segment g005b_1: sectionBAB(J_1, J, I_1, K_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 215.00, 696.00)">
+          <text>b</text>
+        </g>
+      </g>
+      <g id="sg-g005a">
+        <g class="segment s-ffcc66 a">
+          <path d="M 494.89 508.43 L 853.48 301.39"/>
+          <title>Segment g005a</title>
+          <desc>Segment g005a: sectionBAB(J_1, J, I_1, K_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 692.00, 418.00)">
+          <text>a</text>
+        </g>
+      </g>
+      <g id="sg-g005b_2">
+        <g class="segment s-ffcc66 b">
+          <path d="M 853.48 301.39 L 1354.0 12.417"/>
+          <title>Segment g005b_2</title>
+          <desc>Segment g005b_2: sectionBAB(J_1, J, I_1, K_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 1149.0, 153.00)">
+          <text>b</text>
+        </g>
+      </g>
+      <g id="sg-g006c">
+        <g class="segment s-ffcc66 a+b">
+          <path d="M 108.08 508.43 L 480.78 404.91"/>
+          <title>Segment g006c</title>
+          <desc>Segment g006c: sectionBAB(S, M, Q, I_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 298.00, 472.00)">
+          <text>a+b</text>
+        </g>
+      </g>
+      <g id="sg-g006b">
+        <g class="segment s-ffcc66 b">
+          <path d="M 480.78 404.91 L 711.12 340.93"/>
+          <title>Segment g006b</title>
+          <desc>Segment g006b: sectionBAB(S, M, Q, I_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 587.00, 394.00)">
+          <text>b</text>
+        </g>
+      </g>
+      <g id="sg-g006a">
+        <g class="segment s-ffcc66 a">
+          <path d="M 711.12 340.93 L 853.48 301.39"/>
+          <title>Segment g006a</title>
+          <desc>Segment g006a: sectionBAB(S, M, Q, I_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 780.00, 335.00)">
+          <text>a</text>
+        </g>
+      </g>
+      <g id="sg-g007b_1">
+        <g class="segment s-ffcc66 b">
+          <path d="M 480.78 404.91 L 623.14 365.37"/>
+          <title>Segment g007b_1</title>
+          <desc>Segment g007b_1: sectionBAB(M, L_1, Q, I_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 548.00, 374.00)">
+          <text>b</text>
+        </g>
+      </g>
+      <g id="sg-g007a">
+        <g class="segment s-ffcc66 a">
+          <path d="M 623.14 365.37 L 711.12 340.93"/>
+          <title>Segment g007a</title>
+          <desc>Segment g007a: sectionBAB(M, L_1, Q, I_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 661.00, 343.00)">
+          <text>a</text>
+        </g>
+      </g>
+      <g id="sg-g007b_2">
+        <g class="segment s-ffcc66 b">
+          <path d="M 711.12 340.93 L 853.48 301.39"/>
+          <title>Segment g007b_2</title>
+          <desc>Segment g007b_2: sectionBAB(M, L_1, Q, I_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 775.00, 313.00)">
+          <text>b</text>
+        </g>
+      </g>
+      <g id="sg-g008a_2">
+        <g class="segment s-ffcc66 a">
+          <path d="M 480.78 404.91 L 568.76 380.47"/>
+          <title>Segment g008a_2</title>
+          <desc>Segment g008a_2: sectionABA(M, M_1, Q, N_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 529.00, 408.00)">
+          <text>a</text>
+        </g>
+      </g>
+      <g id="sg-g008b">
+        <g class="segment s-ffcc66 b">
+          <path d="M 568.76 380.47 L 711.12 340.93"/>
+          <title>Segment g008b</title>
+          <desc>Segment g008b: sectionABA(M, M_1, Q, N_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 644.00, 376.00)">
+          <text>b</text>
+        </g>
+      </g>
+      <g id="sg-g008a_1">
+        <g class="segment s-ffcc66 a">
+          <path d="M 711.12 340.93 L 799.10 316.50"/>
+          <title>Segment g008a_1</title>
+          <desc>Segment g008a_1: sectionABA(M, M_1, Q, N_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 759.00, 344.00)">
+          <text>a</text>
+        </g>
+      </g>
+      <g id="sg-g009a">
+        <g class="segment s-ffcc66 a">
+          <path d="M 108.08 508.43 L 361.25 404.91"/>
+          <title>Segment g009a</title>
+          <desc>Segment g009a: sectionBAB(S, O_1, B_1, K_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 240.00, 471.00)">
+          <text>a</text>
+        </g>
+      </g>
+      <g id="sg-g009b">
+        <g class="segment s-ffcc66 b">
+          <path d="M 361.25 404.91 L 770.88 237.42"/>
+          <title>Segment g009b</title>
+          <desc>Segment g009b: sectionBAB(S, O_1, B_1, K_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 572.00, 335.00)">
+          <text>b</text>
+        </g>
+      </g>
+      <g id="sg-g009c">
+        <g class="segment s-ffcc66 a+b">
+          <path d="M 770.88 237.42 L 1354.0 -1.0075"/>
+          <title>Segment g009c</title>
+          <desc>Segment g009c: sectionBAB(S, O_1, B_1, K_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 1108.0, 116.00)">
+          <text>a+b</text>
+        </g>
+      </g>
+      <g id="sg-g010a_1">
+        <g class="segment s-ffcc66 a">
+          <path d="M 480.78 404.91 L 614.42 301.39"/>
+          <title>Segment g010a_1</title>
+          <desc>Segment g010a_1: sectionABA(M, D, W, P_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 557.00, 365.00)">
+          <text>a</text>
+        </g>
+      </g>
+      <g id="sg-g010b">
+        <g class="segment s-ffcc66 b">
+          <path d="M 614.42 301.39 L 830.65 133.90"/>
+          <title>Segment g010b</title>
+          <desc>Segment g010b: sectionABA(M, D, W, P_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 732.00, 230.00)">
+          <text>b</text>
+        </g>
+      </g>
+      <g id="sg-g010a_2">
+        <g class="segment s-ffcc66 a">
+          <path d="M 830.65 133.90 L 964.29 30.386"/>
+          <title>Segment g010a_2</title>
+          <desc>Segment g010a_2: sectionABA(M, D, W, P_1)</desc>
+        </g>
+        <g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 907.00, 94.000)">
+          <text>a</text>
+        </g>
+      </g>
+    </g>
+    <g id="points">
+      <g id="pt-A">
+        <g class="point bottom">
+          <path d="M 558.65 404.91 C 558.65 407.12 556.86 408.91 554.65 408.91 C 552.44 408.91 550.65 407.12 550.65 404.91 C 550.65 402.70 552.44 400.91 554.65 400.91 C 556.86 400.91 558.65 402.70 558.65 404.91 z"/>
+          <title>Point A</title>
+          <desc>Point A: Point on xAxis</desc>
+        </g>
+        <g class="point top">
+          <path d="M 558.65 404.91 C 558.65 407.12 556.86 408.91 554.65 408.91 C 552.44 408.91 550.65 407.12 550.65 404.91 C 550.65 402.70 552.44 400.91 554.65 400.91 C 556.86 400.91 558.65 402.70 558.65 404.91 z"/>
+          <title>Point A</title>
+          <desc>Point A: Point on xAxis</desc>
+        </g>
+      </g>
+      <g id="pt-B">
+        <g class="point bottom">
+          <path d="M 678.18 404.91 C 678.18 407.12 676.39 408.91 674.18 408.91 C 671.97 408.91 670.18 407.12 670.18 404.91 C 670.18 402.70 671.97 400.91 674.18 400.91 C 676.39 400.91 678.18 402.70 678.18 404.91 z"/>
+          <title>Point B</title>
+          <desc>Point B: Point on xAxis</desc>
+        </g>
+        <g class="point top">
+          <path d="M 678.18 404.91 C 678.18 407.12 676.39 408.91 674.18 408.91 C 671.97 408.91 670.18 407.12 670.18 404.91 C 670.18 402.70 671.97 400.91 674.18 400.91 C 676.39 400.91 678.18 402.70 678.18 404.91 z"/>
+          <title>Point B</title>
+          <desc>Point B: Point on xAxis</desc>
+        </g>
+      </g>
+      <g id="pt-D">
+        <g class="point bottom">
+          <path d="M 618.42 301.39 C 618.42 303.60 616.63 305.39 614.42 305.39 C 612.21 305.39 610.42 303.60 610.42 301.39 C 610.42 299.19 612.21 297.39 614.42 297.39 C 616.63 297.39 618.42 299.19 618.42 301.39 z"/>
+          <title>Point D</title>
+          <desc>Point D: Intersection point of c, d</desc>
+        </g>
+        <g class="point top">
+          <path d="M 618.42 301.39 C 618.42 303.60 616.63 305.39 614.42 305.39 C 612.21 305.39 610.42 303.60 610.42 301.39 C 610.42 299.19 612.21 297.39 614.42 297.39 C 616.63 297.39 618.42 299.19 618.42 301.39 z"/>
+          <title>Point D</title>
+          <desc>Point D: Intersection point of c, d</desc>
+        </g>
+      </g>
+      <g id="pt-C">
+        <g class="point bottom">
+          <path d="M 618.42 508.43 C 618.42 510.64 616.63 512.43 614.42 512.43 C 612.21 512.43 610.42 510.64 610.42 508.43 C 610.42 506.22 612.21 504.43 614.42 504.43 C 616.63 504.43 618.42 506.22 618.42 508.43 z"/>
+          <title>Point C</title>
+          <desc>Point C: Intersection point of c, d</desc>
+        </g>
+        <g class="point top">
+          <path d="M 618.42 508.43 C 618.42 510.64 616.63 512.43 614.42 512.43 C 612.21 512.43 610.42 510.64 610.42 508.43 C 610.42 506.22 612.21 504.43 614.42 504.43 C 616.63 504.43 618.42 506.22 618.42 508.43 z"/>
+          <title>Point C</title>
+          <desc>Point C: Intersection point of c, d</desc>
+        </g>
+      </g>
+      <g id="pt-E">
+        <g class="point bottom">
+          <path d="M 618.42 404.91 C 618.42 407.12 616.63 408.91 614.42 408.91 C 612.21 408.91 610.42 407.12 610.42 404.91 C 610.42 402.70 612.21 400.91 614.42 400.91 C 616.63 400.91 618.42 402.70 618.42 404.91 z"/>
+          <title>Point E</title>
+          <desc>Point E: Intersection of a and b</desc>
+        </g>
+        <g class="point top">
+          <path d="M 618.42 404.91 C 618.42 407.12 616.63 408.91 614.42 408.91 C 612.21 408.91 610.42 407.12 610.42 404.91 C 610.42 402.70 612.21 400.91 614.42 400.91 C 616.63 400.91 618.42 402.70 618.42 404.91 z"/>
+          <title>Point E</title>
+          <desc>Point E: Intersection of a and b</desc>
+        </g>
+      </g>
+      <g id="pt-F">
+        <g class="point bottom">
+          <path d="M 439.12 404.91 C 439.12 407.12 437.33 408.91 435.12 408.91 C 432.91 408.91 431.12 407.12 431.12 404.91 C 431.12 402.70 432.91 400.91 435.12 400.91 C 437.33 400.91 439.12 402.70 439.12 404.91 z"/>
+          <title>Point F</title>
+          <desc>Point F: Intersection of c and a</desc>
+        </g>
+        <g class="point top">
+          <path d="M 439.12 404.91 C 439.12 407.12 437.33 408.91 435.12 408.91 C 432.91 408.91 431.12 407.12 431.12 404.91 C 431.12 402.70 432.91 400.91 435.12 400.91 C 437.33 400.91 439.12 402.70 439.12 404.91 z"/>
+          <title>Point F</title>
+          <desc>Point F: Intersection of c and a</desc>
+        </g>
+      </g>
+      <g id="pt-G">
+        <g class="point bottom">
+          <path d="M 797.71 404.91 C 797.71 407.12 795.92 408.91 793.71 408.91 C 791.50 408.91 789.71 407.12 789.71 404.91 C 789.71 402.70 791.50 400.91 793.71 400.91 C 795.92 400.91 797.71 402.70 797.71 404.91 z"/>
+          <title>Point G</title>
+          <desc>Point G: Intersection of d and a</desc>
+        </g>
+        <g class="point top">
+          <path d="M 797.71 404.91 C 797.71 407.12 795.92 408.91 793.71 408.91 C 791.50 408.91 789.71 407.12 789.71 404.91 C 789.71 402.70 791.50 400.91 793.71 400.91 C 795.92 400.91 797.71 402.70 797.71 404.91 z"/>
+          <title>Point G</title>
+          <desc>Point G: Intersection of d and a</desc>
+        </g>
+      </g>
+      <g id="pt-H">
+        <g class="point bottom">
+          <path d="M 498.89 301.39 C 498.89 303.60 497.10 305.39 494.89 305.39 C 492.68 305.39 490.89 303.60 490.89 301.39 C 490.89 299.19 492.68 297.39 494.89 297.39 C 497.10 297.39 498.89 299.19 498.89 301.39 z"/>
+          <title>Point H</title>
+          <desc>Point H: Intersection of c and h</desc>
+        </g>
+        <g class="point top">
+          <path d="M 498.89 301.39 C 498.89 303.60 497.10 305.39 494.89 305.39 C 492.68 305.39 490.89 303.60 490.89 301.39 C 490.89 299.19 492.68 297.39 494.89 297.39 C 497.10 297.39 498.89 299.19 498.89 301.39 z"/>
+          <title>Point H</title>
+          <desc>Point H: Intersection of c and h</desc>
+        </g>
+      </g>
+      <g id="pt-I">
+        <g class="point bottom">
+          <path d="M 737.95 301.39 C 737.95 303.60 736.16 305.39 733.95 305.39 C 731.74 305.39 729.95 303.60 729.95 301.39 C 729.95 299.19 731.74 297.39 733.95 297.39 C 736.16 297.39 737.95 299.19 737.95 301.39 z"/>
+          <title>Point I</title>
+          <desc>Point I: Intersection of d and i</desc>
+        </g>
+        <g class="point top">
+          <path d="M 737.95 301.39 C 737.95 303.60 736.16 305.39 733.95 305.39 C 731.74 305.39 729.95 303.60 729.95 301.39 C 729.95 299.19 731.74 297.39 733.95 297.39 C 736.16 297.39 737.95 299.19 737.95 301.39 z"/>
+          <title>Point I</title>
+          <desc>Point I: Intersection of d and i</desc>
+        </g>
+      </g>
+      <g id="pt-J">
+        <g class="point bottom">
+          <path d="M 498.89 508.43 C 498.89 510.64 497.10 512.43 494.89 512.43 C 492.68 512.43 490.89 510.64 490.89 508.43 C 490.89 506.22 492.68 504.43 494.89 504.43 C 497.10 504.43 498.89 506.22 498.89 508.43 z"/>
+          <title>Point J</title>
+          <desc>Point J: Intersection of c and f</desc>
+        </g>
+        <g class="point top">
+          <path d="M 498.89 508.43 C 498.89 510.64 497.10 512.43 494.89 512.43 C 492.68 512.43 490.89 510.64 490.89 508.43 C 490.89 506.22 492.68 504.43 494.89 504.43 C 497.10 504.43 498.89 506.22 498.89 508.43 z"/>
+          <title>Point J</title>
+          <desc>Point J: Intersection of c and f</desc>
+        </g>
+      </g>
+      <g id="pt-K">
+        <g class="point bottom">
+          <path d="M 737.95 508.43 C 737.95 510.64 736.16 512.43 733.95 512.43 C 731.74 512.43 729.95 510.64 729.95 508.43 C 729.95 506.22 731.74 504.43 733.95 504.43 C 736.16 504.43 737.95 506.22 737.95 508.43 z"/>
+          <title>Point K</title>
+          <desc>Point K: Intersection of d and g</desc>
+        </g>
+        <g class="point top">
+          <path d="M 737.95 508.43 C 737.95 510.64 736.16 512.43 733.95 512.43 C 731.74 512.43 729.95 510.64 729.95 508.43 C 729.95 506.22 731.74 504.43 733.95 504.43 C 736.16 504.43 737.95 506.22 737.95 508.43 z"/>
+          <title>Point K</title>
+          <desc>Point K: Intersection of d and g</desc>
+        </g>
+      </g>
+      <g id="pt-L">
+        <g class="point bottom">
+          <path d="M 618.42 439.42 C 618.42 441.62 616.63 443.42 614.42 443.42 C 612.21 443.42 610.42 441.62 610.42 439.42 C 610.42 437.21 612.21 435.42 614.42 435.42 C 616.63 435.42 618.42 437.21 618.42 439.42 z"/>
+          <title>Point L</title>
+          <desc>Point L: Intersection of l and m</desc>
+        </g>
+        <g class="point top">
+          <path d="M 618.42 439.42 C 618.42 441.62 616.63 443.42 614.42 443.42 C 612.21 443.42 610.42 441.62 610.42 439.42 C 610.42 437.21 612.21 435.42 614.42 435.42 C 616.63 435.42 618.42 437.21 618.42 439.42 z"/>
+          <title>Point L</title>
+          <desc>Point L: Intersection of l and m</desc>
+        </g>
+      </g>
+      <g id="pt-M">
+        <g class="point bottom">
+          <path d="M 484.78 404.91 C 484.78 407.12 482.99 408.91 480.78 408.91 C 478.57 408.91 476.78 407.12 476.78 404.91 C 476.78 402.70 478.57 400.91 480.78 400.91 C 482.99 400.91 484.78 402.70 484.78 404.91 z"/>
+          <title>Point M</title>
+          <desc>Point M: Intersection point of e, a</desc>
+        </g>
+        <g class="point top">
+          <path d="M 484.78 404.91 C 484.78 407.12 482.99 408.91 480.78 408.91 C 478.57 408.91 476.78 407.12 476.78 404.91 C 476.78 402.70 478.57 400.91 480.78 400.91 C 482.99 400.91 484.78 402.70 484.78 404.91 z"/>
+          <title>Point M</title>
+          <desc>Point M: Intersection point of e, a</desc>
+        </g>
+      </g>
+      <g id="pt-N">
+        <g class="point bottom">
+          <path d="M 752.06 404.91 C 752.06 407.12 750.26 408.91 748.06 408.91 C 745.85 408.91 744.06 407.12 744.06 404.91 C 744.06 402.70 745.85 400.91 748.06 400.91 C 750.26 400.91 752.06 402.70 752.06 404.91 z"/>
+          <title>Point N</title>
+          <desc>Point N: Intersection point of e, a</desc>
+        </g>
+        <g class="point top">
+          <path d="M 752.06 404.91 C 752.06 407.12 750.26 408.91 748.06 408.91 C 745.85 408.91 744.06 407.12 744.06 404.91 C 744.06 402.70 745.85 400.91 748.06 400.91 C 750.26 400.91 752.06 402.70 752.06 404.91 z"/>
+          <title>Point N</title>
+          <desc>Point N: Intersection point of e, a</desc>
+        </g>
+      </g>
+      <g id="pt-O">
+        <g class="point bottom">
+          <path d="M 521.72 340.93 C 521.72 343.14 519.92 344.93 517.72 344.93 C 515.51 344.93 513.72 343.14 513.72 340.93 C 513.72 338.73 515.51 336.93 517.72 336.93 C 519.92 336.93 521.72 338.73 521.72 340.93 z"/>
+          <title>Point O</title>
+          <desc>Point O: Intersection point of e, h</desc>
+        </g>
+        <g class="point top">
+          <path d="M 521.72 340.93 C 521.72 343.14 519.92 344.93 517.72 344.93 C 515.51 344.93 513.72 343.14 513.72 340.93 C 513.72 338.73 515.51 336.93 517.72 336.93 C 519.92 336.93 521.72 338.73 521.72 340.93 z"/>
+          <title>Point O</title>
+          <desc>Point O: Intersection point of e, h</desc>
+        </g>
+      </g>
+      <g id="pt-P">
+        <g class="point bottom">
+          <path d="M 655.35 572.40 C 655.35 574.61 653.56 576.40 651.35 576.40 C 649.14 576.40 647.35 574.61 647.35 572.40 C 647.35 570.19 649.14 568.40 651.35 568.40 C 653.56 568.40 655.35 570.19 655.35 572.40 z"/>
+          <title>Point P</title>
+          <desc>Point P: Intersection point of e, h</desc>
+        </g>
+        <g class="point top">
+          <path d="M 655.35 572.40 C 655.35 574.61 653.56 576.40 651.35 576.40 C 649.14 576.40 647.35 574.61 647.35 572.40 C 647.35 570.19 649.14 568.40 651.35 568.40 C 653.56 568.40 655.35 570.19 655.35 572.40 z"/>
+          <title>Point P</title>
+          <desc>Point P: Intersection point of e, h</desc>
+        </g>
+      </g>
+      <g id="pt-Q">
+        <g class="point bottom">
+          <path d="M 715.12 340.93 C 715.12 343.14 713.33 344.93 711.12 344.93 C 708.91 344.93 707.12 343.14 707.12 340.93 C 707.12 338.73 708.91 336.93 711.12 336.93 C 713.33 336.93 715.12 338.73 715.12 340.93 z"/>
+          <title>Point Q</title>
+          <desc>Point Q: Intersection point of e, i</desc>
+        </g>
+        <g class="point top">
+          <path d="M 715.12 340.93 C 715.12 343.14 713.33 344.93 711.12 344.93 C 708.91 344.93 707.12 343.14 707.12 340.93 C 707.12 338.73 708.91 336.93 711.12 336.93 C 713.33 336.93 715.12 338.73 715.12 340.93 z"/>
+          <title>Point Q</title>
+          <desc>Point Q: Intersection point of e, i</desc>
+        </g>
+      </g>
+      <g id="pt-R">
+        <g class="point bottom">
+          <path d="M 581.48 572.40 C 581.48 574.61 579.69 576.40 577.48 576.40 C 575.27 576.40 573.48 574.61 573.48 572.40 C 573.48 570.19 575.27 568.40 577.48 568.40 C 579.69 568.40 581.48 570.19 581.48 572.40 z"/>
+          <title>Point R</title>
+          <desc>Point R: Intersection point of e, i</desc>
+        </g>
+        <g class="point top">
+          <path d="M 581.48 572.40 C 581.48 574.61 579.69 576.40 577.48 576.40 C 575.27 576.40 573.48 574.61 573.48 572.40 C 573.48 570.19 575.27 568.40 577.48 568.40 C 579.69 568.40 581.48 570.19 581.48 572.40 z"/>
+          <title>Point R</title>
+          <desc>Point R: Intersection point of e, i</desc>
+        </g>
+      </g>
+      <g id="pt-S">
+        <g class="point bottom">
+          <path d="M 112.08 508.43 C 112.08 510.64 110.29 512.43 108.08 512.43 C 105.87 512.43 104.08 510.64 104.08 508.43 C 104.08 506.22 105.87 504.43 108.08 504.43 C 110.29 504.43 112.08 506.22 112.08 508.43 z"/>
+          <title>Point S</title>
+          <desc>Point S: Intersection of j and n</desc>
+        </g>
+        <g class="point top">
+          <path d="M 112.08 508.43 C 112.08 510.64 110.29 512.43 108.08 512.43 C 105.87 512.43 104.08 510.64 104.08 508.43 C 104.08 506.22 105.87 504.43 108.08 504.43 C 110.29 504.43 112.08 506.22 112.08 508.43 z"/>
+          <title>Point S</title>
+          <desc>Point S: Intersection of j and n</desc>
+        </g>
+      </g>
+      <g id="pt-T">
+        <g class="point bottom">
+          <path d="M 351.14 508.43 C 351.14 510.64 349.35 512.43 347.14 512.43 C 344.93 512.43 343.14 510.64 343.14 508.43 C 343.14 506.22 344.93 504.43 347.14 504.43 C 349.35 504.43 351.14 506.22 351.14 508.43 z"/>
+          <title>Point T</title>
+          <desc>Point T: Intersection of j and p</desc>
+        </g>
+        <g class="point top">
+          <path d="M 351.14 508.43 C 351.14 510.64 349.35 512.43 347.14 512.43 C 344.93 512.43 343.14 510.64 343.14 508.43 C 343.14 506.22 344.93 504.43 347.14 504.43 C 349.35 504.43 351.14 506.22 351.14 508.43 z"/>
+          <title>Point T</title>
+          <desc>Point T: Intersection of j and p</desc>
+        </g>
+      </g>
+      <g id="pt-U">
+        <g class="point bottom">
+          <path d="M 590.20 508.43 C 590.20 510.64 588.41 512.43 586.20 512.43 C 583.99 512.43 582.20 510.64 582.20 508.43 C 582.20 506.22 583.99 504.43 586.20 504.43 C 588.41 504.43 590.20 506.22 590.20 508.43 z"/>
+          <title>Point U</title>
+          <desc>Point U: Intersection of q and j</desc>
+        </g>
+        <g class="point top">
+          <path d="M 590.20 508.43 C 590.20 510.64 588.41 512.43 586.20 512.43 C 583.99 512.43 582.20 510.64 582.20 508.43 C 582.20 506.22 583.99 504.43 586.20 504.43 C 588.41 504.43 590.20 506.22 590.20 508.43 z"/>
+          <title>Point U</title>
+          <desc>Point U: Intersection of q and j</desc>
+        </g>
+      </g>
+      <g id="pt-V">
+        <g class="point bottom">
+          <path d="M 646.63 508.43 C 646.63 510.64 644.84 512.43 642.63 512.43 C 640.42 512.43 638.63 510.64 638.63 508.43 C 638.63 506.22 640.42 504.43 642.63 504.43 C 644.84 504.43 646.63 506.22 646.63 508.43 z"/>
+          <title>Point V</title>
+          <desc>Point V: Intersection of r and j</desc>
+        </g>
+        <g class="point top">
+          <path d="M 646.63 508.43 C 646.63 510.64 644.84 512.43 642.63 512.43 C 640.42 512.43 638.63 510.64 638.63 508.43 C 638.63 506.22 640.42 504.43 642.63 504.43 C 644.84 504.43 646.63 506.22 646.63 508.43 z"/>
+          <title>Point V</title>
+          <desc>Point V: Intersection of r and j</desc>
+        </g>
+      </g>
+      <g id="pt-Z">
+        <g class="point bottom">
+          <path d="M 885.69 508.43 C 885.69 510.64 883.90 512.43 881.69 512.43 C 879.48 512.43 877.69 510.64 877.69 508.43 C 877.69 506.22 879.48 504.43 881.69 504.43 C 883.90 504.43 885.69 506.22 885.69 508.43 z"/>
+          <title>Point Z</title>
+          <desc>Point Z: Intersection of s and j</desc>
+        </g>
+        <g class="point top">
+          <path d="M 885.69 508.43 C 885.69 510.64 883.90 512.43 881.69 512.43 C 879.48 512.43 877.69 510.64 877.69 508.43 C 877.69 506.22 879.48 504.43 881.69 504.43 C 883.90 504.43 885.69 506.22 885.69 508.43 z"/>
+          <title>Point Z</title>
+          <desc>Point Z: Intersection of s and j</desc>
+        </g>
+      </g>
+      <g id="pt-A_1">
+        <g class="point bottom">
+          <path d="M 1124.8 508.43 C 1124.8 510.64 1123.0 512.43 1120.8 512.43 C 1118.5 512.43 1116.8 510.64 1116.8 508.43 C 1116.8 506.22 1118.5 504.43 1120.8 504.43 C 1123.0 504.43 1124.8 506.22 1124.8 508.43 z"/>
+          <title>Point A_1</title>
+          <desc>Point A_1: Intersection of t and j</desc>
+        </g>
+        <g class="point top">
+          <path d="M 1124.8 508.43 C 1124.8 510.64 1123.0 512.43 1120.8 512.43 C 1118.5 512.43 1116.8 510.64 1116.8 508.43 C 1116.8 506.22 1118.5 504.43 1120.8 504.43 C 1123.0 504.43 1124.8 506.22 1124.8 508.43 z"/>
+          <title>Point A_1</title>
+          <desc>Point A_1: Intersection of t and j</desc>
+        </g>
+      </g>
+      <g id="pt-W">
+        <g class="point bottom">
+          <path d="M 834.65 133.90 C 834.65 136.11 832.86 137.90 830.65 137.90 C 828.44 137.90 826.65 136.11 826.65 133.90 C 826.65 131.69 828.44 129.90 830.65 129.90 C 832.86 129.90 834.65 131.69 834.65 133.90 z"/>
+          <title>Point W</title>
+          <desc>Point W: Intersection of i and p</desc>
+        </g>
+        <g class="point top">
+          <path d="M 834.65 133.90 C 834.65 136.11 832.86 137.90 830.65 137.90 C 828.44 137.90 826.65 136.11 826.65 133.90 C 826.65 131.69 828.44 129.90 830.65 129.90 C 832.86 129.90 834.65 131.69 834.65 133.90 z"/>
+          <title>Point W</title>
+          <desc>Point W: Intersection of i and p</desc>
+        </g>
+      </g>
+      <g id="pt-B_1">
+        <g class="point bottom">
+          <path d="M 774.88 237.42 C 774.88 239.63 773.09 241.42 770.88 241.42 C 768.67 241.42 766.88 239.63 766.88 237.42 C 766.88 235.21 768.67 233.42 770.88 233.42 C 773.09 233.42 774.88 235.21 774.88 237.42 z"/>
+          <title>Point B_1</title>
+          <desc>Point B_1: Intersection of i and n</desc>
+        </g>
+        <g class="point top">
+          <path d="M 774.88 237.42 C 774.88 239.63 773.09 241.42 770.88 241.42 C 768.67 241.42 766.88 239.63 766.88 237.42 C 766.88 235.21 768.67 233.42 770.88 233.42 C 773.09 233.42 774.88 235.21 774.88 237.42 z"/>
+          <title>Point B_1</title>
+          <desc>Point B_1: Intersection of i and n</desc>
+        </g>
+      </g>
+      <g id="pt-C_1">
+        <g class="point bottom">
+          <path d="M 701.01 365.37 C 701.01 367.58 699.22 369.37 697.01 369.37 C 694.80 369.37 693.01 367.58 693.01 365.37 C 693.01 363.16 694.80 361.37 697.01 361.37 C 699.22 361.37 701.01 363.16 701.01 365.37 z"/>
+          <title>Point C_1</title>
+          <desc>Point C_1: Intersection of i and s</desc>
+        </g>
+        <g class="point top">
+          <path d="M 701.01 365.37 C 701.01 367.58 699.22 369.37 697.01 369.37 C 694.80 369.37 693.01 367.58 693.01 365.37 C 693.01 363.16 694.80 361.37 697.01 361.37 C 699.22 361.37 701.01 363.16 701.01 365.37 z"/>
+          <title>Point C_1</title>
+          <desc>Point C_1: Intersection of i and s</desc>
+        </g>
+      </g>
+      <g id="pt-D_1">
+        <g class="point bottom">
+          <path d="M 641.25 468.89 C 641.25 471.10 639.45 472.89 637.25 472.89 C 635.04 472.89 633.25 471.10 633.25 468.89 C 633.25 466.68 635.04 464.89 637.25 464.89 C 639.45 464.89 641.25 466.68 641.25 468.89 z"/>
+          <title>Point D_1</title>
+          <desc>Point D_1: Intersection of r and i</desc>
+        </g>
+        <g class="point top">
+          <path d="M 641.25 468.89 C 641.25 471.10 639.45 472.89 637.25 472.89 C 635.04 472.89 633.25 471.10 633.25 468.89 C 633.25 466.68 635.04 464.89 637.25 464.89 C 639.45 464.89 641.25 466.68 641.25 468.89 z"/>
+          <title>Point D_1</title>
+          <desc>Point D_1: Intersection of r and i</desc>
+        </g>
+      </g>
+      <g id="pt-E_1">
+        <g class="point bottom">
+          <path d="M 598.00 451.20 C 598.00 453.41 596.21 455.20 594.00 455.20 C 591.79 455.20 590.00 453.41 590.00 451.20 C 590.00 449.00 591.79 447.20 594.00 447.20 C 596.21 447.20 598.00 449.00 598.00 451.20 z"/>
+          <title>Point E_1</title>
+          <desc>Point E_1: Intersection of q and l</desc>
+        </g>
+        <g class="point top">
+          <path d="M 598.00 451.20 C 598.00 453.41 596.21 455.20 594.00 455.20 C 591.79 455.20 590.00 453.41 590.00 451.20 C 590.00 449.00 591.79 447.20 594.00 447.20 C 596.21 447.20 598.00 449.00 598.00 451.20 z"/>
+          <title>Point E_1</title>
+          <desc>Point E_1: Intersection of q and l</desc>
+        </g>
+      </g>
+      <g id="pt-F_1">
+        <g class="point bottom">
+          <path d="M 635.86 429.35 C 635.86 431.56 634.07 433.35 631.86 433.35 C 629.65 433.35 627.86 431.56 627.86 429.35 C 627.86 427.14 629.65 425.35 631.86 425.35 C 634.07 425.35 635.86 427.14 635.86 429.35 z"/>
+          <title>Point F_1</title>
+          <desc>Point F_1: Intersection of r and l</desc>
+        </g>
+        <g class="point top">
+          <path d="M 635.86 429.35 C 635.86 431.56 634.07 433.35 631.86 433.35 C 629.65 433.35 627.86 431.56 627.86 429.35 C 627.86 427.14 629.65 425.35 631.86 425.35 C 634.07 425.35 635.86 427.14 635.86 429.35 z"/>
+          <title>Point F_1</title>
+          <desc>Point F_1: Intersection of r and l</desc>
+        </g>
+      </g>
+      <g id="pt-G_1">
+        <g class="point bottom">
+          <path d="M 720.51 380.47 C 720.51 382.68 718.72 384.47 716.51 384.47 C 714.30 384.47 712.51 382.68 712.51 380.47 C 712.51 378.26 714.30 376.47 716.51 376.47 C 718.72 376.47 720.51 378.26 720.51 380.47 z"/>
+          <title>Point G_1</title>
+          <desc>Point G_1: Intersection of s and l</desc>
+        </g>
+        <g class="point top">
+          <path d="M 720.51 380.47 C 720.51 382.68 718.72 384.47 716.51 384.47 C 714.30 384.47 712.51 382.68 712.51 380.47 C 712.51 378.26 714.30 376.47 716.51 376.47 C 718.72 376.47 720.51 378.26 720.51 380.47 z"/>
+          <title>Point G_1</title>
+          <desc>Point G_1: Intersection of s and l</desc>
+        </g>
+      </g>
+      <g id="pt-H_1">
+        <g class="point bottom">
+          <path d="M 758.36 358.62 C 758.36 360.83 756.57 362.62 754.36 362.62 C 752.16 362.62 750.36 360.83 750.36 358.62 C 750.36 356.41 752.16 354.62 754.36 354.62 C 756.57 354.62 758.36 356.41 758.36 358.62 z"/>
+          <title>Point H_1</title>
+          <desc>Point H_1: Intersection of t and l</desc>
+        </g>
+        <g class="point top">
+          <path d="M 758.36 358.62 C 758.36 360.83 756.57 362.62 754.36 362.62 C 752.16 362.62 750.36 360.83 750.36 358.62 C 750.36 356.41 752.16 354.62 754.36 354.62 C 756.57 354.62 758.36 356.41 758.36 358.62 z"/>
+          <title>Point H_1</title>
+          <desc>Point H_1: Intersection of t and l</desc>
+        </g>
+      </g>
+      <g id="pt-I_1">
+        <g class="point bottom">
+          <path d="M 857.48 301.39 C 857.48 303.60 855.69 305.39 853.48 305.39 C 851.27 305.39 849.48 303.60 849.48 301.39 C 849.48 299.19 851.27 297.39 853.48 297.39 C 855.69 297.39 857.48 299.19 857.48 301.39 z"/>
+          <title>Point I_1</title>
+          <desc>Point I_1: Intersection of k and l</desc>
+        </g>
+        <g class="point top">
+          <path d="M 857.48 301.39 C 857.48 303.60 855.69 305.39 853.48 305.39 C 851.27 305.39 849.48 303.60 849.48 301.39 C 849.48 299.19 851.27 297.39 853.48 297.39 C 855.69 297.39 857.48 299.19 857.48 301.39 z"/>
+          <title>Point I_1</title>
+          <desc>Point I_1: Intersection of k and l</desc>
+        </g>
+      </g>
+      <g id="pt-L_1">
+        <g class="point bottom">
+          <path d="M 627.14 365.37 C 627.14 367.58 625.35 369.37 623.14 369.37 C 620.93 369.37 619.14 367.58 619.14 365.37 C 619.14 363.16 620.93 361.37 623.14 361.37 C 625.35 361.37 627.14 363.16 627.14 365.37 z"/>
+          <title>Point L_1</title>
+          <desc>Point L_1: Intersection of r and q_1</desc>
+        </g>
+        <g class="point top">
+          <path d="M 627.14 365.37 C 627.14 367.58 625.35 369.37 623.14 369.37 C 620.93 369.37 619.14 367.58 619.14 365.37 C 619.14 363.16 620.93 361.37 623.14 361.37 C 625.35 361.37 627.14 363.16 627.14 365.37 z"/>
+          <title>Point L_1</title>
+          <desc>Point L_1: Intersection of r and q_1</desc>
+        </g>
+      </g>
+      <g id="pt-M_1">
+        <g class="point bottom">
+          <path d="M 572.76 380.47 C 572.76 382.68 570.97 384.47 568.76 384.47 C 566.55 384.47 564.76 382.68 564.76 380.47 C 564.76 378.26 566.55 376.47 568.76 376.47 C 570.97 376.47 572.76 378.26 572.76 380.47 z"/>
+          <title>Point M_1</title>
+          <desc>Point M_1: Intersection of f and q_1</desc>
+        </g>
+        <g class="point top">
+          <path d="M 572.76 380.47 C 572.76 382.68 570.97 384.47 568.76 384.47 C 566.55 384.47 564.76 382.68 564.76 380.47 C 564.76 378.26 566.55 376.47 568.76 376.47 C 570.97 376.47 572.76 378.26 572.76 380.47 z"/>
+          <title>Point M_1</title>
+          <desc>Point M_1: Intersection of f and q_1</desc>
+        </g>
+      </g>
+      <g id="pt-N_1">
+        <g class="point bottom">
+          <path d="M 803.10 316.50 C 803.10 318.71 801.31 320.50 799.10 320.50 C 796.89 320.50 795.10 318.71 795.10 316.50 C 795.10 314.29 796.89 312.50 799.10 312.50 C 801.31 312.50 803.10 314.29 803.10 316.50 z"/>
+          <title>Point N_1</title>
+          <desc>Point N_1: Intersection of n_1 and q_1</desc>
+        </g>
+        <g class="point top">
+          <path d="M 803.10 316.50 C 803.10 318.71 801.31 320.50 799.10 320.50 C 796.89 320.50 795.10 318.71 795.10 316.50 C 795.10 314.29 796.89 312.50 799.10 312.50 C 801.31 312.50 803.10 314.29 803.10 316.50 z"/>
+          <title>Point N_1</title>
+          <desc>Point N_1: Intersection of n_1 and q_1</desc>
+        </g>
+      </g>
+      <g id="pt-O_1">
+        <g class="point bottom">
+          <path d="M 365.25 404.91 C 365.25 407.12 363.46 408.91 361.25 408.91 C 359.04 408.91 357.25 407.12 357.25 404.91 C 357.25 402.70 359.04 400.91 361.25 400.91 C 363.46 400.91 365.25 402.70 365.25 404.91 z"/>
+          <title>Point O_1</title>
+          <desc>Point O_1: Intersection of n and a</desc>
+        </g>
+        <g class="point top">
+          <path d="M 365.25 404.91 C 365.25 407.12 363.46 408.91 361.25 408.91 C 359.04 408.91 357.25 407.12 357.25 404.91 C 357.25 402.70 359.04 400.91 361.25 400.91 C 363.46 400.91 365.25 402.70 365.25 404.91 z"/>
+          <title>Point O_1</title>
+          <desc>Point O_1: Intersection of n and a</desc>
+        </g>
+      </g>
+      <g id="pt-P_1">
+        <g class="point bottom">
+          <path d="M 968.29 30.386 C 968.29 32.595 966.50 34.386 964.29 34.386 C 962.08 34.386 960.29 32.595 960.29 30.386 C 960.29 28.177 962.08 26.386 964.29 26.386 C 966.50 26.386 968.29 28.177 968.29 30.386 z"/>
+          <title>Point P_1</title>
+          <desc>Point P_1: Intersection of n_1 and p</desc>
+        </g>
+        <g class="point top">
+          <path d="M 968.29 30.386 C 968.29 32.595 966.50 34.386 964.29 34.386 C 962.08 34.386 960.29 32.595 960.29 30.386 C 960.29 28.177 962.08 26.386 964.29 26.386 C 966.50 26.386 968.29 28.177 968.29 30.386 z"/>
+          <title>Point P_1</title>
+          <desc>Point P_1: Intersection of n_1 and p</desc>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
