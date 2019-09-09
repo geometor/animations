@@ -5,7 +5,7 @@ function hideAllElements() {
     // tl.set( $('.Line,.Point,.Circle,.Triangle,.Quadrilateral,.Segment,.Sector'), {
     //     autoAlpha: 0,
     // }, "0");
-    tl.set( ".Line,.Point,.Circle,.Triangle,.Quadrilateral,.Segment,.Sector", {
+    tl.set( ".line,.point,.circle,.polygon,.segment,.sector", {
         autoAlpha: 0,
     }, "0");
 
