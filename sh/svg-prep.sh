@@ -13,9 +13,6 @@ then
    pwd
 
   sed \
-    -e '15a <style>' \
-    -e '15r ../../css/construction.css' \
-    -e '15a </style>' \
     -e '1,2d' \
     -e '/^$/d' \
     -e 's/<!--.*-->//' \
@@ -130,10 +127,15 @@ then
       ' \
       ../svg/$FILE
 
-  # circles
+  # circles *******************************************
+
   sed  -i \
     -e '# replace embedded styles with class circle
       s/stroke-dasharray="5.0000,4.0000" fill="none" stroke="#\(.*\)"/class="circle s-\1"/' \
+      ../svg/$FILE
+  sed  -i \
+    -e '# replace embedded styles with class circle
+      s/fill-opacity=".*" fill-rule=".*" stroke=".*" fill="#\(.*\)"/class="circle s-\1"/' \
       ../svg/$FILE
   sed  -i \
     -e '# create id for circles
@@ -162,6 +164,19 @@ then
       }
       ' \
       ../svg/$FILE
+
+
+  sed  \
+      -e "/<!--SVG-->/ r ../svg/$FILE" \
+          ../../templates/_index.html > ../index.html
+
+
+  sed  -i \
+    -e '3a <style>' \
+    -e '3r ../../css/construction.css' \
+    -e '3a </style>' \
+        ../svg/$FILE
+
 
   echo "Process Complete"
 else

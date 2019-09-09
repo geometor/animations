@@ -18,48 +18,48 @@ function main() {
     repeatDelay: 5
   });
 
-  hideAllElements();
+  // hideAllElements();
 
-  zoomToElement(".view01", 50);
+  // zoomToElement("#c-b", 50);
 
   // tl.addPause("blank");
 
   //build sequence
-  setPoint("#g000w");
-  setPoint("#g000e");
+  setPoint("#pt-A");
+  setPoint("#pt-B");
 
-  // tl.addPause("unit points");
-
-  setLine("#i00");
-  strokeLine("#i00");
-
-  // tl.addPause("baseline");
-
-  strokeLine("#Q1");
-  // tl.addPause("unit");
-
-  sweepRadius("#c00aw", "#Q1"); //vesica piseces
-  unStrokeLine("#Q1");
-
-  strokeLineReverse("#Q1");
-  sweepRadius("#c00ae", "#Q1");
-  // tl.addPause("vesica");
-  unStrokeLine("#Q1");
-
-  setPoint(".Point.s001");
-
-  // setPoint(["#p003w", "#p003e"]); //unit poles
-
-  strokeLine("#b01"); //perp bisector
-  setPoint("#p002");
-
-  root3sequence()
-  root5sequence()
-  root2sequence()
-
-  root5review()
-  root3review()
-  showSectors()
+  // // tl.addPause("unit points");
+  //
+  setLine("#i-a");
+  strokeLine("#i-a");
+  //
+  // // tl.addPause("baseline");
+  //
+  // strokeLine("#Q1");
+  // // tl.addPause("unit");
+  //
+  // sweepRadius("#c00aw", "#Q1"); //vesica piseces
+  // unStrokeLine("#Q1");
+  //
+  // strokeLineReverse("#Q1");
+  // sweepRadius("#c00ae", "#Q1");
+  // // tl.addPause("vesica");
+  // unStrokeLine("#Q1");
+  //
+  // setPoint(".Point.s001");
+  //
+  // // setPoint(["#p003w", "#p003e"]); //unit poles
+  //
+  // strokeLine("#b01"); //perp bisector
+  // setPoint("#p002");
+  //
+  // root3sequence()
+  // root5sequence()
+  // root2sequence()
+  //
+  // root5review()
+  // root3review()
+  // showSectors()
 
 }
 

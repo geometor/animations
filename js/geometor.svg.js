@@ -8,7 +8,7 @@ function hideAllElements() {
     tl.set( ".line,.point,.circle,.polygon,.segment,.sector", {
         autoAlpha: 0,
     }, "0");
-
+    
 
 }
 
