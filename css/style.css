@@ -10,6 +10,11 @@ body {
     height: 100vh;
 }
 
+svg {
+  width: 100vw;
+  height: 100vh;
+}
+
 #nav {
     text-align: right;
     margin: 20px 10px;

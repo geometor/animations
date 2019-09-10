@@ -25,6 +25,27 @@ This is a series seeking to find the unique constructions that lead to the basel
 
 these are constructions that lead to a Golden Section within the unit
 
+star patterns
+
 ## Systems
 
 each of the unique studies above outlines a proportional system. Here we take each of these systems for a deeper look.
+
+### Root 3
+
+### Root 5
+
+
+## tools
+
+### Geogebra
+- Build model
+- Export svg
+- Geogebra tools and scripts
+
+
+### sed
+- process SVG
+- svg-prep.sh - creates an updated SVG then creates an embedded HTML page.
+
+### entr
