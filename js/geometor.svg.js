@@ -194,15 +194,15 @@ function sweepRadius(id, radiusId) {
 
   // console.log(center);
 
-  // if (radiusId) {
-  //     strokeLine(radiusId);
-  //     tl.to(radiusId, 1, {
-  //         rotation: 360,
-  //         svgOrigin: center,
-  //         ease: Expo.easeInOut
-  //     });
-  //     timeOffset = "-=1";
-  // }
+  if (radiusId) {
+      // strokeLine(radiusId);
+      tl.to(radiusId, 1, {
+          rotation: "+=360",
+          svgOrigin: center,
+          ease: Expo.easeOut
+      });
+      timeOffset = "-=1";
+  }
 
   tl.to(
     element,
@@ -219,7 +219,7 @@ function sweepRadius(id, radiusId) {
       autoAlpha: 1,
       fillOpacity: 0,
       strokeDashoffset: 0,
-      ease: Expo.easeInOut,
+      ease: Expo.easeOut,
     }, timeOffset
   ).to(
     element,

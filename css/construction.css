@@ -3,7 +3,6 @@
   stroke-linejoin: round;
   stroke-width: 0.1em;
   stroke-linecap: butt;
-
 }
 
 .bg {
@@ -12,6 +11,7 @@
   width: 100vw;
   height: 100vh;
 }
+
 text {
   fill-opacity: 1.0000;
   font-style: normal;
@@ -24,30 +24,36 @@ text {
   x: 0;
   y: 0;
 }
+
 path {
   stroke: #FFF;
-
   stroke-opacity: 1;
   stroke-width: 2;
   stroke-linejoin: round;
   stroke-linecap: butt;
-
   fill: none;
   vector-effect: non-scaling-stroke;
 }
 
-.point path {
+.point {
+  transform: translate(-5px,0);
+}
+.point circle {
   stroke: black;
   stroke-opacity: 1;
-
+  stroke-width: 3;
   fill: white;
   fill-opacity: 1;
+  /* vector-effect: non-scaling-stroke; */
+
+  r:5;
 }
 
-.point.bottom path {
+.point.highlight .bottom {
   stroke: #FC0;
-  stroke-width: 8;
-  stroke-opacity: 0;
+  stroke-width: 10;
+  stroke-opacity: 1;
+  /* r: 20; */
 }
 
 .line {
@@ -60,7 +66,6 @@ path {
 
 .polygon {
   stroke-width: 5;
-
   fill: #CCC;
   fill-opacity: 0.3;
   opacity: 1;
@@ -68,25 +73,27 @@ path {
 
 .bisector {
   stroke-dasharray: 13, 5, 3, 5;
-
 }
+
 .segment path {
   stroke: #C90;
-
   stroke-width: 5;
   stroke-opacity: 1;
-
   opacity: 1;
 }
+
 .a path {
   stroke-width: 3;
 }
+
 .b path {
   stroke-width: 5;
 }
+
 [class~="a+b"] path {
   stroke-width: 8;
 }
+
 [class~="a+2b"] path {
   stroke-width: 13;
 }

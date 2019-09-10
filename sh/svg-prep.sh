@@ -18,6 +18,7 @@ then
     -e 's/<!--.*-->//' \
     -e '/width=".*cm"/d' \
     -e '/height=".*cm"/d' \
+    -e '/xmlns:ev=".*"/d' \
     -e '/<clipPath/,/<\/clipPath>/d' \
     -e 's/\s*clip-path="url(.*)"//' \
     -e 's/stroke-linejoin="round"\s*//' \
@@ -83,10 +84,30 @@ then
         N
         N
         N
-    	  s/<g>.*\n<g class="point bottom">\n\(\s*<path.*>\n\)<title>Point \(.*\)<\/title>/<g id="\2">\n<g class="point bottom">\n\1<title>Point \2<\/title>/
+    	  s/<g>.*\n<g class="point bottom">\n\(\s*<path.*>\n\)<title>Point \(.*\)<\/title>/<g id="\2" class="point">\n<g class="point bottom">\n\1<title>Point \2<\/title>/
+    	}' \
+    ../svg/$FILE
+    #transform="translate(-5,0)"
+  sed  -i \
+    -e '# convert point path to circle
+      /<g class="point bottom">/,/<\/g>/ {
+        s/<path d="M \([0-9\.]*\) \([0-9\.]*\) .*z"\/>/<circle class="bottom" cx="\1" cy="\2" r="5" \/>/
+        /<g class="point bottom">/ d
+        /title/ d
+        /desc/ d
+        /<\/g>/ d
+    	}' \
+    ../svg/$FILE
+  sed  -i \
+    -e '# convert point path to circle
+      /<g class="point top">/,/<\/g>/ {
+        s/<path d="M \([0-9\.]*\) \([0-9\.]*\) .*z"\/>/<circle class="top" cx="\1" cy="\2" r="5" \/>/
+        /<g class="point top">/ d
+        /<\/g>/ d
     	}' \
     ../svg/$FILE
 
+# <path d="M \(.*\) \(.*\)  z"/>
 
 
   # segments *******************************************************************
@@ -111,7 +132,7 @@ then
         N
         N
         N
-    	  s/<g>.*\n\(<g.*>\n\)\(\s*<path.*>\n\)<title>Segment \(.*\)<\/title>/<g id="\3">\n\1\2<title>Segment \3<\/title>/
+    	  s/<g>.*\n\(<g.*>\n\)\(\s*<path.*>\n\)<title>Segment \(.*\)<\/title>/<g id="\3" class="segment">\n\1\2<title>Segment \3<\/title>/
     	}
       ' \
       ../svg/$FILE
@@ -145,7 +166,7 @@ then
         N
         N
         N
-        s/<g>.*\n\s*<g class="line\(.*\)">.*\n\(\s*<path.*>\n\)<title>Line \(.*\)<\/title>/<g id="\3">\n<g class="line\1">\n\2<title>Line \3<\/title>/
+        s/<g>.*\n\s*<g class="line\(.*\)">.*\n\(\s*<path.*>\n\)<title>Line \(.*\)<\/title>/<g id="\3" class="line\1">\n<g>\n\2<title>Line \3<\/title>/
       }
       ' \
       ../svg/$FILE
@@ -167,7 +188,7 @@ then
         N
         N
         N
-        s/<g>.*\n\s*<g class="circle\(.*\)">.*\n\(\s*<path.*>\n\)<title>Circle \(.*\)<\/title>/<g id="\3">\n<g class="circle\1">\n\2<title>Circle \3<\/title>/
+        s/<g>.*\n\s*<g class="circle\(.*\)">.*\n\(\s*<path.*>\n\)<title>Circle \(.*\)<\/title>/<g id="\3" class="circle\1">\n<g>\n\2<title>Circle \3<\/title>/
       }
       ' \
       ../svg/$FILE
@@ -183,7 +204,7 @@ then
         N
         N
         N
-        s/<g>.*\n\s*<g class="polygon\(.*\)">.*\n\(\s*<path.*>\n\)<title>\(.*\) \(.*\)<\/title>/<g id="\4">\n<g class="polygon\1">\n\2<title>\3 \4<\/title>/
+        s/<g>.*\n\s*<g class="polygon\(.*\)">.*\n\(\s*<path.*>\n\)<title>\(.*\) \(.*\)<\/title>/<g id="\4" class="polygon\1">\n<g>\n\2<title>\3 \4<\/title>/
       }
       ' \
       ../svg/$FILE
@@ -193,6 +214,7 @@ then
       -e "/<!--SVG-->/ r ../svg/$FILE" \
           ../../templates/_index.html > ../index.html
 
+  tidy -imq -omit -w 0 ../index.html
 
   sed  -i \
     -e '8a <style>' \
