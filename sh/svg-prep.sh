@@ -35,7 +35,30 @@ then
       ' \
     $FILE > ../svg/$FILE
 
-#fill-opacity="1.0000" font-style="normal" font-family="Helvetica" font-weight="normal" stroke="none" fill="#cc9900" font-size="12.000" x="0" y="0"
+
+    # insert bg rectangle
+    sed  -i \
+      -e '/^<title>$/ i <rect class="bg" />' \
+      ../svg/$FILE
+
+    # remove title tag
+    sed  -i \
+      -e '/^<title>$/d' \
+      -e '/^<\/title>$/d' \
+      ../svg/$FILE
+
+      sed  -i \
+        -e '# create id for lines
+          /<g>.*/ {
+            N
+            N
+            N
+            N
+            s/<g>.*\n\s*<g class="line\(.*\)">.*\n\(\s*<path.*>\n\)<title>Line \(.*\)<\/title>/<g id="i-\3">\n<g class="line\1">\n\2<title>Line \3<\/title>/
+          }
+          ' \
+          ../svg/$FILE
+
 
   # points *******************************************************************
   sed  -i \
@@ -60,7 +83,7 @@ then
         N
         N
         N
-    	  s/<g>.*\n<g class="point bottom">\n\(\s*<path.*>\n\)<title>Point \(.*\)<\/title>/<g id="pt-\2">\n<g class="point bottom">\n\1<title>Point \2<\/title>/
+    	  s/<g>.*\n<g class="point bottom">\n\(\s*<path.*>\n\)<title>Point \(.*\)<\/title>/<g id="\2">\n<g class="point bottom">\n\1<title>Point \2<\/title>/
     	}' \
     ../svg/$FILE
 
@@ -88,7 +111,7 @@ then
         N
         N
         N
-    	  s/<g>.*\n\(<g.*>\n\)\(\s*<path.*>\n\)<title>Segment \(.*\)<\/title>/<g id="sg-\3">\n\1\2<title>Segment \3<\/title>/
+    	  s/<g>.*\n\(<g.*>\n\)\(\s*<path.*>\n\)<title>Segment \(.*\)<\/title>/<g id="\3">\n\1\2<title>Segment \3<\/title>/
     	}
       ' \
       ../svg/$FILE
@@ -122,7 +145,7 @@ then
         N
         N
         N
-        s/<g>.*\n\s*<g class="line\(.*\)">.*\n\(\s*<path.*>\n\)<title>Line \(.*\)<\/title>/<g id="i-\3">\n<g class="line\1">\n\2<title>Line \3<\/title>/
+        s/<g>.*\n\s*<g class="line\(.*\)">.*\n\(\s*<path.*>\n\)<title>Line \(.*\)<\/title>/<g id="\3">\n<g class="line\1">\n\2<title>Line \3<\/title>/
       }
       ' \
       ../svg/$FILE
@@ -144,7 +167,7 @@ then
         N
         N
         N
-        s/<g>.*\n\s*<g class="circle\(.*\)">.*\n\(\s*<path.*>\n\)<title>Circle \(.*\)<\/title>/<g id="c-\3">\n<g class="circle\1">\n\2<title>Circle \3<\/title>/
+        s/<g>.*\n\s*<g class="circle\(.*\)">.*\n\(\s*<path.*>\n\)<title>Circle \(.*\)<\/title>/<g id="\3">\n<g class="circle\1">\n\2<title>Circle \3<\/title>/
       }
       ' \
       ../svg/$FILE
@@ -160,7 +183,7 @@ then
         N
         N
         N
-        s/<g>.*\n\s*<g class="polygon\(.*\)">.*\n\(\s*<path.*>\n\)<title>\(.*\) \(.*\)<\/title>/<g id="y-\4">\n<g class="polygon\1">\n\2<title>\3 \4<\/title>/
+        s/<g>.*\n\s*<g class="polygon\(.*\)">.*\n\(\s*<path.*>\n\)<title>\(.*\) \(.*\)<\/title>/<g id="\4">\n<g class="polygon\1">\n\2<title>\3 \4<\/title>/
       }
       ' \
       ../svg/$FILE
@@ -172,9 +195,9 @@ then
 
 
   sed  -i \
-    -e '3a <style>' \
-    -e '3r ../../css/construction.css' \
-    -e '3a </style>' \
+    -e '8a <style>' \
+    -e '8r ../../css/construction.css' \
+    -e '8a </style>' \
         ../svg/$FILE
 
 
