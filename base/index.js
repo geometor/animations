@@ -1,83 +1,68 @@
-var tl ;
+var TL ;
 
-// $( document ).ready(function() {
-//
-// });
-
-console.log( "ready!" );
 main();
-// tl.stop();
-tl.timeScale(2);
-tl.play();
-
-// tl.tweenFromTo( fromThisLabel, toThisLabel );
 
 function main() {
 
-  tl = new TimelineMax({
+  TL = new TimelineMax({
     repeat: -1,
     yoyo: true,
-    repeatDelay: 5
+    repeatDelay: 2
   });
 
-  // hideAllElements();
+  TL.add( baseSequence() );
 
-  baseSequence();
+  TL.timeScale(2);
+  TL.play();
+
 }
 
 
 function baseSequence() {
 
-  zoomToElement(["#b", "#c"], 50);
+  var seqTL = new TimelineMax({
+    repeat: 0,
+  });
+
+  // zoomToElement(["#b", "#c"], 50);
 
   // tl.addPause("blank");
 
   //build sequence
-  setPoint("#A");
-  setPoint("#B");
+  seqTL.add( setPoint("#A") );
+  seqTL.add( setPoint("#B") );
 
-  // // tl.addPause("unit points");
-  //
-  // setLine("#a");
-  drawLine("#a");
-  //
+  seqTL.add( drawLine("#a") );
+
   // // tl.addPause("baseline");
-  //
-  drawLine("#q1");
-  // // tl.addPause("unit");
 
-  sweepRadius("#b", "#q1"); //vesica piseces
-  unStrokeLine("#q1");
-  setPoint("#C");
+  seqTL.add( drawLine("#q1") );
 
-  drawLineReverse("#q1");
-  sweepRadius("#c", "#q1");
-  // // tl.addPause("vesica");
-  unStrokeLine("#q1");
+  seqTL.add( sweepRadius("#b", "#q1") ); //vesica piseces
+  seqTL.add( eraseLine("#q1") );
+  seqTL.add( setPoint("#C") );
 
-  setPoint("#D");
-  setPoint(["#E", "#F"]);
+  seqTL.add( drawLineReverse("#q1") );
+  seqTL.add( sweepRadius("#c", "#q1") );
+  seqTL.add( eraseLine("#q1") );
 
-  drawLine("#d");
+  seqTL.add( setPoint("#D") );
+  seqTL.add( setPoint(["#E", "#F"]) );
 
-  setPoint("#G");
+  seqTL.add( drawLine("#d") );
 
-  drawLine("#q3");
+  seqTL.add( setPoint("#G") );
 
-  // var removeSet = [
-  //   "#c04an",
-  //   "#y3n",
-  //   "#i04ae",
-  //   "#i04aw",
-  //   "#i02ae",
-  //   "#i02aw",
-  //   "#i02be",
-  //   "#i02bw",
-  //   "#p015n",
-  //   "#p015s",
-  // ];
+  seqTL.add( drawLine("#q3") );
+
+
+  var removeSet = [
+    "#a",
+    "#b",
+    "#c",
+  ];
   // fadeElements(removeSet);
-  // fadeElements(".Segment.s002");
 
-  // end first set
+  return seqTL;
+
 }
