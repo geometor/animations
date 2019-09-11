@@ -212,7 +212,8 @@ then
 
   sed  \
       -e "/<!--SVG-->/ r ../svg/$FILE" \
-          ../../templates/_index.html > ../index.html
+      -e "s/<!--FILE-->/$FILE/" \
+          ../../templates/_index.html > ../$FILE.html
 
   tidy -imq -omit -w 0 ../index.html
 

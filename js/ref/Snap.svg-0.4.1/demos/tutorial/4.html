@@ -48,7 +48,7 @@
                         fill: "none",
                         stroke: "#f00",
                         strokeWidth: 6,
-                        strokeLinecap: "round"
+                        drawLinecap: "round"
                     });
                 for (var i = 1; i <= count; i++) {
                     s.text(90 * i - 55, 49, i).attr({
@@ -153,8 +153,8 @@ var bg = s.rect(50, 50, 200, 200, 10).attr({fill: "#ccc"});</li>
 <li>var t2 = t.use().attr({
     stroke: "#000",
     strokeWidth: 10,
-    strokeLinecap: "round",
-    strokeLinejoin: "round"
+    drawLinecap: "round",
+    drawLinejoin: "round"
 });
 </li>
 <li>var mask = s.mask();</li>

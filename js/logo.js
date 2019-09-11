@@ -34,14 +34,14 @@ tl.delay(1).timeScale(1).play();
 function animateLogo() {
 
 
-    strokeLine(".logo.G");
-    strokeLine(".logo.E");
-    strokeLine(".logo.O");
-    strokeLine(".logo.M");
-    strokeLine(".logo.E2");
-    strokeLine(".logo.T");
-    strokeLine(".logo.O2");
-    strokeLine(".logo.R");
+    drawLine(".logo.G");
+    drawLine(".logo.E");
+    drawLine(".logo.O");
+    drawLine(".logo.M");
+    drawLine(".logo.E2");
+    drawLine(".logo.T");
+    drawLine(".logo.O2");
+    drawLine(".logo.R");
 
 
 }

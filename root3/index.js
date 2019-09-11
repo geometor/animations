@@ -31,18 +31,18 @@ function main() {
   // // tl.addPause("unit points");
   //
   // setLine("#a");
-  strokeLine("#a");
+  drawLine("#a");
   //
   // // tl.addPause("baseline");
   //
-  strokeLine("#q1");
+  drawLine("#q1");
   // // tl.addPause("unit");
 
   sweepRadius("#b", "#q1"); //vesica piseces
   unStrokeLine("#q1");
   setPoint("#C");
 
-  strokeLineReverse("#q1");
+  drawLineReverse("#q1");
   sweepRadius("#c", "#q1");
   // // tl.addPause("vesica");
   unStrokeLine("#q1");
@@ -50,14 +50,14 @@ function main() {
   setPoint("#D");
   setPoint(["#E", "#F"]);
 
-  strokeLine("#d");
+  drawLine("#d");
 
-  strokeLine("#q3");
+  drawLine("#q3");
   unStrokeLine("#q3");
 
   setPoint("#G");
 
-  strokeLine("#sections path");
+  drawLine("#sections path");
 
   // root3sequence()
   // showSectors()

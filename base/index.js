@@ -1,20 +1,22 @@
 var tl ;
 
-$( document ).ready(function() {
-    console.log( "ready!" );
-    main();
-    // tl.stop();
-    // tl.timeScale(2);
-    tl.play();
-    // tl.tweenFromTo( fromThisLabel, toThisLabel );
+// $( document ).ready(function() {
+//
+// });
 
-});
+console.log( "ready!" );
+main();
+// tl.stop();
+tl.timeScale(2);
+tl.play();
 
+// tl.tweenFromTo( fromThisLabel, toThisLabel );
 
 function main() {
 
   tl = new TimelineMax({
-    repeat: 0,
+    repeat: -1,
+    yoyo: true,
     repeatDelay: 5
   });
 
@@ -37,18 +39,18 @@ function baseSequence() {
   // // tl.addPause("unit points");
   //
   // setLine("#a");
-  strokeLine("#a");
+  drawLine("#a");
   //
   // // tl.addPause("baseline");
   //
-  strokeLine("#q1");
+  drawLine("#q1");
   // // tl.addPause("unit");
 
   sweepRadius("#b", "#q1"); //vesica piseces
   unStrokeLine("#q1");
   setPoint("#C");
 
-  strokeLineReverse("#q1");
+  drawLineReverse("#q1");
   sweepRadius("#c", "#q1");
   // // tl.addPause("vesica");
   unStrokeLine("#q1");
@@ -56,12 +58,11 @@ function baseSequence() {
   setPoint("#D");
   setPoint(["#E", "#F"]);
 
-  strokeLine("#d");
-
-  strokeLine("#q3");
-  unStrokeLine("#q3");
+  drawLine("#d");
 
   setPoint("#G");
+
+  drawLine("#q3");
 
   // var removeSet = [
   //   "#c04an",

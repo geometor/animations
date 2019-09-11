@@ -13,9 +13,17 @@ function hideAllElements() {
 }
 
 function setPoint(id, position) {
-  tl.fromTo(
+
+
+  tl.set(
     id,
-    .5, {
+    {
+      className: "+=highlight",
+
+    }
+  ).fromTo(
+    id,
+    1, {
       autoAlpha: 0,
       scale: 10,
       transformOrigin: "50% 50%",
@@ -25,6 +33,12 @@ function setPoint(id, position) {
       fillOpacity: 1
     },
     position
+  ).set(
+    id,
+    {
+      className: "-=highlight",
+
+    }
   );
 }
 
@@ -41,7 +55,7 @@ function setLine(id) {
   );
 }
 
-function strokeLine(id) {
+function drawLine(id) {
   var element = document.querySelector(id + " path")
   var len = element.getTotalLength();
 
@@ -52,7 +66,7 @@ function strokeLine(id) {
     }
   ).fromTo(
     element,
-    .5, {
+    1, {
       strokeDasharray: len + OFFSET,
       strokeDashoffset: len + OFFSET,
 
@@ -94,7 +108,7 @@ function unStrokeLine(id) {
   );
 }
 
-function strokeLineReverse(id) {
+function drawLineReverse(id) {
   var element = document.querySelector(id + " path")
   var len = element.getTotalLength();
 
@@ -120,7 +134,7 @@ function strokeLineReverse(id) {
   );
 }
 
-function strokeLineCenter(id) {
+function drawLineCenter(id) {
   var len = document.querySelector(id).getTotalLength();
 
   tl.fromTo(
@@ -186,23 +200,18 @@ function sweepRadius(id, radiusId) {
   var element = document.querySelector(id + " path");
   var len = element.getTotalLength();
 
+  var radius = document.querySelector(radiusId + " path");
+  var radiusLen = radius.getTotalLength();
+
   var cx = parseInt(element.getBBox().x) + parseInt(element.getBBox().width / 2);
   var cy = parseInt(element.getBBox().y) + parseInt(element.getBBox().height / 2);
   var center = cx + ' ' + cy;
 
   var timeOffset;
 
-  // console.log(center);
+  console.log("circle len: " + len);
+  console.log("radius len: " + radiusLen);
 
-  if (radiusId) {
-      // strokeLine(radiusId);
-      tl.to(radiusId, 1, {
-          rotation: "+=360",
-          svgOrigin: center,
-          ease: Expo.easeOut
-      });
-      timeOffset = "-=1";
-  }
 
   tl.to(
     element,
@@ -211,22 +220,34 @@ function sweepRadius(id, radiusId) {
     }
   ).fromTo(
     element,
-    1, {
-      fillOpacity: 0,
-      strokeDasharray: len + OFFSET,
-      strokeDashoffset: len + OFFSET
+    2, {
+      strokeDasharray: len ,
+      strokeDashoffset: len ,
+
     }, {
-      autoAlpha: 1,
-      fillOpacity: 0,
       strokeDashoffset: 0,
-      ease: Expo.easeOut,
-    }, timeOffset
-  ).to(
+
+    }
+  );
+
+  // ease: Power2.easeOut,
+
+  if (radiusId) {
+      // drawLine(radiusId);
+      tl.to(radiusId, 2, {
+          rotation: "+=360",
+          svgOrigin: center,
+
+      }, "-=2" );
+  }
+
+  tl.to(
     element,
     .5, {
       strokeOpacity: .5,
     }
   );
+
 
   // if (radiusId) {
   //     unStrokeLine(radiusId);
@@ -301,7 +322,6 @@ function zoomToElement(id, margin, scale) {
         }
       }
       console.log("bounds: " + i + " : " + topX + " " + topY + " " + bottomX + " " + bottomY);
-
     }
   }
 

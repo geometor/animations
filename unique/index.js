@@ -31,17 +31,17 @@ function main() {
   // // tl.addPause("unit points");
   //
   setLine("#i-a");
-  strokeLine("#i-a");
+  drawLine("#i-a");
   //
   // // tl.addPause("baseline");
   //
-  // strokeLine("#Q1");
+  // drawLine("#Q1");
   // // tl.addPause("unit");
   //
   // sweepRadius("#c00aw", "#Q1"); //vesica piseces
   // unStrokeLine("#Q1");
   //
-  // strokeLineReverse("#Q1");
+  // drawLineReverse("#Q1");
   // sweepRadius("#c00ae", "#Q1");
   // // tl.addPause("vesica");
   // unStrokeLine("#Q1");
@@ -50,7 +50,7 @@ function main() {
   //
   // // setPoint(["#p003w", "#p003e"]); //unit poles
   //
-  // strokeLine("#b01"); //perp bisector
+  // drawLine("#b01"); //perp bisector
   // setPoint("#p002");
   //
   // root3sequence()
@@ -73,24 +73,24 @@ function root3sequence() {
     "#i02bw",
   ];
 
-  strokeLine("#i02ae"); //trilateral lines
-  strokeLine("#i02aw");
-  strokeLine("#i02be");
-  strokeLine("#i02bw");
+  drawLine("#i02ae"); //trilateral lines
+  drawLine("#i02aw");
+  drawLine("#i02be");
+  drawLine("#i02bw");
 
   setPoint(".Point.s009");
 
   setPolygon("#y3n"); //polygon
 
-  strokeLine("#i04ae"); //diagonals
-  strokeLine("#i04aw");
-  // strokeLine("#i04be");
-  // strokeLine("#i04bw");
+  drawLine("#i04ae"); //diagonals
+  drawLine("#i04aw");
+  // drawLine("#i04be");
+  // drawLine("#i04bw");
 
   setPoint("#p015n"); //circumcenter
   // setPoint("#p015s");
 
-  strokeLine("#r04an");
+  drawLine("#r04an");
   sweepRadius("#c04an", "#r04an"); //circumcircles
   // sweepRadius("#c04as", "#r04as");
   unStrokeLine("#r04an");
@@ -98,9 +98,9 @@ function root3sequence() {
 
   setPoint("#g003w", "begin"); //g section 02
   setPoint("#g003e");
-  strokeLine("#g002a2");
-  strokeLine("#g002b");
-  strokeLine("#g002a1");
+  drawLine("#g002a2");
+  drawLine("#g002b");
+  drawLine("#g002a1");
   // tl.addPause("g02.r3");
 
   var removeSet = [
@@ -130,20 +130,20 @@ function root5sequence() {
 
   // zoomToElement(".view01", 50);
 
-  strokeLine("#r00a");
+  drawLine("#r00a");
   sweepRadius("#c00bw", "#r00a"); //unit 2 circles
   unStrokeLine("#r00a");
 
-  strokeLine("#r00b");
+  drawLine("#r00b");
   sweepRadius("#c00be", "#r00b");
   unStrokeLine("#r00b");
 
   setPoint(["#g002n", "#g002s"]); //g section 01
 
   // first golden section
-  strokeLine("#g001a2");
-  strokeLine("#g001b");
-  strokeLine("#g001a1");
+  drawLine("#g001a2");
+  drawLine("#g001b");
+  drawLine("#g001a1");
 
   hideElements(".Segment.s001");
 
@@ -156,12 +156,12 @@ function root5sequence() {
   setPoint("#p005ne");
   setPoint("#p005se");
 
-  strokeLine("#i01ae"); //unit perps
+  drawLine("#i01ae"); //unit perps
 
   setPoint("#p005nw");
   setPoint("#p005sw");
 
-  strokeLine("#i01aw");
+  drawLine("#i01aw");
 
   zoomToElement(".view01", 50);
 
@@ -176,21 +176,21 @@ function root5sequence() {
   ];
   fadeElements(removeSet);
 
-  strokeLine("#i00an"); //horizontal unit above baseline
-  strokeLine("#i00as");
+  drawLine("#i00an"); //horizontal unit above baseline
+  drawLine("#i00as");
 
   setPolygon("#y4n"); //squares
   setPolygon("#y4s");
 
-  strokeLine("#i03ae"); //diagonal
+  drawLine("#i03ae"); //diagonal
 
-  strokeLine("#r03a"); //radius
+  drawLine("#r03a"); //radius
   sweepRadius("#c03a", "#r03a"); //root 5 circle
   unStrokeLine("#r03a"); //radius
 
-  strokeLine("#g002a2");
-  strokeLine("#g002b");
-  strokeLine("#g002a1");
+  drawLine("#g002a2");
+  drawLine("#g002b");
+  drawLine("#g002a1");
 
   // tl.addPause("g02.r5");
 
@@ -208,21 +208,21 @@ function root5sequence() {
 function root2sequence() {
   //Root 2 ****************************
 
-  strokeLine("#i05bw"); //diagonal
+  drawLine("#i05bw"); //diagonal
   setPoint("#p016e");
   setPoint("#p018n");
 
   setPolygon("#y4ds"); //diamond
 
-  strokeLine("#r06an")
+  drawLine("#r06an")
   zoomToElement(".view04", 50);
 
   sweepRadius("#c06an", "#r06an"); //root 5 circle
   unStrokeLine("#r06an")
 
-  strokeLine("#g002a2");
-  strokeLine("#g002b");
-  strokeLine("#g002a1");
+  drawLine("#g002a2");
+  drawLine("#g002b");
+  drawLine("#g002a1");
 
   fadeElements(".Segment.s002");
 
@@ -236,12 +236,12 @@ function root5review() {
   setCircle("#y4n"); //squares
   setCircle("#y4s");
 
-  strokeLine("#i03ae"); //diagonal
+  drawLine("#i03ae"); //diagonal
   sweepRadius("#c03a", "#r03a"); //root 5 circle
 
-  strokeLine("#g002a2");
-  strokeLine("#g002b");
-  strokeLine("#g002a1");
+  drawLine("#g002a2");
+  drawLine("#g002b");
+  drawLine("#g002a1");
 
   fadeElements(".Segment.s002");
 
@@ -249,28 +249,28 @@ function root5review() {
 }
 
 function root3review() {
-  // strokeLine("#i02ae"); //trilateral lines
-  // strokeLine("#i02aw");
-  strokeLine("#i02be");
-  // strokeLine("#i02bw");
+  // drawLine("#i02ae"); //trilateral lines
+  // drawLine("#i02aw");
+  drawLine("#i02be");
+  // drawLine("#i02bw");
 
   setPoint(".Point.s009");
 
   setCircle("#y3n"); //polygon
 
-  strokeLine("#i04aw"); //diagonals
-  // strokeLine("#i04aw");
-  // strokeLine("#i04be");
-  // strokeLine("#i04bw");
+  drawLine("#i04aw"); //diagonals
+  // drawLine("#i04aw");
+  // drawLine("#i04be");
+  // drawLine("#i04bw");
 
   setPoint("#p015n"); //circumcenter
   // setPoint("#p015s");
 
   sweepRadius("#c04an", "#r04an"); //circumcircles
 
-  strokeLine("#g002a2");
-  strokeLine("#g002b");
-  strokeLine("#g002a1");
+  drawLine("#g002a2");
+  drawLine("#g002b");
+  drawLine("#g002a1");
 
   fadeElements(".Segment.s002");
 
@@ -278,9 +278,9 @@ function root3review() {
 
 function showSectors() {
 
-  strokeLine("#g002a2");
-  strokeLine("#g002b");
-  strokeLine("#g002a1");
+  drawLine("#g002a2");
+  drawLine("#g002b");
+  drawLine("#g002a1");
 
   fadeElements(".y");
 

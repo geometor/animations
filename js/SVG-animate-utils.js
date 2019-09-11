@@ -83,7 +83,7 @@ function setSegment(id) {
     )
 }
 
-function strokeLine(id) {
+function drawLine(id) {
     var len = $(id).get(0).getTotalLength();
 
     DrawTL.fromTo(
@@ -125,7 +125,7 @@ function unStrokeLine(id) {
     );
 }
 
-function strokeLineReverse(id) {
+function drawLineReverse(id) {
     var len = $(id).get(0).getTotalLength();
 
     DrawTL.fromTo(
@@ -146,7 +146,7 @@ function strokeLineReverse(id) {
     );
 }
 
-function strokeLineCenter(id) {
+function drawLineCenter(id) {
     var len = $(id).get(0).getTotalLength();
 
     DrawTL.fromTo(
@@ -205,7 +205,7 @@ function sweepRadius(circleId, radiusId) {
     // console.log(center);
 
     if (radiusId) {
-        strokeLine(radiusId);
+        drawLine(radiusId);
         DrawTL.to(radiusId, 1, {
             rotation: 360,
             svgOrigin: center
@@ -389,14 +389,14 @@ function getStyle(oElm, strCssRule) {
 function animateLogo() {
 
 
-    strokeLine(".logo.G");
-    strokeLine(".logo.E");
-    strokeLine(".logo.O");
-    strokeLine(".logo.M");
-    strokeLine(".logo.E2");
-    strokeLine(".logo.T");
-    strokeLine(".logo.O2");
-    strokeLine(".logo.R");
+    drawLine(".logo.G");
+    drawLine(".logo.E");
+    drawLine(".logo.O");
+    drawLine(".logo.M");
+    drawLine(".logo.E2");
+    drawLine(".logo.T");
+    drawLine(".logo.O2");
+    drawLine(".logo.R");
 
 
 }

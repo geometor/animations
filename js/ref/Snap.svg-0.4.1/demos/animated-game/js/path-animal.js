@@ -23,7 +23,7 @@ var PathAnimal = Backbone.View.extend({
 			stroke: this.dot.attr('fill'),
 			strokeWidth: 25,
 			strokeMiterlimit: 10,
-			strokeLinecap: 'round',
+			drawLinecap: 'round',
 			opacity: 1,
 			strokeDasharray: this.totalLength + " 200",
 			strokeDashoffset: this.totalLength
