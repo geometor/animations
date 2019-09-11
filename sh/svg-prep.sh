@@ -215,7 +215,7 @@ then
       -e "s/<!--FILE-->/$FILE/" \
           ../../templates/_index.html > ../$FILE.html
 
-  tidy -imq -omit -w 0 ../$FILE.html
+  # tidy -imq -omit -w 0 ../$FILE.html
 
   sed  -i \
     -e '8a <style>' \
