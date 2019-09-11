@@ -1,3 +1,4 @@
 alias watch="sh/watch.sh"
 alias swatch="sass --watch scss:css"
 alias timecut="sh/timecut.sh"
+alias clone="sh/clone.sh"
