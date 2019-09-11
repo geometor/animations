@@ -1,0 +1,2 @@
+alias watch="sh/watch.sh"
+alias swatch="sass --watch scss:css"
