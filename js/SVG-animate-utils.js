@@ -104,7 +104,7 @@ function drawLine(id) {
     );
 }
 
-function unStrokeLine(id) {
+function eraseLine(id) {
     var len = $(id).get(0).getTotalLength();
 
     DrawTL.fromTo(
@@ -233,7 +233,7 @@ function sweepRadius(circleId, radiusId) {
 
     if (radiusId) {
         hideElements(radiusId);
-        // unStrokeLine(radiusId);
+        // eraseLine(radiusId);
     }
     DrawTL.to(circleId, .5, {
         strokeWidth: .5

@@ -14,8 +14,9 @@ function hideAllElements() {
 
 function setPoint(id, position) {
 
+  var seqTL = new TimelineMax();
 
-  tl.set(
+  seqTL.set(
     id,
     {
       className: "+=highlight",
@@ -37,29 +38,19 @@ function setPoint(id, position) {
     id,
     {
       className: "-=highlight",
-
     }
   );
-}
 
-function setLine(id) {
-  tl.fromTo(
-    id,
-    .5, {
-      autoAlpha: 0,
-
-    }, {
-      autoAlpha: 1,
-
-    }
-  );
+  return seqTL;
 }
 
 function drawLine(id) {
   var element = document.querySelector(id + " path")
   var len = element.getTotalLength();
 
-  tl.to(
+  var seqTL = new TimelineMax();
+
+  seqTL.to(
     element,
     0, {
       autoAlpha: 1,
@@ -69,7 +60,6 @@ function drawLine(id) {
     1, {
       strokeDasharray: len + OFFSET,
       strokeDashoffset: len + OFFSET,
-
     }, {
       strokeDashoffset: 0,
       ease: Power2.easeOut,
@@ -80,20 +70,23 @@ function drawLine(id) {
       strokeOpacity: .5,
     }
   );
+
+  return seqTL;
 }
 
-function unStrokeLine(id) {
+function eraseLine(id) {
   var element = document.querySelector(id + " path")
   var len = element.getTotalLength();
 
-  tl.to(
+  var seqTL = new TimelineMax();
+
+  seqTL.to(
     element,
     1, {
       scale: 1,
       strokeDasharray: len + OFFSET,
       strokeDashoffset: len + OFFSET,
       ease: Power2.easeOut,
-
     }
   ).to(
     element,
@@ -106,13 +99,17 @@ function unStrokeLine(id) {
       strokeOpacity: .5,
     }
   );
+
+  return seqTL;
 }
 
 function drawLineReverse(id) {
   var element = document.querySelector(id + " path")
   var len = element.getTotalLength();
 
-  tl.fromTo(
+  var seqTL = new TimelineMax();
+
+  seqTL.fromTo(
     element,
     .5, {
       scale: 1,
@@ -132,12 +129,17 @@ function drawLineReverse(id) {
       strokeOpacity: .5,
     }
   );
+
+  return seqTL;
 }
 
 function drawLineCenter(id) {
-  var len = document.querySelector(id).getTotalLength();
+  var element = document.querySelector(id + " path")
+  var len = element.getTotalLength();
 
-  tl.fromTo(
+  var seqTL = new TimelineMax();
+
+  seqTL.fromTo(
     id,
     .5, {
       autoAlpha: 1,
@@ -151,20 +153,29 @@ function drawLineCenter(id) {
       transformOrigin: "50% 50%",
     }
   );
+  return seqTL;
 }
 
 function setLines(id) {
-  tl.staggerFrom(
+
+  var seqTL = new TimelineMax();
+
+  seqTL.staggerFrom(
     id,
     .5, {
       scale: 0,
       transformOrigin: "50% 50%",
     }, .2
   );
+
+  return seqTL;
 }
 
 function setCircle(id) {
-  tl.fromTo(
+
+  var seqTL = new TimelineMax();
+
+  seqTL.fromTo(
     id,
     .5, {
       autoAlpha: 1,
@@ -181,7 +192,9 @@ function setCircle(id) {
 }
 
 function setPolygon(id) {
-  tl.fromTo(
+  var seqTL = new TimelineMax();
+
+  seqTL.fromTo(
     id,
     .5, {
       autoAlpha: 1,
@@ -194,6 +207,7 @@ function setPolygon(id) {
       transformOrigin: "50% 50%",
     }
   );
+  return seqTL;
 }
 
 function sweepRadius(id, radiusId) {
@@ -207,13 +221,12 @@ function sweepRadius(id, radiusId) {
   var cy = parseInt(element.getBBox().y) + parseInt(element.getBBox().height / 2);
   var center = cx + ' ' + cy;
 
-  var timeOffset;
+  // console.log("circle len: " + len);
+  // console.log("radius len: " + radiusLen);
 
-  console.log("circle len: " + len);
-  console.log("radius len: " + radiusLen);
+  var seqTL = new TimelineMax();
 
-
-  tl.to(
+  seqTL.to(
     element,
     0, {
       autoAlpha: 1,
@@ -226,7 +239,6 @@ function sweepRadius(id, radiusId) {
 
     }, {
       strokeDashoffset: 0,
-
     }
   );
 
@@ -234,48 +246,50 @@ function sweepRadius(id, radiusId) {
 
   if (radiusId) {
       // drawLine(radiusId);
-      tl.to(radiusId, 2, {
+      seqTL.to(radiusId, 2, {
           rotation: "+=360",
           svgOrigin: center,
 
       }, "-=2" );
   }
 
-  tl.to(
+  seqTL.to(
     element,
     .5, {
       strokeOpacity: .5,
     }
   );
 
+  return seqTL;
 
-  // if (radiusId) {
-  //     unStrokeLine(radiusId);
-  //     // unStrokeLine(radiusId);
-  // }
-  // tl.to(circleId, .5, {
-  //   strokeWidth: .5
-  // }, "-=1")
 }
 
 function hideElements(id) {
-  tl.staggerTo(
+  var seqTL = new TimelineMax();
+
+  seqTL.staggerTo(
     id,
     1, {
       autoAlpha: 0,
 
     }, .1
   );
+
+  return reqTL;
 }
 
 function fadeElements(id) {
-  tl.staggerTo(
+  var seqTL = new TimelineMax();
+
+  seqTL.staggerTo(
     id,
     1, {
       opacity: .4,
       fillOpacity: 0,
     }, .1
   );
+
+  return seqTL;
 }
 
 //can take multiple items
@@ -284,8 +298,6 @@ function zoomToElement(id, margin, scale) {
   var elements = document.querySelectorAll(id);
   var topX, topY, bottomX, bottomY;
   var start = true;
-  //margin = 0;
-  // console.log(elements);
 
   if (elements) {
     for (i = 0; i < elements.length; ++i) {
@@ -334,7 +346,9 @@ function zoomToElement(id, margin, scale) {
   console.log(viewBox);
 
   //scale lines and points with viewbox
-  tl.to("#drawing", 1, {
+  var seqTL = new TimelineMax();
+
+  seqTL.to("svg", 1, {
       attr: {
         viewBox: viewBox
       }
@@ -352,6 +366,8 @@ function zoomToElement(id, margin, scale) {
         r: 3
       }
     }, "-=1");
+
+  return seqTL;
 
 }
 
