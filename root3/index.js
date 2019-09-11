@@ -39,13 +39,13 @@ function main() {
   // // tl.addPause("unit");
 
   sweepRadius("#b", "#q1"); //vesica piseces
-  unStrokeLine("#q1");
+  eraseLine("#q1");
   setPoint("#C");
 
   drawLineReverse("#q1");
   sweepRadius("#c", "#q1");
   // // tl.addPause("vesica");
-  unStrokeLine("#q1");
+  eraseLine("#q1");
 
   setPoint("#D");
   setPoint(["#E", "#F"]);
@@ -53,7 +53,7 @@ function main() {
   drawLine("#d");
 
   drawLine("#q3");
-  unStrokeLine("#q3");
+  eraseLine("#q3");
 
   setPoint("#G");
 

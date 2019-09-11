@@ -39,12 +39,12 @@ function main() {
   // // tl.addPause("unit");
   //
   // sweepRadius("#c00aw", "#Q1"); //vesica piseces
-  // unStrokeLine("#Q1");
+  // eraseLine("#Q1");
   //
   // drawLineReverse("#Q1");
   // sweepRadius("#c00ae", "#Q1");
   // // tl.addPause("vesica");
-  // unStrokeLine("#Q1");
+  // eraseLine("#Q1");
   //
   // setPoint(".Point.s001");
   //
@@ -93,7 +93,7 @@ function root3sequence() {
   drawLine("#r04an");
   sweepRadius("#c04an", "#r04an"); //circumcircles
   // sweepRadius("#c04as", "#r04as");
-  unStrokeLine("#r04an");
+  eraseLine("#r04an");
 
 
   setPoint("#g003w", "begin"); //g section 02
@@ -132,11 +132,11 @@ function root5sequence() {
 
   drawLine("#r00a");
   sweepRadius("#c00bw", "#r00a"); //unit 2 circles
-  unStrokeLine("#r00a");
+  eraseLine("#r00a");
 
   drawLine("#r00b");
   sweepRadius("#c00be", "#r00b");
-  unStrokeLine("#r00b");
+  eraseLine("#r00b");
 
   setPoint(["#g002n", "#g002s"]); //g section 01
 
@@ -186,7 +186,7 @@ function root5sequence() {
 
   drawLine("#r03a"); //radius
   sweepRadius("#c03a", "#r03a"); //root 5 circle
-  unStrokeLine("#r03a"); //radius
+  eraseLine("#r03a"); //radius
 
   drawLine("#g002a2");
   drawLine("#g002b");
@@ -218,7 +218,7 @@ function root2sequence() {
   zoomToElement(".view04", 50);
 
   sweepRadius("#c06an", "#r06an"); //root 5 circle
-  unStrokeLine("#r06an")
+  eraseLine("#r06an")
 
   drawLine("#g002a2");
   drawLine("#g002b");
