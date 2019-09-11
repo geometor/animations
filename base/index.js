@@ -11,9 +11,25 @@ function main() {
   });
 
   TL.add( baseSequence() );
+  TL.add( root3grid() );
 
   TL.timeScale(2);
-  TL.play(14);
+  TL.play(0);
+
+}
+
+function root3grid() {
+
+  var seqTL = new TimelineMax({
+    repeat: 0,
+  });
+
+  seqTL.add( drawLine( "#f" ) );
+  seqTL.add( drawLine( "#g" ) );
+  seqTL.add( drawLine( "#h" ) );
+  seqTL.add( drawLine( "#i" ) );
+
+  return seqTL;
 
 }
 
@@ -65,22 +81,22 @@ function baseSequence() {
   ];
   seqTL.add( fadeElements( set ) );
 
-  seqTL.add( unFadeElements("#a"), "+=1" );
-  seqTL.add( selectElements("#a"), "+=2" );
-  seqTL.add( unSelectElements("#a"), "+=1" );
-  seqTL.add( fadeElements("#a"), "+=1" );
-
-  seqTL.add( unFadeElements("#b"), "+=1" );
-  seqTL.add( selectElements("#b"), "+=2" );
-
-  seqTL.add( unFadeElements("#c"), "+=1" );
-  seqTL.add( selectElements("#c"), "+=2" );
-  seqTL.add( unSelectElements("#b"), "+=1" );
-  seqTL.add( fadeElements("#b"), "+=1" );
-  seqTL.add( unSelectElements("#c"), "+=1" );
-  seqTL.add( fadeElements("#c"), "+=1" );
-
-  seqTL.add( clearElements( set ), "+=2");
+  // seqTL.add( unFadeElements("#a"), "+=1" );
+  // seqTL.add( selectElements("#a"), "+=2" );
+  // seqTL.add( unSelectElements("#a"), "+=1" );
+  // seqTL.add( fadeElements("#a"), "+=1" );
+  //
+  // seqTL.add( unFadeElements("#b"), "+=1" );
+  // seqTL.add( selectElements("#b"), "+=2" );
+  //
+  // seqTL.add( unFadeElements("#c"), "+=1" );
+  // seqTL.add( selectElements("#c"), "+=2" );
+  // seqTL.add( unSelectElements("#b"), "+=1" );
+  // seqTL.add( fadeElements("#b"), "+=1" );
+  // seqTL.add( unSelectElements("#c"), "+=1" );
+  // seqTL.add( fadeElements("#c"), "+=1" );
+  //
+  // seqTL.add( clearElements( set ), "+=2");
 
   return seqTL;
 
