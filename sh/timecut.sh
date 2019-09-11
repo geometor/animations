@@ -3,7 +3,7 @@
 node node_modules/timecut/cli.js "$1/index.html" \
   --viewport=1920,1280 \
   --fps=30 \
-  --duration=55 \
+  --duration=60 \
   --start-delay=0 \
   --frame-cache timecut \
   --pix-fmt=yuv420p \

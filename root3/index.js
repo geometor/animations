@@ -38,12 +38,12 @@ function main() {
   drawLine("#q1");
   // // tl.addPause("unit");
 
-  sweepRadius("#b", "#q1"); //vesica piseces
+  drawCircle("#b", "#q1"); //vesica piseces
   eraseLine("#q1");
   setPoint("#C");
 
   drawLineReverse("#q1");
-  sweepRadius("#c", "#q1");
+  drawCircle("#c", "#q1");
   // // tl.addPause("vesica");
   eraseLine("#q1");
 

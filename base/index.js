@@ -7,13 +7,13 @@ function main() {
   TL = new TimelineMax({
     repeat: -1,
     yoyo: true,
-    repeatDelay: 2
+    repeatDelay: 5
   });
 
   TL.add( baseSequence() );
 
   TL.timeScale(2);
-  TL.play();
+  TL.play(14);
 
 }
 
@@ -38,12 +38,12 @@ function baseSequence() {
 
   seqTL.add( drawLine("#q1") );
 
-  seqTL.add( sweepRadius("#b", "#q1") ); //vesica piseces
+  seqTL.add( drawCircle("#b", "#q1") ); //vesica piseces
   seqTL.add( eraseLine("#q1") );
   seqTL.add( setPoint("#C") );
 
   seqTL.add( drawLineReverse("#q1") );
-  seqTL.add( sweepRadius("#c", "#q1") );
+  seqTL.add( drawCircle("#c", "#q1") );
   seqTL.add( eraseLine("#q1") );
 
   seqTL.add( setPoint("#D") );
@@ -54,14 +54,33 @@ function baseSequence() {
   seqTL.add( setPoint("#G") );
 
   seqTL.add( drawLine("#q3") );
+  seqTL.add( eraseLine("#q3") );
 
 
-  var removeSet = [
+  var set = [
     "#a",
     "#b",
     "#c",
+    "#d",
   ];
-  // fadeElements(removeSet);
+  seqTL.add( fadeElements( set ) );
+
+  seqTL.add( unFadeElements("#a"), "+=1" );
+  seqTL.add( selectElements("#a"), "+=2" );
+  seqTL.add( unSelectElements("#a"), "+=1" );
+  seqTL.add( fadeElements("#a"), "+=1" );
+
+  seqTL.add( unFadeElements("#b"), "+=1" );
+  seqTL.add( selectElements("#b"), "+=2" );
+
+  seqTL.add( unFadeElements("#c"), "+=1" );
+  seqTL.add( selectElements("#c"), "+=2" );
+  seqTL.add( unSelectElements("#b"), "+=1" );
+  seqTL.add( fadeElements("#b"), "+=1" );
+  seqTL.add( unSelectElements("#c"), "+=1" );
+  seqTL.add( fadeElements("#c"), "+=1" );
+
+  seqTL.add( clearElements( set ), "+=2");
 
   return seqTL;
 

@@ -37,11 +37,11 @@ function main() {
   drawLine("#Q1");
   // tl.addPause("unit");
 
-  sweepRadius("#c00aw", "#Q1"); //vesica piseces
+  drawCircle("#c00aw", "#Q1"); //vesica piseces
   eraseLine("#Q1");
 
   drawLineReverse("#Q1");
-  sweepRadius("#c00ae", "#Q1");
+  drawCircle("#c00ae", "#Q1");
   // tl.addPause("vesica");
   eraseLine("#Q1");
 
@@ -90,8 +90,8 @@ function root3sequence() {
   // setPoint("#p015s");
 
   drawLine("#r04an");
-  sweepRadius("#c04an", "#r04an"); //circumcircles
-  // sweepRadius("#c04as", "#r04as");
+  drawCircle("#c04an", "#r04an"); //circumcircles
+  // drawCircle("#c04as", "#r04as");
   eraseLine("#r04an");
 
 
@@ -130,11 +130,11 @@ function root5sequence() {
   // zoomToElement(".view01", 50);
 
   drawLine("#r00a");
-  sweepRadius("#c00bw", "#r00a"); //unit 2 circles
+  drawCircle("#c00bw", "#r00a"); //unit 2 circles
   eraseLine("#r00a");
 
   drawLine("#r00b");
-  sweepRadius("#c00be", "#r00b");
+  drawCircle("#c00be", "#r00b");
   eraseLine("#r00b");
 
   setPoint(["#g002n", "#g002s"]); //g section 01
@@ -149,8 +149,8 @@ function root5sequence() {
 
   // tl.addPause("g01");
 
-  sweepRadius("#c00cw", "#r00b"); //unit 2 circles
-  sweepRadius("#c00ce", "#r00a");
+  drawCircle("#c00cw", "#r00b"); //unit 2 circles
+  drawCircle("#c00ce", "#r00a");
 
   setPoint("#p005ne");
   setPoint("#p005se");
@@ -184,7 +184,7 @@ function root5sequence() {
   drawLine("#i03ae"); //diagonal
 
   drawLine("#r03a"); //radius
-  sweepRadius("#c03a", "#r03a"); //root 5 circle
+  drawCircle("#c03a", "#r03a"); //root 5 circle
   eraseLine("#r03a"); //radius
 
   drawLine("#g002a2");
@@ -216,7 +216,7 @@ function root2sequence() {
   drawLine("#r06an")
   zoomToElement(".view04", 50);
 
-  sweepRadius("#c06an", "#r06an"); //root 5 circle
+  drawCircle("#c06an", "#r06an"); //root 5 circle
   eraseLine("#r06an")
 
   drawLine("#g002a2");
@@ -236,7 +236,7 @@ function root5review() {
   setCircle("#y4s");
 
   drawLine("#i03ae"); //diagonal
-  sweepRadius("#c03a", "#r03a"); //root 5 circle
+  drawCircle("#c03a", "#r03a"); //root 5 circle
 
   drawLine("#g002a2");
   drawLine("#g002b");
@@ -265,7 +265,7 @@ function root3review() {
   setPoint("#p015n"); //circumcenter
   // setPoint("#p015s");
 
-  sweepRadius("#c04an", "#r04an"); //circumcircles
+  drawCircle("#c04an", "#r04an"); //circumcircles
 
   drawLine("#g002a2");
   drawLine("#g002b");

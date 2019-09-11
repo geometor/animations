@@ -210,7 +210,7 @@ function setPolygon(id) {
   return seqTL;
 }
 
-function sweepRadius(id, radiusId) {
+function drawCircle(id, radiusId) {
   var element = document.querySelector(id + " path");
   var len = element.getTotalLength();
 
@@ -278,15 +278,79 @@ function hideElements(id) {
   return reqTL;
 }
 
-function fadeElements(id) {
+function fadeElementsOld(id) {
   var seqTL = new TimelineMax();
 
   seqTL.staggerTo(
     id,
     1, {
-      opacity: .4,
+      opacity: .2,
       fillOpacity: 0,
     }, .1
+  );
+
+  return seqTL;
+}
+function fadeElements(id) {
+  var seqTL = new TimelineMax();
+
+  seqTL.set(
+    id,
+    {
+      className: "+=fade",
+    }
+  );
+
+  return seqTL;
+}
+
+function unFadeElements(id) {
+  var seqTL = new TimelineMax();
+
+  seqTL.set(
+    id,
+    {
+      className: "-=fade",
+    }
+  );
+
+  return seqTL;
+}
+
+function clearElements(id) {
+  var seqTL = new TimelineMax();
+
+  seqTL.set(
+    id,
+    {
+      clearProps: "all",
+    }
+  );
+
+  return seqTL;
+}
+
+function selectElements(id) {
+  var seqTL = new TimelineMax();
+
+  seqTL.set(
+    id,
+    {
+      className: "+=select",
+    }
+  );
+
+  return seqTL;
+}
+
+function unSelectElements(id) {
+  var seqTL = new TimelineMax();
+
+  seqTL.set(
+    id,
+    {
+      className: "-=select",
+    }
   );
 
   return seqTL;

@@ -192,7 +192,7 @@ function setCircle(id) {
     );
 }
 
-function sweepRadius(circleId, radiusId) {
+function drawCircle(circleId, radiusId) {
     var circle = $(circleId);
     var len = $(circleId).get(0).getTotalLength();
 
