@@ -79,11 +79,6 @@ function drawLine(id, position) {
       strokeDashoffset: 0,
       ease: Power2.easeOut,
     }
-  ).to(
-    element,
-    .5, {
-      strokeOpacity: .5,
-    }
   );
 
   return seqTL;
@@ -107,11 +102,6 @@ function eraseLine(id) {
     element,
     0, {
       autoAlpha: 0,
-    }
-  ).to(
-    element,
-    .5, {
-      strokeOpacity: .5,
     }
   );
 
@@ -137,11 +127,6 @@ function drawLineReverse(id) {
       autoAlpha: 1,
       strokeDashoffset: 0,
       transformOrigin: "50% 50%",
-    }
-  ).to(
-    element,
-    .5, {
-      strokeOpacity: .5,
     }
   );
 
@@ -265,12 +250,7 @@ function drawCircle(id, radiusId) {
       }, "-=2" );
   }
 
-  seqTL.to(
-    element,
-    .5, {
-      strokeOpacity: .5,
-    }
-  );
+  
 
   return seqTL;
 
