@@ -5,17 +5,19 @@ main();
 function main() {
 
   TL = new TimelineMax({
-    repeat: -1,
-    yoyo: true,
-    repeatDelay: 1,
+
   });
 
   TL.add( baseSequence() );
-  TL.add( root3grid() );
+  TL.addLabel("base")
+  TL.add( root3grid(), "+=2");
+  TL.addLabel("root3")
+  TL.add( g01() );
 
   TL.delay(2);
   TL.timeScale(2);
-  TL.play(0);
+  console.log("duration: " + TL.duration())
+  TL.play("");
 
 }
 
@@ -43,7 +45,7 @@ function root3grid() {
 
   seqTL.add( drawLine( "#m" ) );
 
-  seqTL.add( orientCircle("#e", "-30") );
+  seqTL.add( orientCircle("#e", "30") );
   seqTL.add( drawCircle("#e", "#m") );
   seqTL.add( eraseLine("#m") );
 
@@ -52,6 +54,27 @@ function root3grid() {
   seqTL.add( setPoint("#N") );
   seqTL.add( setPoint("#L") );
 
+
+
+  return seqTL;
+
+}
+
+function g01() {
+
+  var seqTL = new TimelineMax();
+  var set = [
+    "#N",
+    "#L",
+    "#A",
+    "#B",
+    "#C",
+    "#D",
+  ];
+
+  seqTL.add( highlightPoint( set ) );
+
+
   seqTL.add( drawLine( "#g0101c" ) );
   seqTL.add( drawLine( "#g0101b_2" ) );
   seqTL.add( drawLine( "#g0101b_1" ), "-=1.5"  );
@@ -59,24 +82,21 @@ function root3grid() {
   seqTL.add( drawLine( "#g0101a_1" ), "-=1.5"   );
 
 
-  return seqTL;
+  seqTL.add( unHighlightPoint( set ) );
 
-}
-
+  return seqTL;}
 
 function baseSequence() {
 
   var seqTL = new TimelineMax();
 
-  // seqTL.add( hideAllElements() );
-
-  // zoomToElement(["#b", "#c"], 50);
-
-  // tl.addPause("blank");
 
   //build sequence
   seqTL.add( setPoint("#A") );
+  seqTL.add( highlightPoint("#A") );
+
   seqTL.add( setPoint("#B") );
+  seqTL.add( highlightPoint("#B") );
 
   seqTL.add( drawLine("#a") );
 
@@ -87,18 +107,27 @@ function baseSequence() {
   seqTL.add( drawCircle("#b", "#q1") ); //vesica piseces
   seqTL.add( eraseLine("#q1") );
   seqTL.add( setPoint("#C") );
+  seqTL.add( highlightPoint("#C") );
+
 
   seqTL.add( drawLineReverse("#q1") );
   seqTL.add( orientCircle("#c", "180") );
   seqTL.add( drawCircle("#c", "#q1") );
   seqTL.add( eraseLine("#q1") );
 
+  seqTL.add( unHighlightPoint("#C") );
   seqTL.add( setPoint("#D") );
+  seqTL.add( highlightPoint("#D") );
+
+  seqTL.add( unHighlightPoint(["#D", "#A", "#B"]), "+=.5");
   seqTL.add( setPoint(["#E", "#F"]) );
+  seqTL.add( highlightPoint(["#E", "#F"]) );
 
   seqTL.add( drawLine("#d") );
 
+  seqTL.add( unHighlightPoint(["#E", "#F"]), "+=.5" );
   seqTL.add( setPoint("#G") );
+  seqTL.add( highlightPoint("#G") );
 
   // seqTL.add( drawLine("#q3") );
   // seqTL.add( eraseLine("#q3") );
@@ -111,6 +140,7 @@ function baseSequence() {
     "#d",
   ];
   seqTL.add( fadeElements( set ) );
+  seqTL.add( unHighlightPoint("#G") );
 
   // seqTL.add( unFadeElements("#a"), "+=1" );
   // seqTL.add( selectElements("#a"), "+=2" );
