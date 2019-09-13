@@ -40,7 +40,7 @@ text {
 }
 
 path {
-  vector-effect: non-scaling-stroke;
+  // vector-effect: non-scaling-stroke;
 }
 
 .select {
@@ -84,6 +84,7 @@ path {
 }
 
 .circle {
+  fill-opacity: 0;
 }
 
 .polygon {
