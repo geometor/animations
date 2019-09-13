@@ -42,6 +42,8 @@ text {
 
 path {
   // vector-effect: non-scaling-stroke;
+  transition-property: opacity, stroke-width, stroke-opacity;
+  transition-duration: 2s;
 }
 
 .select {
@@ -51,11 +53,13 @@ path {
     fill-opacity: .2;
   }
 }
-.fade {
-  opacity: .2;
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: 2s;
 
+.fade {
+  path {
+    stroke-opacity: .2;
+    transition-property: opacity, stroke-width, stroke-opacity;
+    transition-duration: 2s;
+  }
 }
 
 .point {
@@ -81,8 +85,9 @@ path {
     stroke-opacity: .5;
     /* r: 20; */
   }
+
   &.select .bottom {
-    stroke: #F69;
+    stroke: #69F;
     stroke-width: 10;
     stroke-opacity:.8;
     /* r: 20; */
@@ -92,6 +97,15 @@ path {
 
 
 .line {
+  transition-property: opacity, stroke-width, stroke-opacity;
+  transition-duration: 2s;
+
+  &.fade {
+    path {
+      stroke-opacity: .2;
+    }
+  }
+
 }
 
 .circle {

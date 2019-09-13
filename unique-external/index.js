@@ -1,12 +1,12 @@
-var TL ;
+var TL = new TimelineMax();;
 
 main();
 
 function main() {
 
-  TL = new TimelineMax({
 
-  });
+  document.addEventListener("keydown", keyPressCheck, false);
+  // TL.eventCallback("onUpdate", updateSlider);
 
   TL.add( baseSequence() );
   TL.addLabel("base")
@@ -17,7 +17,7 @@ function main() {
   TL.delay(2);
   TL.timeScale(2);
   console.log("duration: " + TL.duration())
-  TL.play("");
+  TL.play(4);
 
 }
 
@@ -139,8 +139,9 @@ function baseSequence() {
     "#c",
     "#d",
   ];
+
   seqTL.add( fadeElements( set ) );
-  seqTL.add( unHighlightPoint("#G") );
+  seqTL.add( unHighlightPoint("#G"), "+=2" );
 
   // seqTL.add( unFadeElements("#a"), "+=1" );
   // seqTL.add( selectElements("#a"), "+=2" );
