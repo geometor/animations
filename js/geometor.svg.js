@@ -2,14 +2,13 @@ const OFFSET = 20;
 
 function hideAllElements() {
 
-  // tl.set( $('.Line,.Point,.Circle,.Triangle,.Quadrilateral,.Segment,.Sector'), {
-  //     autoAlpha: 0,
-  // }, "0");
-  tl.set(".line,.point,.circle,.polygon,.segment,.sector", {
+  var seqTL = new TimelineMax();
+
+  seqTL.set(".line,.point,.circle,.polygon,.segment,.sector", {
     autoAlpha: 0,
   }, "0");
 
-
+  return seqTL;
 }
 
 function setPoint(id, position) {
@@ -44,7 +43,7 @@ function setPoint(id, position) {
   return seqTL;
 }
 
-function drawLine(id) {
+function drawLine(id, position) {
   var element = document.querySelector(id + " path")
   var len = element.getTotalLength();
 
@@ -54,7 +53,7 @@ function drawLine(id) {
     element,
     0, {
       autoAlpha: 1,
-    }
+    }, position
   ).fromTo(
     element,
     1, {
@@ -221,9 +220,6 @@ function drawCircle(id, radiusId) {
   var cy = parseInt(element.getBBox().y) + parseInt(element.getBBox().height / 2);
   var center = cx + ' ' + cy;
 
-  // console.log("circle len: " + len);
-  // console.log("radius len: " + radiusLen);
-
   var seqTL = new TimelineMax();
 
   seqTL.to(
@@ -257,6 +253,29 @@ function drawCircle(id, radiusId) {
     element,
     .5, {
       strokeOpacity: .5,
+    }
+  );
+
+  return seqTL;
+
+}
+
+
+function orientCircle(id, direction) {
+
+  var element = document.querySelector(id + " path");
+
+  var cx = parseInt(element.getBBox().x) + parseInt(element.getBBox().width / 2);
+  var cy = parseInt(element.getBBox().y) + parseInt(element.getBBox().height / 2);
+  var center = cx + ' ' + cy;
+
+  var seqTL = new TimelineMax();
+
+  seqTL.set(
+    element,
+    {
+      rotation: direction,
+      svgOrigin: center,
     }
   );
 
@@ -373,8 +392,8 @@ function zoomToElement(id, margin, scale) {
         // topX = parseInt(i.getBBox().x);
         topX = parseInt(elements[i].getBBox().x);
         topY = parseInt(elements[i].getBBox().y);
-        bottomX = parseInt(elements[i].getBBox().width);
-        bottomY = parseInt(elements[i].getBBox().height);
+        bottomX = topX + parseInt(elements[i].getBBox().width);
+        bottomY = topY + parseInt(elements[i].getBBox().height);
       } else {
         if (elements[i]) {
           var x = parseInt(elements[i].getBBox().x);
