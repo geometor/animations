@@ -1,6 +1,6 @@
 #!/bin/sh
 
-node node_modules/timecut/cli.js "$1/index.html" \
+node node_modules/timecut/cli.js "$1/$1.svg.html" \
   --viewport=1920,1280 \
   --fps=30 \
   --duration=60 \
