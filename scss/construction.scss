@@ -1,4 +1,5 @@
 * {
+  opacity: 1;
   stroke: white;
   stroke-opacity: .5;
 
@@ -12,7 +13,7 @@
   fill-rule: nonzero;
 
   transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: 2s;
+  transition-duration: .5s;
 
 }
 
@@ -52,14 +53,17 @@ path {
 }
 .fade {
   opacity: .2;
+  transition-property: opacity, stroke-width, stroke-opacity;
+  transition-duration: 2s;
+
 }
 
 .point {
 
   transform: translate(-5px,0);
 
-  transition-property: stroke-width, stroke-opacity;
-  transition-duration: 2s;
+  transition-property: opacity, stroke-width, stroke-opacity;
+  transition-duration: .25s;
 
   circle {
     stroke: black;
@@ -77,6 +81,13 @@ path {
     stroke-opacity: .5;
     /* r: 20; */
   }
+  &.select .bottom {
+    stroke: #F69;
+    stroke-width: 10;
+    stroke-opacity:.8;
+    /* r: 20; */
+  }
+
 }
 
 
