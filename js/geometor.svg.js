@@ -15,13 +15,7 @@ function setPoint(id, position) {
 
   var seqTL = new TimelineMax();
 
-  seqTL.set(
-    id,
-    {
-      className: "+=highlight",
-
-    }
-  ).fromTo(
+  seqTL.fromTo(
     id,
     1, {
       autoAlpha: 0,
@@ -30,10 +24,32 @@ function setPoint(id, position) {
     }, {
       autoAlpha: 1,
       scale: 1,
-      fillOpacity: 1
     },
     position
-  ).set(
+  );
+
+  return seqTL;
+}
+
+function highlightPoint(id) {
+
+  var seqTL = new TimelineMax();
+
+  seqTL.set(
+    id,
+    {
+      className: "+=highlight",
+    }
+  );
+
+  return seqTL;
+}
+
+function unHighlightPoint(id) {
+
+  var seqTL = new TimelineMax();
+
+  seqTL.set(
     id,
     {
       className: "-=highlight",
