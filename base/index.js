@@ -11,7 +11,6 @@ function main() {
   });
 
   TL.add( baseSequence() );
-  TL.add( root3grid() );
 
   TL.timeScale(2);
   TL.play(0);
