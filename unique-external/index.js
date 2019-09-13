@@ -7,12 +7,13 @@ function main() {
   TL = new TimelineMax({
     repeat: -1,
     yoyo: true,
-    repeatDelay: 5
+    repeatDelay: 1,
   });
 
   TL.add( baseSequence() );
   TL.add( root3grid() );
 
+  TL.delay(2);
   TL.timeScale(2);
   TL.play(0);
 
@@ -20,14 +21,43 @@ function main() {
 
 function root3grid() {
 
-  var seqTL = new TimelineMax({
-    repeat: 0,
-  });
+  var seqTL = new TimelineMax();
 
   seqTL.add( drawLine( "#f" ) );
+  seqTL.add( setPoint("#I") );
+
   seqTL.add( drawLine( "#g" ) );
+  seqTL.add( setPoint("#K") );
+
   seqTL.add( drawLine( "#h" ) );
+  seqTL.add( setPoint("#M") );
+
   seqTL.add( drawLine( "#i" ) );
+  seqTL.add( setPoint("#J") );
+
+  seqTL.add( drawLine( "#j" ) );
+  seqTL.add( drawLine( "#k" ) );
+  seqTL.add( drawLine( "#l" ) );
+
+  seqTL.add( setPoint("#H") );
+
+  seqTL.add( drawLine( "#m" ) );
+
+  seqTL.add( orientCircle("#e", "-30") );
+  seqTL.add( drawCircle("#e", "#m") );
+  seqTL.add( eraseLine("#m") );
+
+  seqTL.add( zoomToElement("#e", 100) );
+
+  seqTL.add( setPoint("#N") );
+  seqTL.add( setPoint("#L") );
+
+  seqTL.add( drawLine( "#g0101c" ) );
+  seqTL.add( drawLine( "#g0101b_2" ) );
+  seqTL.add( drawLine( "#g0101b_1" ), "-=1.5"  );
+  seqTL.add( drawLine( "#g0101a_2" ) );
+  seqTL.add( drawLine( "#g0101a_1" ), "-=1.5"   );
+
 
   return seqTL;
 
@@ -36,9 +66,9 @@ function root3grid() {
 
 function baseSequence() {
 
-  var seqTL = new TimelineMax({
-    repeat: 0,
-  });
+  var seqTL = new TimelineMax();
+
+  // seqTL.add( hideAllElements() );
 
   // zoomToElement(["#b", "#c"], 50);
 
@@ -59,6 +89,7 @@ function baseSequence() {
   seqTL.add( setPoint("#C") );
 
   seqTL.add( drawLineReverse("#q1") );
+  seqTL.add( orientCircle("#c", "180") );
   seqTL.add( drawCircle("#c", "#q1") );
   seqTL.add( eraseLine("#q1") );
 
@@ -69,8 +100,8 @@ function baseSequence() {
 
   seqTL.add( setPoint("#G") );
 
-  seqTL.add( drawLine("#q3") );
-  seqTL.add( eraseLine("#q3") );
+  // seqTL.add( drawLine("#q3") );
+  // seqTL.add( eraseLine("#q3") );
 
 
   var set = [
