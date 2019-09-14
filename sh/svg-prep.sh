@@ -48,17 +48,22 @@ then
       -e '/^<\/title>$/d' \
       ../svg/$FILE
 
-      sed  -i \
-        -e '# create id for lines
-          /<g>.*/ {
-            N
-            N
-            N
-            N
-            s/<g>.*\n\s*<g class="line\(.*\)">.*\n\(\s*<path.*>\n\)<title>Line \(.*\)<\/title>/<g id="i-\3">\n<g class="line\1">\n\2<title>Line \3<\/title>/
-          }
-          ' \
-          ../svg/$FILE
+    sed  -i \
+      -e '# create id for lines
+        /<g>.*/ {
+          N
+          N
+          N
+          N
+          s/<g>.*\n\s*<g class="line\(.*\)">.*\n\(\s*<path.*>\n\)<title>Line \(.*\)<\/title>/<g id="i-\3">\n<g class="line\1">\n\2<title>Line \3<\/title>/
+        }
+        ' \
+        ../svg/$FILE
+
+# exit
+
+
+
 
 
   # points *******************************************************************
@@ -167,6 +172,25 @@ then
         N
         N
         s/<g>.*\n\s*<g class="line\(.*\)">.*\n\(\s*<path.*>\n\)<title>Line \(.*\)<\/title>/<g id="\3" class="line\1">\n<g>\n\2<title>Line \3<\/title>/
+      }
+      ' \
+      ../svg/$FILE
+
+  # polygons *******************************************
+
+  # fill-opacity=".*" fill-rule="evenodd" stroke="none" fill="#\(.*\)"
+  sed  -i \
+    -e '# replace embedded styles with class polygon
+      s/fill-opacity=".*" fill-rule="evenodd" stroke="none" fill="#\(.*\)"/class="polygon s-\1"/' \
+      ../svg/$FILE
+  sed  -i \
+    -e '# create id for polygons
+      /<g>.*/ {
+        N
+        N
+        N
+        N
+        s/<g>.*\n\s*<g class="polygon\(.*\)">.*\n\(\s*<path.*>\n\)<title>Triangle \(.*\)<\/title>/<g id="\3" class="polygon\1">\n<g>\n\2<title>Polygon \3<\/title>/
       }
       ' \
       ../svg/$FILE

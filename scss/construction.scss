@@ -76,12 +76,12 @@ path {
     fill: white;
     fill-opacity: 1;
     /* vector-effect: non-scaling-stroke; */
-    r:5;
+    r:3;
   }
 
   &.highlight .bottom {
     stroke: #FC0;
-    stroke-width: 20;
+    stroke-width: 12;
     stroke-opacity: .5;
     /* r: 20; */
   }
@@ -113,9 +113,11 @@ path {
 }
 
 .polygon {
-  stroke-width: 5;
-  fill: #CCF;
-  fill-opacity: 0.3;
+  path {
+    stroke-width: 0;
+    fill: #CCF;
+    fill-opacity: 0.2;
+  }
 }
 
 .bisector {
@@ -165,4 +167,17 @@ path {
 .s-cc66ff path {
   stroke: #cc66ff;
   fill: #cc66ff;
+}
+
+.s-99ff00 path {
+  stroke: #99ff00;
+  fill: #99ff00;
+}
+.s-33ffcc path {
+  stroke: #33ffcc;
+  fill: #33ffcc;
+}
+.s-ffff66 path {
+  stroke: #ffff66;
+  fill: #ffff66;
 }

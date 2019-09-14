@@ -196,15 +196,13 @@ function setPolygon(id) {
 
   seqTL.fromTo(
     id,
-    .5, {
-      autoAlpha: 1,
+    1, {
+      autoAlpha: 0,
       scale: 0,
       transformOrigin: "50% 50%",
     }, {
       autoAlpha: 1,
       scale: 1,
-      fillOpacity: .2,
-      transformOrigin: "50% 50%",
     }
   );
   return seqTL;
@@ -214,8 +212,6 @@ function drawCircle(id, radiusId) {
   var element = document.querySelector(id + " path");
   var len = element.getTotalLength();
 
-  var radius = document.querySelector(radiusId + " path");
-  var radiusLen = radius.getTotalLength();
 
   var cx = parseInt(element.getBBox().x) + parseInt(element.getBBox().width / 2);
   var cy = parseInt(element.getBBox().y) + parseInt(element.getBBox().height / 2);
@@ -242,6 +238,9 @@ function drawCircle(id, radiusId) {
   // ease: Power2.easeOut,
 
   if (radiusId) {
+    var radius = document.querySelector(radiusId + " path");
+    var radiusLen = radius.getTotalLength();
+
       // drawLine(radiusId);
       seqTL.to(radiusId, 2, {
           rotation: "+=360",
@@ -250,7 +249,7 @@ function drawCircle(id, radiusId) {
       }, "-=2" );
   }
 
-  
+
 
   return seqTL;
 
@@ -259,7 +258,7 @@ function drawCircle(id, radiusId) {
 
 function orientCircle(id, direction) {
 
-  var element = document.querySelector(id + " path");
+  var element = document.querySelector(id );
 
   var cx = parseInt(element.getBBox().x) + parseInt(element.getBBox().width / 2);
   var cy = parseInt(element.getBBox().y) + parseInt(element.getBBox().height / 2);
@@ -267,9 +266,9 @@ function orientCircle(id, direction) {
 
   var seqTL = new TimelineMax();
 
-  seqTL.set(
+  seqTL.to(
     element,
-    {
+    .2, {
       rotation: direction,
       svgOrigin: center,
     }
@@ -282,7 +281,7 @@ function orientCircle(id, direction) {
 function hideElements(id) {
   var seqTL = new TimelineMax();
 
-  seqTL.staggerTo(
+  seqTL.to(
     id,
     1, {
       autoAlpha: 0,
@@ -290,7 +289,7 @@ function hideElements(id) {
     }, .1
   );
 
-  return reqTL;
+  return seqTL;
 }
 
 function fadeElementsOld(id) {
