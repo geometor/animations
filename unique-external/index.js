@@ -56,13 +56,135 @@ function main() {
   TL.add( hexagon(), "+=2" );
   TL.add( g01() );
   TL.addLabel("g01-f");
-  // TL.add( g01remove(), "+=2" );
+  TL.add( g01remove(), "+=2" );
+
+  TL.add( fadeHexagon(), "+=2");
+
+  TL.add( circumTriangle(), "+=2" );
+  TL.add( g01() );
+  TL.addLabel("g01-g");
+  TL.add( g01remove(), "+=2" );
+
+  TL.add( fadeCircumTriangle(), "+=2");
+
+  TL.add( g01(), "+=2" );
+  TL.addLabel("review1");
+  TL.add( review1() );
+  TL.addLabel("review2");
+  TL.add( review2() );
 
 
   TL.delay(2);
   TL.timeScale(2);
   console.log("duration: " + TL.duration())
-  TL.play("g01-d");
+  TL.play("");
+
+}
+
+function review1() {
+
+  var seqTL = new TimelineMax();
+
+  seqTL.add( selectElements("#e") );
+
+  seqTL.add( selectElements("#c_1"), "+=2" );
+  seqTL.add( unSelectElements("#e") );
+
+  seqTL.add( selectElements("#d_2"), "+=2" );
+  seqTL.add( unSelectElements("#c_1") );
+
+  seqTL.add( selectElements("#c_2"), "+=2" );
+  seqTL.add( unSelectElements("#d_2") );
+
+  // seqTL.add( selectElements("#c_3"), "+=2" );
+
+  seqTL.add( selectElements("#d_4"), "+=2" );
+  seqTL.add( unSelectElements("#c_2") );
+
+  seqTL.add( selectElements("#r_3"), "+=2" );
+  seqTL.add( unSelectElements("#d_4") );
+
+  seqTL.add( unSelectElements("#r_3"), "+=2" );
+
+
+  seqTL.add( selectElements("#e") , "+=2");
+  seqTL.add( selectElements("#c_1"), "+=2" );
+  seqTL.add( selectElements("#d_2"), "+=2" );
+  seqTL.add( selectElements("#c_2"), "+=2" );
+  seqTL.add( selectElements("#d_4"), "+=2" );
+  seqTL.add( selectElements("#r_3"), "+=2" );
+
+  seqTL.add( unSelectElements("#r_3") );
+  seqTL.add( unSelectElements("#d_4") );
+  seqTL.add( unSelectElements("#c_2") );
+  seqTL.add( unSelectElements("#d_2") );
+  seqTL.add( unSelectElements("#c_1") );
+  seqTL.add( unSelectElements("#e") );
+
+  return seqTL;
+
+}
+
+function review2() {
+
+  var seqTL = new TimelineMax();
+
+  // root 3
+  seqTL.add( selectElements("#e") , "+=2");
+
+  seqTL.add( zoomToElement(["#e"], 50) );
+  seqTL.add( setPolygon("#t3") );
+
+  // root 5
+  seqTL.add( selectElements("#c_1") , "+=4");
+
+  seqTL.add( unSelectElements("#e") );
+  seqTL.add( hideElements("#t3") );
+  seqTL.add( zoomToElement(["#c_1"], 50) );
+
+  seqTL.add( setPolygon("#q2") );
+  seqTL.add( setPolygon("#q4") );
+
+
+  // root 2
+  seqTL.add( selectElements("#d_2") , "+=4");
+
+  seqTL.add( unSelectElements("#c_1") );
+  seqTL.add( hideElements("#q2") );
+  seqTL.add( hideElements("#q4") );
+  seqTL.add( zoomToElement(["#d_2"], 50) );
+  seqTL.add( setPolygon("#q5") );
+
+
+  // squares
+  seqTL.add( selectElements("#c_2") , "+=4");
+  seqTL.add( zoomToElement(["#c_2"], 50) );
+  seqTL.add( setPolygon("#q6") );
+  seqTL.add( setPolygon("#q7") );
+
+  seqTL.add( unSelectElements("#d_2") );
+  seqTL.add( hideElements("#q5") );
+
+
+  //hexagon
+  seqTL.add( selectElements("#r_3") , "+=4");
+  seqTL.add( zoomToElement(["#r_3"], 50) )
+  seqTL.add( setPolygon("#poly1"));
+
+  seqTL.add( unSelectElements("#c_2") );
+  seqTL.add( hideElements("#q6") );
+  seqTL.add( hideElements("#q7") );
+
+// circumtriangle
+  seqTL.add( selectElements("#d_4") , "+=4");
+  seqTL.add( zoomToElement(["#d_4"], 50) );
+  seqTL.add( setPolygon("#t4") );
+
+  seqTL.add( unSelectElements("#r_3") );
+  seqTL.add( hideElements("#poly1") );
+
+
+  return seqTL;
 
 }
 
@@ -115,7 +237,6 @@ function root3grid() {
   return seqTL;
 
 }
-
 
 function fadeRoot3() {
 
@@ -257,7 +378,7 @@ function root5grid() {
   seqTL.add( drawLine( "#m_1" ) );
   seqTL.add( orientCircle("#c_1", "-62.5") );
   seqTL.add( drawCircle("#c_1", "#m_1") );
-  seqTL.add( orientCircle("#c_1", "62.5") );
+  seqTL.add( orientCircle("#c_1", "0") );
   seqTL.add( eraseLine("#m_1") );
 
   seqTL.add( selectElements("#c_1") );
@@ -381,7 +502,7 @@ function squares() {
 
   seqTL.add( drawLine( "#r_2" ) );
 
-  seqTL.add( orientCircle("#c_2", "30") );
+  seqTL.add( orientCircle("#c_2", "11") );
   seqTL.add( drawCircle("#c_2", "#r_2") );
   seqTL.add( orientCircle("#c_2", "0") );
   seqTL.add( selectElements("#c_2") );
@@ -436,9 +557,9 @@ function squares3() {
 
   seqTL.add( drawLine( "#h_3" ) );
 
-  // seqTL.add( orientCircle("#c_3", "30") );
+  seqTL.add( orientCircle("#c_3", "-15") );
   seqTL.add( drawCircle("#c_3", "#h_3") );
-  // seqTL.add( orientCircle("#c_3", "0") );
+  seqTL.add( orientCircle("#c_3", "0") );
   seqTL.add( selectElements("#c_3") );
 
   seqTL.add( eraseLine("#h_3") );
@@ -496,6 +617,10 @@ function hexagon() {
   //
   seqTL.add( drawCircle("#d_3" ) );
   seqTL.add( drawCircle("#s_3" ) );
+
+  seqTL.add( setPoint("#O_1") );
+  seqTL.add( setPoint("#P_1") );
+
   //
   //
   seqTL.add( drawLine( "#f_4" ) );
@@ -514,6 +639,89 @@ function hexagon() {
   return seqTL;
 
 }
+
+function fadeHexagon() {
+
+  var seqTL = new TimelineMax();
+
+  var set = [
+    "#d_3",
+    "#s_3",
+    "#r_3",
+
+  ];
+
+  seqTL.add( hideElements("#poly1") );
+
+  seqTL.add( unSelectElements( "#r_3" ) );
+  seqTL.add( fadeElements( set ) );
+
+  return seqTL;
+
+}
+
+function circumTriangle() {
+
+  var seqTL = new TimelineMax();
+
+  seqTL.add( setPolygon("#t1") );
+
+  seqTL.add( drawLine("#m_4") );
+  seqTL.add( drawLine("#n_4") );
+
+  seqTL.add( setPoint("#S_1") );
+
+  seqTL.add( drawLine( "#p_4" ) );
+  seqTL.add( orientCircle("#c_4", "30") );
+  seqTL.add( drawCircle("#c_4", "#p_4") );
+  seqTL.add( orientCircle("#c_4", "0") );
+  seqTL.add( selectElements("#c_4") );
+  seqTL.add( eraseLine("#p_4") );
+  //
+  seqTL.add( drawLine( "#q_4" ) );
+  seqTL.add( orientCircle("#d_4", "30") );
+  seqTL.add( drawCircle("#d_4", "#q_4") );
+  seqTL.add( orientCircle("#d_4", "0") );
+  seqTL.add( selectElements("#d_4") );
+  seqTL.add( eraseLine("#q_4") );
+
+  seqTL.add( setPoint("#C_2") );
+  seqTL.add( setPoint("#B_2") );
+  seqTL.add( setPoint("#E_2") );
+  seqTL.add( setPoint("#D_2") );
+
+  //
+  seqTL.add( setPolygon("#t4") );
+
+
+
+  return seqTL;
+
+}
+
+function fadeCircumTriangle() {
+
+  var seqTL = new TimelineMax();
+
+  var set = [
+    "#c_4",
+    "#d_4",
+    "#m_4",
+    "#n_4",
+
+  ];
+
+  seqTL.add( hideElements("#t1") );
+  seqTL.add( hideElements("#t4") );
+
+  seqTL.add( unSelectElements( "#c_4" ) );
+  seqTL.add( unSelectElements( "#d_4" ) );
+  seqTL.add( fadeElements( set ) );
+
+  return seqTL;
+
+}
+
 
 
 

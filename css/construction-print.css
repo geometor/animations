@@ -1,0 +1,172 @@
+* {
+  opacity: 1;
+  stroke: black;
+  stroke-opacity: 0.5;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: butt;
+  fill: black;
+  fill-opacity: 0;
+  fill-rule: nonzero;
+  transition-property: opacity, stroke-width, stroke-opacity;
+  transition-duration: 0.5s;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+.bg {
+  width: 100vw;
+  height: 100vh;
+  stroke: none;
+  fill: white;
+}
+
+text {
+  stroke: none;
+  fill: #ffcc66;
+  fill-opacity: 1;
+  font-size: 1em;
+  opacity: 0;
+  x: 0;
+  y: 0;
+}
+
+path {
+  transition-property: opacity, stroke-width, stroke-opacity;
+  transition-duration: 2s;
+}
+
+.select {
+  stroke-opacity: 1;
+  fill-opacity: 0.7;
+}
+.select path {
+  fill-opacity: 0.2;
+}
+
+.fade path {
+  stroke-opacity: 0.2;
+  transition-property: opacity, stroke-width, stroke-opacity;
+  transition-duration: 2s;
+}
+
+.point {
+  transform: translate(-5px, 0);
+  transition-property: opacity, stroke-width, stroke-opacity;
+  transition-duration: 0.25s;
+}
+.point circle {
+  stroke: white;
+  stroke-opacity: 1;
+  stroke-width: 3;
+  fill: black;
+  fill-opacity: 1;
+  /* vector-effect: non-scaling-stroke; */
+  r: 3;
+}
+.point.highlight .bottom {
+  stroke: #FC0;
+  stroke-width: 12;
+  stroke-opacity: 0.5;
+  /* r: 20; */
+}
+.point.select .bottom {
+  stroke: #69F;
+  stroke-width: 10;
+  stroke-opacity: 0.8;
+  /* r: 20; */
+}
+
+.line {
+  transition-property: opacity, stroke-width, stroke-opacity;
+  transition-duration: 2s;
+}
+.line.fade path {
+  stroke-opacity: 0.2;
+}
+
+.circle {
+  fill-opacity: 0;
+}
+
+.polygon path {
+  stroke-width: 0;
+  fill: #CCF;
+  fill-opacity: 0.2;
+}
+
+.bisector {
+  stroke-dasharray: 13, 5, 3, 5;
+}
+
+.segment path {
+  stroke: #C90;
+  stroke-width: 5;
+  stroke-opacity: 1;
+}
+
+.a path {
+  stroke-width: 3;
+}
+
+.b path {
+  stroke-width: 5;
+}
+
+[class~="a+b"] path {
+  stroke-width: 8;
+}
+
+[class~="a+2b"] path {
+  stroke-width: 13;
+}
+
+.golden path {
+  stroke-opacity: 0.8;
+}
+
+.golden text {
+  opacity: 0.8;
+}
+
+.s-ff6699 path {
+  stroke: #ff6699;
+  fill: #ff6699;
+}
+
+.s-66ccff path {
+  stroke: #66ccff;
+  fill: #66ccff;
+}
+
+.s-cc66ff path {
+  stroke: #cc66ff;
+  fill: #cc66ff;
+}
+
+.s-99ff00 path {
+  stroke: #99ff00;
+  fill: #99ff00;
+}
+
+.s-33ffcc path {
+  stroke: #33ffcc;
+  fill: #33ffcc;
+}
+
+.s-ffff66 path {
+  stroke: #ffff66;
+  fill: #ffff66;
+}
+
+.s-66ff00 path {
+  stroke: #66ff00;
+  fill: #66ff00;
+}
+
+/*# sourceMappingURL=construction-print.css.map */

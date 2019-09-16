@@ -15,7 +15,16 @@
   transition-property: opacity, stroke-width, stroke-opacity;
   transition-duration: .5s;
 
+
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
 
 .bg {
   width: 100vw;
@@ -180,4 +189,8 @@ path {
 .s-ffff66 path {
   stroke: #ffff66;
   fill: #ffff66;
+}
+.s-66ff00 path {
+  stroke: #66ff00;
+  fill: #66ff00;
 }
