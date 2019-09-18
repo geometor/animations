@@ -1,4 +1,4 @@
-const OFFSET = 20;
+const OFFSET = 100;
 
 function hideAllElements() {
 
@@ -65,9 +65,11 @@ function drawLine(id, position) {
 
   var seqTL = new TimelineMax();
 
-  seqTL.to(
+  seqTL.fromTo(
     element,
     0, {
+      autoAlpha: 0,
+    }, {
       autoAlpha: 1,
     }, position
   ).fromTo(
@@ -98,12 +100,14 @@ function eraseLine(id) {
       strokeDashoffset: len + OFFSET,
       ease: Power2.easeOut,
     }
-  ).to(
-    element,
-    0, {
-      autoAlpha: 0,
-    }
-  );
+  )
+  // .to(
+  //   element,
+  //   0, {
+  //     autoAlpha: 0,
+  //   }
+  // )
+  ;
 
   return seqTL;
 }
@@ -116,14 +120,12 @@ function drawLineReverse(id) {
 
   seqTL.fromTo(
     element,
-    .5, {
-      scale: 1,
+    1, {
       autoAlpha: 1,
       strokeDasharray: len + OFFSET,
       strokeDashoffset: -len - OFFSET,
       transformOrigin: "50% 50%",
     }, {
-      scale: 1,
       autoAlpha: 1,
       strokeDashoffset: 0,
       transformOrigin: "50% 50%",
@@ -215,6 +217,7 @@ function drawCircle(id, radiusId) {
 
   var cx = parseInt(element.getBBox().x) + parseInt(element.getBBox().width / 2);
   var cy = parseInt(element.getBBox().y) + parseInt(element.getBBox().height / 2);
+  // cx -= 10;
   var center = cx + ' ' + cy;
 
   var seqTL = new TimelineMax();
@@ -262,13 +265,15 @@ function orientCircle(id, direction) {
 
   var cx = parseInt(element.getBBox().x) + parseInt(element.getBBox().width / 2);
   var cy = parseInt(element.getBBox().y) + parseInt(element.getBBox().height / 2);
+  cx += 1;
+  cy += 1;
   var center = cx + ' ' + cy;
 
   var seqTL = new TimelineMax();
 
   seqTL.to(
     element,
-    .2, {
+    0, {
       rotation: direction,
       svgOrigin: center,
     }
