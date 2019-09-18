@@ -193,15 +193,15 @@ function root3grid() {
   var seqTL = new TimelineMax();
 
   seqTL.add( drawLine( "#f" ) );
-  seqTL.add( setPoint("#I") );
+  seqTL.add( drawLine( "#g" ), "-=1"  );
 
-  seqTL.add( drawLine( "#g" ) );
+  seqTL.add( setPoint("#I") );
   seqTL.add( setPoint("#K") );
 
   seqTL.add( drawLine( "#h" ) );
+  seqTL.add( drawLine( "#i" ), "-=1"  );
+  
   seqTL.add( setPoint("#M") );
-
-  seqTL.add( drawLine( "#i" ) );
   seqTL.add( setPoint("#J") );
 
   seqTL.add( setPolygon("#t1") );
@@ -209,7 +209,7 @@ function root3grid() {
 
 
   seqTL.add( drawLine( "#j" ) );
-  seqTL.add( drawLine( "#k" ) );
+  seqTL.add( drawLine( "#k" ), "-=1" );
 
   seqTL.add( hideElements(["#t1", "#t2"]) );
 
@@ -731,39 +731,45 @@ function baseSequence() {
 
   // seqTL.add( zoomToElement(["#b","#c"], 100) );
 
-  //build sequence
+  // point A
   seqTL.add( setPoint("#A") );
   seqTL.add( highlightPoint("#A") );
 
+  //point B
   seqTL.add( setPoint("#B") );
   seqTL.add( highlightPoint("#B") );
 
+  // line a
   seqTL.add( drawLine("#a") );
 
-  // // tl.addPause("baseline");
-
+  // circle b
   seqTL.add( drawLine("#q1") );
-
   seqTL.add( drawCircle("#b", "#q1") ); //vesica piseces
   seqTL.add( eraseLine("#q1") );
-  seqTL.add( setPoint("#C") );
-  seqTL.add( highlightPoint("#C") );
 
-
+  // circle c
   seqTL.add( drawLineReverse("#q1") );
   seqTL.add( orientCircle("#c", "180") );
   seqTL.add( drawCircle("#c", "#q1") );
   seqTL.add( orientCircle("#c", "0") );
   seqTL.add( eraseLine("#q1") );
 
-  seqTL.add( unHighlightPoint("#C") );
+  seqTL.add( unHighlightPoint(["#A", "#B"]), "+=.5");
+
+  // new points on baseline
+  seqTL.add( setPoint("#C") );
   seqTL.add( setPoint("#D") );
+
+  seqTL.add( highlightPoint("#C") );
   seqTL.add( highlightPoint("#D") );
 
-  seqTL.add( unHighlightPoint(["#D", "#A", "#B"]), "+=.5");
+
+  // new points on bisector
   seqTL.add( setPoint(["#E", "#F"]) );
   seqTL.add( highlightPoint(["#E", "#F"]) );
+  seqTL.add( unHighlightPoint(["#C", "#D"]), "+=.5");
 
+  // line d
   seqTL.add( drawLine("#d") );
 
   seqTL.add( unHighlightPoint(["#E", "#F"]), "+=.5" );
