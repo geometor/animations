@@ -8,78 +8,105 @@ function main() {
   document.addEventListener("keydown", keyPressCheck, false);
   // TL.eventCallback("onUpdate", updateSlider);
 
-  TL.add( zoomToElement(["#r","#s"], 100) );
 
-  TL.add( baseSequence() );
+  TL.add( metronome() );
+  TL.add( zoomToElement(["#r","#s"], 100), 0 );
+
+  TL.add( baseSequence(), "-=" + BEAT * 3 );
   // TL.addLabel("root3")
-  TL.add( root3grid(), "+=2");
+  TL.add( root3grid(), "+=" + BEAT);
   // TL.addLabel("root3");
   TL.add( g01() );
   TL.addLabel("g01");
-  TL.add( g01remove(), "+=2" );
+  TL.add( g01remove(), "+=" + BEAT );
 
-  TL.add( fadeRoot3(), "+=2");
+  TL.add( fadeRoot3(), "+=" + BEAT * 4);
 
   // TL.addLabel("root5");
-  TL.add( root5grid(), "+=2" );
+  TL.add( root5grid(), "+=" + BEAT * 4 );
   TL.add( g01() );
   TL.addLabel("g01-b");
-  TL.add( g01remove(), "+=2" );
+  TL.add( g01remove(), "+=" + BEAT * 4 );
 
-  TL.add( fadeRoot5(), "+=2");
+  TL.add( fadeRoot5(), "+=" + BEAT * 4);
 
   // TL.addLabel("root2");
-  TL.add( root2grid(), "+=2" );
+  TL.add( root2grid(), "+=" + BEAT * 4 );
   TL.add( g01() );
   TL.addLabel("g01-c");
-  TL.add( g01remove(), "+=2" );
+  TL.add( g01remove(), "+=" + BEAT * 4 );
 
-  TL.add( fadeRoot2(), "+=2");
+  TL.add( fadeRoot2(), "+=" + BEAT * 4);
 
   // TL.addLabel("squares");
-  TL.add( squares(), "+=2" );
+  TL.add( squares(), "+=" + BEAT * 4 );
   TL.add( g01() );
   TL.addLabel("g01-d");
-  TL.add( g01remove(), "+=2" );
+  TL.add( g01remove(), "+=" + BEAT * 4 );
 
-  TL.add( fadeSquares(), "+=2");
+  TL.add( fadeSquares(), "+=" + BEAT);
 
   // TL.addLabel("squares");
-  TL.add( squares3(), "+=2" );
+  TL.add( squares3(), "+=" + BEAT  * 4);
   TL.add( g01() );
   TL.addLabel("g01-e");
-  TL.add( g01remove(), "+=2" );
+  TL.add( g01remove(), "+=" + BEAT  * 4);
 
-  TL.add( fadeSquares3(), "+=2");
+  TL.add( fadeSquares3(), "+=" + BEAT);
 
 
-  TL.add( hexagon(), "+=2" );
+  TL.add( hexagon(), "+=" + BEAT  * 4);
   TL.add( g01() );
   TL.addLabel("g01-f");
-  TL.add( g01remove(), "+=2" );
+  TL.add( g01remove(), "+=" + BEAT  * 4);
 
-  TL.add( fadeHexagon(), "+=2");
+  TL.add( fadeHexagon(), "+=" + BEAT);
 
-  TL.add( circumTriangle(), "+=2" );
+  TL.add( circumTriangle(), "+=" + BEAT  * 4 );
   TL.add( g01() );
   TL.addLabel("g01-g");
-  TL.add( g01remove(), "+=2" );
+  TL.add( g01remove(), "+=" + BEAT  * 4 );
 
-  TL.add( fadeCircumTriangle(), "+=2");
+  TL.add( fadeCircumTriangle(), "+=" + BEAT);
 
-  TL.add( g01(), "+=2" );
+  TL.add( g01(), "+=" + BEAT  * 2 );
   TL.addLabel("review1");
   TL.add( review1() );
   TL.addLabel("review2");
   TL.add( review2() );
 
 
-  TL.delay(2);
+  // TL.delay(2);
   TL.timeScale(2);
   console.log("duration: " + TL.duration())
-  TL.play("");
+  TL.play(20);
 
 }
+
+//template
+function sequence() {
+
+  var seqTL = new TimelineMax();
+
+  seqTL.add( selectElements("#e") );
+
+  seqTL.add( unSelectElements("#e") );
+
+  return seqTL;
+
+}
+
+function metronome() {
+
+  var seqTL = new TimelineMax( {repeat:-1} );
+
+
+  seqTL.call( tick, [], this, BEAT );
+
+  return seqTL;
+
+}
+
 
 function review1() {
 
@@ -193,23 +220,26 @@ function root3grid() {
   var seqTL = new TimelineMax();
 
   seqTL.add( drawLine( "#f" ) );
-  seqTL.add( drawLine( "#g" ), "-=1"  );
-
-  seqTL.add( setPoint("#I") );
-  seqTL.add( setPoint("#K") );
-
-  seqTL.add( drawLine( "#h" ) );
-  seqTL.add( drawLine( "#i" ), "-=1"  );
-  
-  seqTL.add( setPoint("#M") );
-  seqTL.add( setPoint("#J") );
+  seqTL.add( drawLine( "#g" ), "-=" + BEAT  );
 
   seqTL.add( setPolygon("#t1") );
+
+
+  seqTL.add( drawLine( "#h" ), "+=" + BEAT );
+  seqTL.add( drawLine( "#i" ), "-=" + BEAT  );
+
   seqTL.add( setPolygon("#t2") );
 
 
+  seqTL.add( setPoint("#I") );
+  seqTL.add( setPoint("#K"), "-=" + BEAT  );
+
+  seqTL.add( drawLine( "#k" ), "-=" + BEAT  );
+
+  seqTL.add( setPoint("#M") );
+  seqTL.add( setPoint("#J"), "-=" + BEAT  );
+
   seqTL.add( drawLine( "#j" ) );
-  seqTL.add( drawLine( "#k" ), "-=1" );
 
   seqTL.add( hideElements(["#t1", "#t2"]) );
 
@@ -729,56 +759,48 @@ function baseSequence() {
 
   var seqTL = new TimelineMax();
 
-  // seqTL.add( zoomToElement(["#b","#c"], 100) );
-
   // point A
   seqTL.add( setPoint("#A") );
-  seqTL.add( highlightPoint("#A") );
-
-  //point B
   seqTL.add( setPoint("#B") );
-  seqTL.add( highlightPoint("#B") );
+
+  seqTL.add( highlightPoint("#A"), "+=" + BEAT );
+  seqTL.add( highlightPoint("#B"), "+=" + BEAT);
 
   // line a
-  seqTL.add( drawLine("#a") );
+  seqTL.add( drawLine("#a"), "+=" + BEAT * 4 );
 
   // circle b
-  seqTL.add( drawLine("#q1") );
+  seqTL.add( drawLine("#q1"), "+=" + BEAT * 3 );
   seqTL.add( drawCircle("#b", "#q1") ); //vesica piseces
   seqTL.add( eraseLine("#q1") );
 
   // circle c
-  seqTL.add( drawLineReverse("#q1") );
+  seqTL.add( drawLineReverse("#q1")  );
   seqTL.add( orientCircle("#c", "180") );
   seqTL.add( drawCircle("#c", "#q1") );
   seqTL.add( orientCircle("#c", "0") );
   seqTL.add( eraseLine("#q1") );
 
-  seqTL.add( unHighlightPoint(["#A", "#B"]), "+=.5");
+  seqTL.add( unHighlightPoint(["#A", "#B"]));
 
   // new points on baseline
-  seqTL.add( setPoint("#C") );
-  seqTL.add( setPoint("#D") );
-
-  seqTL.add( highlightPoint("#C") );
-  seqTL.add( highlightPoint("#D") );
-
+  seqTL.add( setPoint(["#C", "#D"]) );
+  seqTL.add( highlightPoint(["#C", "#D"]) );
 
   // new points on bisector
-  seqTL.add( setPoint(["#E", "#F"]) );
+  seqTL.add( setPoint(["#E", "#F"]), "+=" + BEAT * 2 );
   seqTL.add( highlightPoint(["#E", "#F"]) );
-  seqTL.add( unHighlightPoint(["#C", "#D"]), "+=.5");
+  seqTL.add( unHighlightPoint(["#C", "#D"]));
 
   // line d
-  seqTL.add( drawLine("#d") );
+  seqTL.add( drawLine("#d"), "+=" + BEAT * 4 );
 
-  seqTL.add( unHighlightPoint(["#E", "#F"]), "+=.5" );
+  seqTL.add( unHighlightPoint(["#E", "#F"]), "+=" + BEAT * 3 );
   seqTL.add( setPoint("#G") );
   seqTL.add( highlightPoint("#G") );
 
   // seqTL.add( drawLine("#q3") );
   // seqTL.add( eraseLine("#q3") );
-
 
   var set = [
     "#a",
@@ -787,25 +809,8 @@ function baseSequence() {
     "#d",
   ];
 
-  seqTL.add( fadeElements( set ) );
-  seqTL.add( unHighlightPoint("#G"), "+=2" );
-
-  // seqTL.add( unFadeElements("#a"), "+=1" );
-  // seqTL.add( selectElements("#a"), "+=2" );
-  // seqTL.add( unSelectElements("#a"), "+=1" );
-  // seqTL.add( fadeElements("#a"), "+=1" );
-  //
-  // seqTL.add( unFadeElements("#b"), "+=1" );
-  // seqTL.add( selectElements("#b"), "+=2" );
-  //
-  // seqTL.add( unFadeElements("#c"), "+=1" );
-  // seqTL.add( selectElements("#c"), "+=2" );
-  // seqTL.add( unSelectElements("#b"), "+=1" );
-  // seqTL.add( fadeElements("#b"), "+=1" );
-  // seqTL.add( unSelectElements("#c"), "+=1" );
-  // seqTL.add( fadeElements("#c"), "+=1" );
-  //
-  // seqTL.add( clearElements( set ), "+=2");
+  seqTL.add( fadeElements( set ), "+=" + BEAT * 2  );
+  seqTL.add( unHighlightPoint("#G") );
 
   return seqTL;
 

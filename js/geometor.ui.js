@@ -79,9 +79,11 @@ function keyPressCheck(e) {
           break;
         case 37: //left arrow
           TL.seek( TL.getLabelBefore() );
+          tick();
           break;
         case 39: //right arrow
           TL.seek( TL.getLabelAfter() );
+          tick();
           break;
 
     }
@@ -98,4 +100,19 @@ function toggleMenu() {
 
 function toggleAnimation() {
   TL.paused(!TL.paused());
+}
+
+var BPM = 4;
+var time = document.getElementById("time");
+var beats = document.getElementById("beats");
+
+function tick() {
+  ticks = TL.time() * BEAT;
+  measure = Math.floor(ticks/BPM)+1;
+  index = Math.floor(ticks % BPM);
+  time.innerHTML = measure ;
+  for (i = 0; i < beats.children.length; i++) {
+    beats.children[i].classList.remove("select");
+  }
+  beats.children[index].classList.add("select")
 }

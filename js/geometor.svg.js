@@ -1,4 +1,5 @@
 const OFFSET = 100;
+const BEAT = 1;
 
 function hideAllElements() {
 
@@ -17,13 +18,16 @@ function setPoint(id, position) {
 
   seqTL.fromTo(
     id,
-    1, {
+    BEAT, {
       autoAlpha: 0,
-      scale: 10,
+      scale: 50,
+      r: 10,
       transformOrigin: "50% 50%",
     }, {
       autoAlpha: 1,
       scale: 1,
+      r: 5,
+      ease: Expo.easeOut,
     },
     position
   );
@@ -74,12 +78,12 @@ function drawLine(id, position) {
     }, position
   ).fromTo(
     element,
-    1, {
+    BEAT, {
       strokeDasharray: len + OFFSET,
       strokeDashoffset: len + OFFSET,
     }, {
       strokeDashoffset: 0,
-      ease: Power2.easeOut,
+      ease: Expo.easeOut,
     }
   );
 
@@ -94,20 +98,14 @@ function eraseLine(id) {
 
   seqTL.to(
     element,
-    1, {
+    BEAT, {
       scale: 1,
       strokeDasharray: len + OFFSET,
       strokeDashoffset: len + OFFSET,
-      ease: Power2.easeOut,
+      ease: Expo.easeOut,
+
     }
   )
-  // .to(
-  //   element,
-  //   0, {
-  //     autoAlpha: 0,
-  //   }
-  // )
-  ;
 
   return seqTL;
 }
@@ -120,7 +118,7 @@ function drawLineReverse(id) {
 
   seqTL.fromTo(
     element,
-    1, {
+    BEAT, {
       autoAlpha: 1,
       strokeDasharray: len + OFFSET,
       strokeDashoffset: -len - OFFSET,
@@ -129,6 +127,8 @@ function drawLineReverse(id) {
       autoAlpha: 1,
       strokeDashoffset: 0,
       transformOrigin: "50% 50%",
+      ease: Expo.easeOut,
+
     }
   );
 
@@ -143,7 +143,7 @@ function drawLineCenter(id) {
 
   seqTL.fromTo(
     id,
-    .5, {
+    BEAT, {
       autoAlpha: 1,
       strokeDasharray: 1,
       strokeDashoffset: len / 2,
@@ -164,7 +164,7 @@ function setLines(id) {
 
   seqTL.staggerFrom(
     id,
-    .5, {
+    BEAT, {
       scale: 0,
       transformOrigin: "50% 50%",
     }, .2
@@ -179,7 +179,7 @@ function setCircle(id) {
 
   seqTL.fromTo(
     id,
-    .5, {
+    BEAT, {
       autoAlpha: 1,
       scale: 0,
       fillOpacity: 1,
@@ -198,27 +198,35 @@ function setPolygon(id) {
 
   seqTL.fromTo(
     id,
-    1, {
+    BEAT, {
       autoAlpha: 0,
       scale: 0,
       transformOrigin: "50% 50%",
     }, {
       autoAlpha: 1,
       scale: 1,
+      ease: Expo.easeOut,
+
     }
   );
   return seqTL;
+}
+
+function getCenter(element) {
+
+  var cx = parseInt(element.getBBox().x) + parseInt(element.getBBox().width / 2);
+  var cy = parseInt(element.getBBox().y) + parseInt(element.getBBox().height / 2);
+  cx += 1;
+  cy += 1;
+  return cx + ' ' + cy;
+
 }
 
 function drawCircle(id, radiusId) {
   var element = document.querySelector(id + " path");
   var len = element.getTotalLength();
 
-
-  var cx = parseInt(element.getBBox().x) + parseInt(element.getBBox().width / 2);
-  var cy = parseInt(element.getBBox().y) + parseInt(element.getBBox().height / 2);
-  // cx -= 10;
-  var center = cx + ' ' + cy;
+  var center = getCenter(element)
 
   var seqTL = new TimelineMax();
 
@@ -229,27 +237,29 @@ function drawCircle(id, radiusId) {
     }
   ).fromTo(
     element,
-    2, {
+    BEAT * 2, {
       strokeDasharray: len ,
       strokeDashoffset: len ,
 
     }, {
       strokeDashoffset: 0,
-    }
-  );
+      ease: Expo.easeOut,
 
-  // ease: Power2.easeOut,
+    },
+  );
 
   if (radiusId) {
     var radius = document.querySelector(radiusId + " path");
     var radiusLen = radius.getTotalLength();
 
       // drawLine(radiusId);
-      seqTL.to(radiusId, 2, {
+      seqTL.to(radiusId,
+        BEAT * 2, {
           rotation: "+=360",
           svgOrigin: center,
+          ease: Expo.easeOut,
 
-      }, "-=2" );
+      }, "-=" + BEAT * 2 );
   }
 
 
@@ -261,19 +271,15 @@ function drawCircle(id, radiusId) {
 
 function orientCircle(id, direction) {
 
-  var element = document.querySelector(id );
+  var element = document.querySelector(id + " path" );
 
-  var cx = parseInt(element.getBBox().x) + parseInt(element.getBBox().width / 2);
-  var cy = parseInt(element.getBBox().y) + parseInt(element.getBBox().height / 2);
-  cx += 1;
-  cy += 1;
-  var center = cx + ' ' + cy;
+  var center = getCenter(element) ;
 
   var seqTL = new TimelineMax();
 
-  seqTL.to(
+  seqTL.set(
     element,
-    0, {
+    {
       rotation: direction,
       svgOrigin: center,
     }
@@ -288,7 +294,7 @@ function hideElements(id) {
 
   seqTL.to(
     id,
-    1, {
+    BEAT, {
       autoAlpha: 0,
 
     }, .1
@@ -302,7 +308,7 @@ function fadeElementsOld(id) {
 
   seqTL.staggerTo(
     id,
-    1, {
+    BEAT, {
       opacity: .2,
       fillOpacity: 0,
     }, .1
@@ -385,7 +391,7 @@ function zoomToElement(id, margin, scale) {
   if (elements) {
     for (i = 0; i < elements.length; ++i) {
       // for (i in elements) {
-      console.log("for: " + i + " : " + elements[i]);
+      // console.log("for: " + i + " : " + elements[i]);
       if (start) {
         start = false;
 
@@ -401,7 +407,7 @@ function zoomToElement(id, margin, scale) {
           var wd = parseInt(elements[i].getBBox().width);
           var ht = parseInt(elements[i].getBBox().height);
 
-          console.log("element: " + i + " x: " + x + " y: " + y + " w: " + wd + " h: " + ht);
+          // console.log("element: " + i + " x: " + x + " y: " + y + " w: " + wd + " h: " + ht);
           if (x < topX) {
             topX = x;
           }
@@ -416,39 +422,30 @@ function zoomToElement(id, margin, scale) {
           }
         }
       }
-      console.log("bounds: " + i + " : " + topX + " " + topY + " " + bottomX + " " + bottomY);
+      // console.log("bounds: " + i + " : " + topX + " " + topY + " " + bottomX + " " + bottomY);
     }
   }
 
-  console.log(topX);
-  console.log(topY);
-  console.log(bottomX);
-  console.log(bottomY);
+  // console.log(topX);
+  // console.log(topY);
+  // console.log(bottomX);
+  // console.log(bottomY);
 
   var viewBox = (topX - margin) + ' ' + (topY - margin) + ' ' + (bottomX - topX + (2 * margin)) + ' ' + (bottomY - topY + (2 * margin));
-  console.log(viewBox);
+  // console.log(viewBox);
 
   //scale lines and points with viewbox
   var seqTL = new TimelineMax();
 
-  seqTL.to("svg", 1, {
+  seqTL.to("svg",
+    BEAT, {
       attr: {
-        viewBox: viewBox
+        viewBox: viewBox,
+        ease: Expo.easeOut,
+
       }
     })
-    .to(".Segment", 1, {
-      // strokeWidth: 2
-    }, "-=1")
-    .to(".Point", 1, {
-      attr: {
-        r: 3
-      }
-    }, "-=1")
-    .to(".Point.g", 1, {
-      attr: {
-        r: 3
-      }
-    }, "-=1");
+    ;
 
   return seqTL;
 
