@@ -12,15 +12,15 @@ function main() {
   TL.add( metronome() );
   TL.add( zoomToElement(["#r","#s"], 100), 0 );
 
-  TL.add( baseSequence(), "-=" + BEAT * 3 );
-  // TL.addLabel("root3")
-  TL.add( root3grid(), "+=" + BEAT);
-  // TL.addLabel("root3");
+  TL.add( baseSequence(), 3 );
+  TL.addLabel("start")
+
+  TL.add( root3grid(), "+=" + BEAT * 2 ); //, "+=" + BEAT
   TL.add( g01() );
   TL.addLabel("g01");
-  TL.add( g01remove(), "+=" + BEAT );
+  TL.add( g01remove(), "+=" + BEAT * 4 );
 
-  TL.add( fadeRoot3(), "+=" + BEAT * 4);
+  TL.add( fadeRoot3());
 
   // TL.addLabel("root5");
   TL.add( root5grid(), "+=" + BEAT * 4 );
@@ -76,10 +76,10 @@ function main() {
   TL.add( review2() );
 
 
-  // TL.delay(2);
-  TL.timeScale(2);
+  // TL.delay(4);
+  TL.timeScale(1  );
   console.log("duration: " + TL.duration())
-  TL.play(20);
+  TL.play("");
 
 }
 
@@ -99,7 +99,6 @@ function sequence() {
 function metronome() {
 
   var seqTL = new TimelineMax( {repeat:-1} );
-
 
   seqTL.call( tick, [], this, BEAT );
 
@@ -219,36 +218,98 @@ function root3grid() {
 
   var seqTL = new TimelineMax();
 
+  var points = [
+    "#A",
+    "#B",
+    "#E",
+  ];
+
+  seqTL.add( highlightPoint( points ) );
+
   seqTL.add( drawLine( "#f" ) );
   seqTL.add( drawLine( "#g" ), "-=" + BEAT  );
 
   seqTL.add( setPolygon("#t1") );
 
+  seqTL.add( unHighlightPoint( points ) );
 
-  seqTL.add( drawLine( "#h" ), "+=" + BEAT );
+  points = [
+    "#A",
+    "#B",
+    "#F",
+  ];
+
+  seqTL.add( highlightPoint( points ) );
+
+  seqTL.add( drawLine( "#h" ) );
   seqTL.add( drawLine( "#i" ), "-=" + BEAT  );
 
   seqTL.add( setPolygon("#t2") );
 
+  seqTL.add( unHighlightPoint( points ) );
 
-  seqTL.add( setPoint("#I") );
-  seqTL.add( setPoint("#K"), "-=" + BEAT  );
+  points = [
+    "#I",
+    "#K",
+  ];
 
-  seqTL.add( drawLine( "#k" ), "-=" + BEAT  );
+  seqTL.add( setPoint( points ) );
+  seqTL.add( highlightPoint( points ) );
 
-  seqTL.add( setPoint("#M") );
-  seqTL.add( setPoint("#J"), "-=" + BEAT  );
+  seqTL.add( drawLine( "#k" ) );
+
+  seqTL.add( unHighlightPoint( points ) );
+
+  points = [
+    "#M",
+    "#J",
+  ];
+
+  seqTL.add( setPoint( points ) );
+  seqTL.add( highlightPoint( points ) );
 
   seqTL.add( drawLine( "#j" ) );
 
+  seqTL.add( unHighlightPoint( points ) );
+
+
   seqTL.add( hideElements(["#t1", "#t2"]) );
+
+  var points = [
+    "#I",
+    "#E",
+    "#K",
+  ];
+
+  seqTL.add( highlightPoint( points ) );
 
   seqTL.add( setPolygon("#t3") );
 
+  seqTL.add( unHighlightPoint( points ) );
+
+
+  var points = [
+    "#I",
+    "#B",
+    "#A",
+    "#K",
+  ];
+
+  seqTL.add( highlightPoint( points ) );
+
   seqTL.add( drawLine( "#l" ) );
-  seqTL.add( drawLine( "#h_2" ) );
+  seqTL.add( drawLine( "#h_2" ), "-=1" );
+
+  seqTL.add( unHighlightPoint( points ) );
+
   seqTL.add( setPoint("#H") );
 
+  var points = [
+    "#H",
+    "#K",
+  ];
+
+  seqTL.add( highlightPoint( points ) );
   seqTL.add( drawLine( "#m" ) );
 
   seqTL.add( orientCircle("#e", "30") );
@@ -256,10 +317,11 @@ function root3grid() {
   seqTL.add( orientCircle("#e", "0") );
   seqTL.add( eraseLine("#m") );
 
+  seqTL.add( unHighlightPoint( points ) );
+
   // seqTL.add( zoomToElement("#e", 100) );
 
-  seqTL.add( setPoint("#N") );
-  seqTL.add( setPoint("#L") );
+  seqTL.add( setPoint( ["#N", "#L"] ) );
 
   seqTL.add( selectElements("#e") );
 
@@ -348,6 +410,13 @@ function root5grid() {
   //vesica piseces
   // seqTL.add( zoomToElement(["#r","#s"], 100) );
 
+  var points = [
+    "#B",
+    "#C",
+  ];
+
+  seqTL.add( highlightPoint( points ) );
+
   seqTL.add( drawLine( "#n_1" ) );
   seqTL.add( orientCircle("#p", "180") );
   seqTL.add( drawCircle("#p", "#n_1") );
@@ -355,23 +424,32 @@ function root5grid() {
 
   seqTL.add( eraseLine("#n_1") );
 
+
   seqTL.add( drawLineReverse("#n_1") );
   seqTL.add( drawCircle("#r", "#n_1") );
   seqTL.add( eraseLine("#n_1") );
 
-  seqTL.add( setPoint("#O") );
-  seqTL.add( setPoint("#P") );
+  seqTL.add( unHighlightPoint( points ) );
 
-  // seqTL.add( highlightPoint("#O") );
-  // seqTL.add( highlightPoint("#P") );
+  seqTL.add( setPoint("#O") );
+
+  var points = [
+    "#O",
+    "#P",
+  ];
+
+  seqTL.add( setPoint( points ) );
+  seqTL.add( highlightPoint( points ) );
 
   seqTL.add( drawLine( "#n" ) );
+  seqTL.add( unHighlightPoint( points ) );
+
 
   seqTL.add( setPoint("#S") );
-  seqTL.add( setPoint("#T") );
+  seqTL.add( setPoint("#T"), "-=" + BEAT );
 
-  seqTL.add( highlightPoint("#S") );
-  seqTL.add( highlightPoint("#T") );
+  // seqTL.add( highlightPoint("#S") );
+  // seqTL.add( highlightPoint("#T") );
 
   seqTL.add( drawLine( "#p_1" ) );
   // seqTL.add( orientCircle("#q", "180") );
@@ -384,19 +462,42 @@ function root5grid() {
   seqTL.add( orientCircle("#s", "0") );
   seqTL.add( eraseLine("#p_1") );
 
-  seqTL.add( setPoint("#R") );
-  seqTL.add( setPoint("#Q") );
+  var points = [
+    "#R",
+    "#Q",
+  ];
+
+  seqTL.add( setPoint( points ) );
+  seqTL.add( highlightPoint( points ) );
 
   seqTL.add( drawLine( "#t" ) );
 
+  seqTL.add( unHighlightPoint( points ) );
+
   seqTL.add( setPoint("#U") );
-  seqTL.add( setPoint("#V") );
+  seqTL.add( setPoint("#V"), "-=" + BEAT );
 
-  seqTL.add( highlightPoint("#U") );
-  seqTL.add( highlightPoint("#V") );
+  // seqTL.add( highlightPoint("#U") );
+  // seqTL.add( highlightPoint("#V") );
 
+  var points = [
+    "#S",
+    "#U",
+  ];
+
+  seqTL.add( highlightPoint( points ) );
   seqTL.add( drawLine( "#g_1" ) );
+  seqTL.add( unHighlightPoint( points ) );
+
+  var points = [
+    "#T",
+    "#V",
+  ];
+
+  seqTL.add( highlightPoint( points ) );
   seqTL.add( drawLine( "#h_1" ) );
+  seqTL.add( unHighlightPoint( points ) );
+
 
   seqTL.add( setPolygon( "#q2" ) );
   seqTL.add( setPolygon( "#q4" ) );
@@ -709,7 +810,7 @@ function circumTriangle() {
   seqTL.add( eraseLine("#p_4") );
   //
   seqTL.add( drawLine( "#q_4" ) );
-  seqTL.add( orientCircle("#d_4", "30") );
+  seqTL.add( orientCircle("#d_4", "-30") );
   seqTL.add( drawCircle("#d_4", "#q_4") );
   seqTL.add( orientCircle("#d_4", "0") );
   seqTL.add( selectElements("#d_4") );
@@ -763,14 +864,13 @@ function baseSequence() {
   seqTL.add( setPoint("#A") );
   seqTL.add( setPoint("#B") );
 
-  seqTL.add( highlightPoint("#A"), "+=" + BEAT );
-  seqTL.add( highlightPoint("#B"), "+=" + BEAT);
+  seqTL.add( highlightPoint( ["#A", "#B"] ), "+=" + BEAT );
 
   // line a
-  seqTL.add( drawLine("#a"), "+=" + BEAT * 4 );
+  seqTL.add( drawLine("#a") );
 
   // circle b
-  seqTL.add( drawLine("#q1"), "+=" + BEAT * 3 );
+  seqTL.add( drawLine("#q1") );
   seqTL.add( drawCircle("#b", "#q1") ); //vesica piseces
   seqTL.add( eraseLine("#q1") );
 
@@ -788,14 +888,14 @@ function baseSequence() {
   seqTL.add( highlightPoint(["#C", "#D"]) );
 
   // new points on bisector
-  seqTL.add( setPoint(["#E", "#F"]), "+=" + BEAT * 2 );
+  seqTL.add( setPoint(["#E", "#F"]) );
   seqTL.add( highlightPoint(["#E", "#F"]) );
   seqTL.add( unHighlightPoint(["#C", "#D"]));
 
   // line d
-  seqTL.add( drawLine("#d"), "+=" + BEAT * 4 );
+  seqTL.add( drawLine("#d") );
 
-  seqTL.add( unHighlightPoint(["#E", "#F"]), "+=" + BEAT * 3 );
+  seqTL.add( unHighlightPoint(["#E", "#F"]) );
   seqTL.add( setPoint("#G") );
   seqTL.add( highlightPoint("#G") );
 
