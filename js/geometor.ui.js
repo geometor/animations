@@ -62,12 +62,28 @@
 
 function keyPressCheck(e) {
   console.log("Key: " + e.which);
+
+  if (e.ctrlKey) {
+
+    console.log('Control Down');
+    switch (e.which) {
+        case 37: //left arrow
+          TL.seek( Math.floor(TL.time())-1 );
+          tick();
+          break;
+        case 39: //right arrow
+          TL.seek( Math.floor(TL.time())+1 );
+          tick();
+          break;
+    }
+
+  } else {
+
     switch (e.which) {
         case 13: //enter
             toggleAnimation();
             break;
         case 32: //space
-            //togle play
             toggleAnimation();
             break;
         case 77:
@@ -85,8 +101,9 @@ function keyPressCheck(e) {
           TL.seek( TL.getLabelAfter() );
           tick();
           break;
-
     }
+  }
+
 }
 
 function toggleMenu() {
