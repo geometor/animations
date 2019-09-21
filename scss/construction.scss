@@ -112,6 +112,8 @@ path {
   &.fade {
     path {
       stroke-opacity: .2;
+      transition-property: opacity, stroke-width, stroke-opacity;
+      transition-duration: 2s;
     }
   }
 
@@ -119,6 +121,13 @@ path {
 
 .circle {
   fill-opacity: 0;
+  &.fade {
+    path {
+      stroke-opacity: .2;
+      transition-property: opacity, stroke-width, stroke-opacity;
+      transition-duration: 2s;
+    }
+  }
 }
 
 .polygon {

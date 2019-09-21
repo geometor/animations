@@ -88,10 +88,17 @@ path {
 }
 .line.fade path {
   stroke-opacity: 0.2;
+  transition-property: opacity, stroke-width, stroke-opacity;
+  transition-duration: 2s;
 }
 
 .circle {
   fill-opacity: 0;
+}
+.circle.fade path {
+  stroke-opacity: 0.2;
+  transition-property: opacity, stroke-width, stroke-opacity;
+  transition-duration: 2s;
 }
 
 .polygon path {
