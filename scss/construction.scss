@@ -89,9 +89,9 @@ path {
   }
 
   &.highlight .bottom {
-    stroke: #FC0;
-    stroke-width: 12;
-    stroke-opacity: .5;
+    stroke: #FFF;
+    stroke-width: 20;
+    stroke-opacity: .2;
     /* r: 20; */
   }
 
@@ -156,6 +156,7 @@ path {
 }
 
 .golden path {
+  stroke: #FC0;
   stroke-opacity: 0.8;
 }
 
