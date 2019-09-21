@@ -27,7 +27,7 @@ function setPoint(id, position) {
       autoAlpha: 1,
       scale: 1,
       r: 5,
-      ease: Expo.easeOut,
+      ease: Expo.easeIn,
     },
     position
   );
@@ -83,7 +83,7 @@ function drawLine(id, position) {
       strokeDashoffset: len + OFFSET,
     }, {
       strokeDashoffset: 0,
-      ease: Expo.easeOut,
+      ease: Expo.easeIn,
     }
   );
 
@@ -102,7 +102,7 @@ function eraseLine(id) {
       scale: 1,
       strokeDasharray: len + OFFSET,
       strokeDashoffset: len + OFFSET,
-      ease: Expo.easeOut,
+      ease: Expo.easeIn,
 
     }
   )
@@ -127,7 +127,7 @@ function drawLineReverse(id) {
       autoAlpha: 1,
       strokeDashoffset: 0,
       transformOrigin: "50% 50%",
-      ease: Expo.easeOut,
+      ease: Expo.easeIn,
 
     }
   );
@@ -205,7 +205,7 @@ function setPolygon(id) {
     }, {
       autoAlpha: 1,
       scale: 1,
-      ease: Expo.easeOut,
+      ease: Expo.easeIn,
 
     }
   );
@@ -237,15 +237,23 @@ function drawCircle(id, radiusId) {
     }
   ).fromTo(
     element,
-    BEAT * 2, {
+    BEAT, {
       strokeDasharray: len ,
       strokeDashoffset: len ,
 
     }, {
-      strokeDashoffset: 0,
-      ease: Expo.easeOut,
+      strokeDashoffset: len/2,
+      ease: Expo.easeIn,
 
-    },
+    }
+  ).to(
+    element,
+    BEAT, {
+      // strokeDasharray: len ,
+      strokeDashoffset: 0,
+      ease: Expo.easeIn,
+
+    }
   );
 
   if (radiusId) {
@@ -254,12 +262,19 @@ function drawCircle(id, radiusId) {
 
       // drawLine(radiusId);
       seqTL.to(radiusId,
-        BEAT * 2, {
-          rotation: "+=360",
+        BEAT , {
+          rotation: "+=180",
           svgOrigin: center,
-          ease: Expo.easeOut,
+          ease: Expo.easeIn,
 
-      }, "-=" + BEAT * 2 );
+      }, "-=" + BEAT * 2 )
+      .to(radiusId,
+        BEAT , {
+          rotation: "+=180",
+          svgOrigin: center,
+          ease: Expo.easeIn,
+
+      }, "-=" + BEAT   );
   }
 
 
@@ -297,7 +312,7 @@ function hideElements(id) {
     BEAT, {
       autoAlpha: 0,
 
-    }, .1
+    }
   );
 
   return seqTL;
@@ -441,7 +456,7 @@ function zoomToElement(id, margin, scale) {
     BEAT, {
       attr: {
         viewBox: viewBox,
-        ease: Expo.easeOut,
+        ease: Expo.easeIn,
 
       }
     })
