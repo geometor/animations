@@ -70,9 +70,9 @@ path {
   r: 3;
 }
 .point.highlight .bottom {
-  stroke: #FC0;
-  stroke-width: 12;
-  stroke-opacity: 0.5;
+  stroke: #FFF;
+  stroke-width: 20;
+  stroke-opacity: 0.2;
   /* r: 20; */
 }
 .point.select .bottom {
@@ -127,6 +127,7 @@ path {
 }
 
 .golden path {
+  stroke: #FC0;
   stroke-opacity: 0.8;
 }
 
