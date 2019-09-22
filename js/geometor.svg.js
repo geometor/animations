@@ -65,7 +65,7 @@ function unHighlightPoint(id) {
 
 function drawLine(id, position) {
   var element = document.querySelector(id + " path")
-  var len = element.getTotalLength();
+  var len = Math.floor( element.getTotalLength() );
 
   var seqTL = new TimelineMax();
 
@@ -92,7 +92,7 @@ function drawLine(id, position) {
 
 function eraseLine(id) {
   var element = document.querySelector(id + " path")
-  var len = element.getTotalLength();
+  var len = Math.floor( element.getTotalLength() );
 
   var seqTL = new TimelineMax();
 
@@ -223,8 +223,9 @@ function getCenter(element) {
 }
 
 function drawCircle(id, radiusId) {
+
   var element = document.querySelector(id + " path");
-  var len = element.getTotalLength();
+  var len = Math.floor( element.getTotalLength() );
 
   var center = getCenter(element)
 
@@ -519,4 +520,52 @@ function getStyle(oElm, strCssRule) {
     strValue = oElm.currentStyle[strCssRule];
   }
   return strValue;
+}
+
+
+function constructLine(line, points) {
+  var seqTL = new TimelineMax();
+
+  seqTL.add(setPoint(points));
+  seqTL.add(highlightPoint(points));
+
+  seqTL.add(drawLine(line));
+
+  seqTL.add(unHighlightPoint(points));
+
+  return seqTL;
+}
+
+function constructPolygon(polygon, points) {
+  var seqTL = new TimelineMax();
+
+  seqTL.add(setPoint(points));
+  seqTL.add(highlightPoint(points), 0);
+
+  seqTL.add(setPolygon(polygon));
+
+  seqTL.add(unHighlightPoint(points));
+
+  return seqTL;
+}
+
+function constructCircle(circle, radius, points, orient = "0", reverse=false) {
+  var seqTL = new TimelineMax();
+
+  seqTL.add(setPoint(points));
+  seqTL.add(highlightPoint(points));
+  if (reverse) {
+    seqTL.add(drawLine(radius), "-=1");
+  }else{
+    seqTL.add(drawLineReverse(radius), "-=1");
+  }
+
+  seqTL.add(orientCircle(circle, orient));
+  seqTL.add(drawCircle(circle, radius));
+  seqTL.add(orientCircle(circle, "0"));
+  seqTL.add(eraseLine(radius));
+
+  seqTL.add(unHighlightPoint(points));
+
+  return seqTL;
 }
