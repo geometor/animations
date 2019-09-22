@@ -57,9 +57,11 @@ function main() {
   TL.add(review2());
 
   TL.timeScale(1);
-  console.log("duration: " + TL.duration())
+  var duration = TL.duration();
 
-  TL.add(metronome(), 0);
+  console.log("duration: " + duration)
+
+  TL.add(metronome(duration), 0);
 
   TL.play("");
 
@@ -86,10 +88,10 @@ function showGolden(label) {
 
 }
 
-function metronome() {
+function metronome(duration) {
 
   var seqTL = new TimelineMax({
-    repeat: -1
+    repeat: Math.floor(duration)
   });
 
   seqTL.call(tick, [], this, BEAT);
@@ -484,51 +486,25 @@ function squares3() {
 
   var seqTL = new TimelineMax();
 
-  // seqTL.add(drawLine("#s_2"));
   seqTL.add(constructLine("#s_2", ["#T", "#B"]));
 
-  // seqTL.add(drawLine("#t_2"));
   seqTL.add(constructLine("#t_2", ["#A", "#V"]));
 
-
-  // seqTL.add(setPoint("#H_1"));
-
-  // seqTL.add(drawLine("#m_3"));
   seqTL.add(constructLine("#m_3", ["#W", "#D"]));
 
-  // seqTL.add(drawLine("#n_3"));
   seqTL.add(constructLine("#n_3", ["#Z", "#C"]));
 
 
   seqTL.add(constructCircle("#c_3", "#h_3", ["#H_1", "#D"], "-14"));
 
-  // seqTL.add(drawLine("#h_3"));
-  //
-  // seqTL.add(orientCircle("#c_3", "-14"));
-  // seqTL.add(drawCircle("#c_3", "#h_3"));
-  // seqTL.add(orientCircle("#c_3", "0"));
-  // seqTL.add(selectElements("#c_3"));
-  //
-  // seqTL.add(eraseLine("#h_3"));
-
-  // seqTL.add(setPoint("#I_1"));
-  // seqTL.add(setPoint("#J_1"));
-  // seqTL.add(setPoint("#K_1"));
-  // seqTL.add(setPoint("#L_1"));
-
-  // seqTL.add(drawLine("#f_3"));
   seqTL.add(constructLine("#f_3", ["#J_1", "#K_1"]));
 
-  // seqTL.add(drawLine("#g_3"));
   seqTL.add(constructLine("#g_3", ["#L_1", "#I_1"]));
 
-  // seqTL.add(drawLine("#p_3"));
   seqTL.add(constructLine("#p_3", ["#J_1", "#L_1"]));
 
-  // seqTL.add(drawLine("#q_3"));
   seqTL.add(constructLine("#q_3", ["#K_1", "#I_1"]));
 
-  // seqTL.add(setPolygon("#q8"));
   seqTL.add(constructPolygon("#q8", ["#J_1", "#K_1", "#L_1", "#I_1"]));
 
 
