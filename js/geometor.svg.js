@@ -397,6 +397,32 @@ function unSelectElements(id) {
   return seqTL;
 }
 
+function setGolden(id) {
+  var seqTL = new TimelineMax();
+
+  seqTL.set(
+    id,
+    {
+      className: "+=golden",
+    }
+  );
+
+  return seqTL;
+}
+
+function unSetGolden(id) {
+  var seqTL = new TimelineMax();
+
+  seqTL.set(
+    id,
+    {
+      className: "-=golden",
+    }
+  );
+
+  return seqTL;
+}
+
 //can take multiple items
 function zoomToElement(id, margin, scale) {
 

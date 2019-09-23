@@ -63,7 +63,7 @@ function main() {
 
   TL.add(metronome(duration), 0);
 
-  TL.play("");
+  TL.pause("g01");
 
 }
 
@@ -293,7 +293,19 @@ function g01() {
   ];
 
   seqTL.add(highlightPoint(set));
+  seqTL.add(setGolden(set))
 
+  var set = [
+    "#g0101c",
+    "#g0101b_1",
+    "#g0101b_2",
+    "#g0101a_1",
+    "#g0101a_2",
+  ];
+
+
+
+  seqTL.add(setGolden(set))
 
   seqTL.add(drawLine("#g0101c"));
   seqTL.add(drawLine("#g0101b_2"));
@@ -316,6 +328,19 @@ function g01remove() {
     "#D",
   ];
 
+  seqTL.add(unSetGolden(set))
+  seqTL.add(unHighlightPoint(set));
+
+  var set = [
+    "#g0101c",
+    "#g0101b_1",
+    "#g0101b_2",
+    "#g0101a_1",
+    "#g0101a_2",
+  ];
+
+  seqTL.add(unSetGolden(set))
+
   seqTL.add(eraseLine("#g0101a_2"));
   seqTL.add(eraseLine("#g0101a_1"), "-=1");
 
@@ -324,7 +349,6 @@ function g01remove() {
 
   seqTL.add(eraseLine("#g0101c"));
 
-  seqTL.add(unHighlightPoint(set));
   seqTL.add(hideElements("#t3"));
 
 

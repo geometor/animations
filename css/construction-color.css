@@ -1,11 +1,15 @@
+body {
+  background: none;
+}
+
 * {
   opacity: 1;
-  stroke: white;
+  stroke: black;
   stroke-opacity: 0.5;
-  stroke-width: 2;
+  stroke-width: 3;
   stroke-linejoin: round;
   stroke-linecap: butt;
-  fill: white;
+  fill: black;
   fill-opacity: 0;
   fill-rule: nonzero;
   transition-property: opacity, stroke-width, stroke-opacity;
@@ -23,7 +27,7 @@
   width: 100vw;
   height: 100vh;
   stroke: none;
-  fill: black;
+  fill: white;
 }
 
 text {
@@ -47,8 +51,6 @@ path {
 }
 .select path {
   fill-opacity: 0.2;
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: 2s;
 }
 
 .fade path {
@@ -63,7 +65,7 @@ path {
   transition-duration: 0.25s;
 }
 .point circle {
-  stroke: black;
+  stroke: white;
   stroke-opacity: 1;
   stroke-width: 3;
   fill: white;
@@ -73,8 +75,8 @@ path {
 }
 .point.highlight .bottom {
   stroke: #FFF;
-  stroke-width: 20;
-  stroke-opacity: 0.2;
+  stroke-width: 12;
+  stroke-opacity: 0.5;
   /* r: 20; */
 }
 .point.golden .bottom {
@@ -96,35 +98,10 @@ path {
 }
 .line.fade path {
   stroke-opacity: 0.2;
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: 2s;
-}
-.line.select {
-  stroke-opacity: 1;
-  fill-opacity: 0.7;
-}
-.line.select path {
-  fill-opacity: 0.2;
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: 2s;
 }
 
 .circle {
   fill-opacity: 0;
-}
-.circle.fade path {
-  stroke-opacity: 0.2;
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: 2s;
-}
-.circle .select {
-  stroke-opacity: 1;
-  fill-opacity: 0.7;
-}
-.circle .select path {
-  fill-opacity: 0.2;
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: 2s;
 }
 
 .polygon path {
@@ -204,4 +181,4 @@ path {
   fill: #66ff00;
 }
 
-/*# sourceMappingURL=construction.css.map */
+/*# sourceMappingURL=construction-color.css.map */

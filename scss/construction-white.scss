@@ -1,3 +1,8 @@
+body {
+  background: none;
+
+}
+
 * {
   opacity: 1;
   stroke: black;
@@ -14,9 +19,8 @@
 
   transition-property: opacity, stroke-width, stroke-opacity;
   transition-duration: .5s;
-
-
 }
+
 
 
 * {
@@ -33,13 +37,13 @@
 
   stroke: none;
 
-  fill: white;
+  fill: black;
 }
 
 text {
   stroke: none;
 
-  fill: #ffcc66;
+  fill: black;
   fill-opacity: 1.0000;
 
   font-size: 1em;
@@ -90,15 +94,22 @@ path {
   }
 
   &.highlight .bottom {
-    stroke: #FC0;
-    stroke-width: 12;
+    stroke: black;
+    stroke-width: 11;
     stroke-opacity: .5;
     /* r: 20; */
   }
 
+  &.golden .bottom {
+    stroke: black;
+    stroke-width: 14;
+    stroke-opacity: 1;
+    /* r: 20; */
+  }
+
   &.select .bottom {
-    stroke: #69F;
-    stroke-width: 10;
+    stroke: black;
+    stroke-width: 9;
     stroke-opacity:.8;
     /* r: 20; */
   }
@@ -125,7 +136,7 @@ path {
 .polygon {
   path {
     stroke-width: 0;
-    fill: #CCF;
+    fill: black;
     fill-opacity: 0.2;
   }
 }
@@ -135,7 +146,7 @@ path {
 }
 
 .segment path {
-  stroke: #C90;
+  stroke: black;
   stroke-width: 5;
   stroke-opacity: 1;
 }
@@ -156,42 +167,49 @@ path {
   stroke-width: 13;
 }
 
+.golden  {
+  stroke: black;
+  stroke-opacity: 1;
+}
+
 .golden path {
-  stroke-opacity: 0.8;
+  // stroke: #FC0;
+  // stroke-opacity: 0.8;
 }
 
 .golden text {
   opacity: 0.8;
+  display: none;
 }
 
 .s-ff6699 path {
-  stroke: #ff6699;
-  fill: #ff6699;
+  stroke: black;
+  fill: black;
 }
 
 .s-66ccff path {
-  stroke: #66ccff;
-  fill: #66ccff;
+  stroke: black;
+  fill: black;
 }
 
 .s-cc66ff path {
-  stroke: #cc66ff;
-  fill: #cc66ff;
+  stroke: black;
+  fill: black;
 }
 
 .s-99ff00 path {
-  stroke: #99ff00;
-  fill: #99ff00;
+  stroke: black;
+  fill: black;
 }
 .s-33ffcc path {
-  stroke: #33ffcc;
-  fill: #33ffcc;
+  stroke: black;
+  fill: black;
 }
 .s-ffff66 path {
-  stroke: #ffff66;
-  fill: #ffff66;
+  stroke: black;
+  fill: black;
 }
 .s-66ff00 path {
-  stroke: #66ff00;
-  fill: #66ff00;
+  stroke: black;
+  fill: black;
 }
