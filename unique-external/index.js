@@ -63,7 +63,8 @@ function main() {
 
   TL.add(metronome(duration), 0);
 
-  TL.pause("g01");
+  // TL.pause("g01");
+  TL.play("");
 
 }
 
