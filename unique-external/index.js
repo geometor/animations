@@ -14,7 +14,7 @@ function main() {
   TL.add(baseSequence(), 3);
 
   TL.addLabel("root3")
-  TL.add(root3grid(), "+=" + BEAT * 2);
+  TL.add(root3grid());
   showGolden("g01");
   TL.add(fadeRoot3());
 
@@ -217,39 +217,39 @@ function root3grid() {
 
   //1
   seqTL.add(constructLine("#f", ["#A", "#E"]));
-  seqTL.add(constructLine("#g", ["#B", "#E"]), "-=" + BEAT * 2);
+  seqTL.add(constructLine("#g", ["#B", "#E"]));
 
   //3
   seqTL.add(constructPolygon("#t1", ["#A", "#B", "#E"]));
 
   //1
   seqTL.add(constructLine("#h", ["#A", "#F"]));
-  seqTL.add(constructLine("#i", ["#B", "#F"]), "-=" + BEAT * 2);
+  seqTL.add(constructLine("#i", ["#B", "#F"]));
 
   //3
   seqTL.add(constructPolygon("#t2", ["#A", "#B", "#F"]));
 
   //1
   points = ["#I", "#K"];
-  seqTL.add(setPoint(points));
+  // seqTL.add(setPoint(points));
   seqTL.add(constructLine("#k", points));
 
   //3
   points = ["#M", "#J"];
-  seqTL.add(setPoint(points));
+  // seqTL.add(setPoint(points));
   seqTL.add(constructLine("#j", points));
 
   seqTL.add(hideElements(["#t1", "#t2"]));
 
 
-  seqTL.add(constructPolygon("#t3", ["#E", "#I", "#K"]), "+=" + BEAT * 2);
+  seqTL.add(constructPolygon("#t3", ["#E", "#I", "#K"]));
 
-  seqTL.add(constructLine("#l", ["#B", "#I"]));
-  seqTL.add(constructLine("#h_2", ["#A", "#K"]), "-=" + BEAT * 2);
+  seqTL.add(constructLine("#h_2", ["#B", "#I"]));
+  seqTL.add(constructLine("#l", ["#A", "#K"]));
 
-  seqTL.add(setPoint("#H"));
+  // seqTL.add(setPoint("#H"));
 
-  seqTL.add(constructCircle("#e", "#m", ["#H", "#K"], "30"), "+=" + BEAT * 2);
+  seqTL.add(constructCircle("#e", "#m", ["#H", "#K"], "30", true));
 
   seqTL.add(setPoint(["#N", "#L"]));
 

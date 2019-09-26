@@ -198,7 +198,7 @@ function setPolygon(id) {
 
   seqTL.fromTo(
     id,
-    BEAT, {
+    BEAT * 3, {
       autoAlpha: 0,
       scale: 0,
       transformOrigin: "50% 50%",
@@ -339,6 +339,14 @@ function fadeElements(id) {
     id,
     {
       className: "+=fade",
+    }
+  );
+
+  seqTL.to(
+    id,
+    BEAT * 2,
+    {
+
     }
   );
 
@@ -568,7 +576,7 @@ function constructPolygon(polygon, points) {
   seqTL.add(setPoint(points));
   seqTL.add(highlightPoint(points), 0);
 
-  seqTL.add(setPolygon(polygon));
+  seqTL.add(setPolygon(polygon), 0);
 
   seqTL.add(unHighlightPoint(points));
 
