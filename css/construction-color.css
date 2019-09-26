@@ -3,24 +3,22 @@ body {
 }
 
 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+* {
   opacity: 1;
-  stroke: black;
-  stroke-opacity: 0.5;
-  stroke-width: 3;
+  stroke: white;
+  stroke-opacity: 1;
+  stroke-width: 4;
   stroke-linejoin: round;
   stroke-linecap: butt;
   fill: black;
   fill-opacity: 0;
   fill-rule: nonzero;
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: 0.5s;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  border: none;
 }
 
 .bg {
@@ -40,34 +38,21 @@ text {
   y: 0;
 }
 
-path {
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: 2s;
-}
-
 .select {
   stroke-opacity: 1;
-  fill-opacity: 0.7;
+  fill-opacity: 1;
 }
 .select path {
-  fill-opacity: 0.2;
-}
-
-.fade path {
-  stroke-opacity: 0.2;
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: 2s;
+  fill-opacity: 1;
 }
 
 .point {
   transform: translate(-5px, 0);
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: 0.25s;
 }
 .point circle {
   stroke: white;
   stroke-opacity: 1;
-  stroke-width: 3;
+  stroke-width: 4;
   fill: white;
   fill-opacity: 1;
   /* vector-effect: non-scaling-stroke; */
@@ -75,29 +60,21 @@ path {
 }
 .point.highlight .bottom {
   stroke: #FFF;
-  stroke-width: 12;
-  stroke-opacity: 0.5;
+  stroke-width: 13;
+  stroke-opacity: 1;
   /* r: 20; */
 }
 .point.golden .bottom {
   stroke: #C90;
-  stroke-width: 15;
+  stroke-width: 16;
   stroke-opacity: 1;
   /* r: 20; */
 }
 .point.select .bottom {
   stroke: #69F;
-  stroke-width: 10;
+  stroke-width: 11;
   stroke-opacity: 0.8;
   /* r: 20; */
-}
-
-.line {
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: 2s;
-}
-.line.fade path {
-  stroke-opacity: 0.2;
 }
 
 .circle {
@@ -107,7 +84,7 @@ path {
 .polygon path {
   stroke-width: 0;
   fill: #CCF;
-  fill-opacity: 0.2;
+  fill-opacity: 1;
 }
 
 .bisector {
@@ -116,24 +93,24 @@ path {
 
 .segment path {
   stroke: #C90;
-  stroke-width: 5;
+  stroke-width: 7;
   stroke-opacity: 1;
 }
 
 .a path {
-  stroke-width: 3;
-}
-
-.b path {
   stroke-width: 5;
 }
 
+.b path {
+  stroke-width: 7;
+}
+
 [class~="a+b"] path {
-  stroke-width: 8;
+  stroke-width: 10;
 }
 
 [class~="a+2b"] path {
-  stroke-width: 13;
+  stroke-width: 15;
 }
 
 .golden {
@@ -142,7 +119,6 @@ path {
 }
 
 .golden text {
-  opacity: 0.8;
   display: none;
 }
 
