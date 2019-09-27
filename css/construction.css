@@ -8,7 +8,7 @@
   fill: white;
   fill-opacity: 0;
   fill-rule: nonzero;
-  transition-property: opacity, stroke-width, stroke-opacity;
+  transition-property: opacity, stroke-width, stroke-opacity, fill-opacity;
   transition-duration: 0.5s;
 }
 
@@ -37,8 +37,8 @@ text {
 }
 
 path {
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: 2s;
+  transition-property: opacity, stroke-width, stroke-opacity, fill-opacity;
+  transition-duration: 1s;
 }
 
 .select {
@@ -47,19 +47,19 @@ path {
 }
 .select path {
   fill-opacity: 0.2;
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: 2s;
+  transition-property: opacity, stroke-width, stroke-opacity, fill-opacity;
+  transition-duration: 1s;
 }
 
 .fade path {
   stroke-opacity: 0.2;
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: 2s;
+  transition-property: opacity, stroke-width, stroke-opacity, fill-opacity;
+  transition-duration: 1s;
 }
 
 .point {
   transform: translate(-5px, 0);
-  transition-property: opacity, stroke-width, stroke-opacity;
+  transition-property: opacity, stroke-width, stroke-opacity, fill-opacity;
   transition-duration: 0.25s;
 }
 .point circle {
@@ -91,13 +91,13 @@ path {
 }
 
 .line {
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: 2s;
+  transition-property: opacity, stroke-width, stroke-opacity, fill-opacity;
+  transition-duration: 1s;
 }
 .line.fade path {
   stroke-opacity: 0.2;
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: 2s;
+  transition-property: opacity, stroke-width, stroke-opacity, fill-opacity;
+  transition-duration: 1s;
 }
 .line.select {
   stroke-opacity: 1;
@@ -105,8 +105,8 @@ path {
 }
 .line.select path {
   fill-opacity: 0.2;
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: 2s;
+  transition-property: opacity, stroke-width, stroke-opacity, fill-opacity;
+  transition-duration: 1s;
 }
 
 .circle {
@@ -114,8 +114,8 @@ path {
 }
 .circle.fade path {
   stroke-opacity: 0.2;
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: 2s;
+  transition-property: opacity, stroke-width, stroke-opacity, fill-opacity;
+  transition-duration: 1s;
 }
 .circle .select {
   stroke-opacity: 1;
@@ -123,8 +123,8 @@ path {
 }
 .circle .select path {
   fill-opacity: 0.2;
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: 2s;
+  transition-property: opacity, stroke-width, stroke-opacity, fill-opacity;
+  transition-duration: 1s;
 }
 
 .polygon path {
@@ -202,6 +202,11 @@ path {
 .s-66ff00 path {
   stroke: #66ff00;
   fill: #66ff00;
+}
+
+.s-ffffff path {
+  stroke: #ffffff;
+  fill: #ffffff;
 }
 
 /*# sourceMappingURL=construction.css.map */
