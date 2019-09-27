@@ -110,6 +110,26 @@ function eraseLine(id) {
   return seqTL;
 }
 
+function eraseLineReverse(id) {
+  var element = document.querySelector(id + " path")
+  var len = Math.floor( element.getTotalLength() );
+
+  var seqTL = new TimelineMax();
+
+  seqTL.to(
+    element,
+    BEAT, {
+      scale: 1,
+      strokeDasharray: len + OFFSET,
+      strokeDashoffset: -len - OFFSET,
+      ease: Expo.easeIn,
+
+    }
+  )
+
+  return seqTL;
+}
+
 function drawLineReverse(id) {
   var element = document.querySelector(id + " path")
   var len = element.getTotalLength();
@@ -162,12 +182,13 @@ function setLines(id) {
 
   var seqTL = new TimelineMax();
 
-  seqTL.staggerFrom(
+  seqTL.fromTo(
     id,
-    BEAT, {
-      scale: 0,
-      transformOrigin: "50% 50%",
-    }, .2
+    0, {
+      autoAlpha: 0,
+    }, {
+      autoAlpha: 1,
+    }
   );
 
   return seqTL;
@@ -179,7 +200,7 @@ function setCircle(id) {
 
   seqTL.fromTo(
     id,
-    BEAT, {
+    0, {
       autoAlpha: 1,
       scale: 0,
       fillOpacity: 1,
@@ -198,7 +219,7 @@ function setPolygon(id) {
 
   seqTL.fromTo(
     id,
-    BEAT * 3, {
+    BEAT * 2, {
       autoAlpha: 0,
       scale: 0,
       transformOrigin: "50% 50%",
@@ -206,7 +227,6 @@ function setPolygon(id) {
       autoAlpha: 1,
       scale: 1,
       ease: Expo.easeIn,
-
     }
   );
   return seqTL;
@@ -310,7 +330,7 @@ function hideElements(id) {
 
   seqTL.to(
     id,
-    BEAT, {
+    0, {
       autoAlpha: 0,
 
     }
@@ -573,12 +593,13 @@ function constructLine(line, points) {
 function constructPolygon(polygon, points) {
   var seqTL = new TimelineMax();
 
-  seqTL.add(setPoint(points));
-  seqTL.add(highlightPoint(points), 0);
 
   seqTL.add(setPolygon(polygon), 0);
 
-  seqTL.add(unHighlightPoint(points));
+  seqTL.add(setPoint(points), 0);
+  seqTL.add(highlightPoint(points), 2);
+
+  seqTL.add(unHighlightPoint(points), 3);
 
   return seqTL;
 }
@@ -588,16 +609,26 @@ function constructCircle(circle, radius, points, orient = "0", reverse=false) {
 
   seqTL.add(setPoint(points));
   seqTL.add(highlightPoint(points));
-  if (reverse) {
-    seqTL.add(drawLine(radius), "-=1");
-  }else{
-    seqTL.add(drawLineReverse(radius), "-=1");
+  if (radius) {
+    if (reverse) {
+      seqTL.add(drawLine(radius), "-=1");
+    }else{
+      seqTL.add(drawLineReverse(radius), "-=1");
+    }
   }
 
   seqTL.add(orientCircle(circle, orient));
   seqTL.add(drawCircle(circle, radius));
   seqTL.add(orientCircle(circle, "0"));
-  seqTL.add(eraseLine(radius));
+  // seqTL.add(eraseLine(radius));
+
+  if (radius) {
+    if (reverse) {
+      seqTL.add(eraseLine(radius));
+    }else{
+      seqTL.add(eraseLineReverse(radius));
+    }
+  }
 
   seqTL.add(unHighlightPoint(points));
 

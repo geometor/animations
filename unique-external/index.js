@@ -8,6 +8,10 @@ function main() {
   document.addEventListener("keydown", keyPressCheck, false);
   // TL.eventCallback("onUpdate", updateSlider);
 
+  TL.add(setLines("#g0101a_2"));
+  TL.add(setLines("#g0101a_1"));
+  TL.add(hideElements("#g0101a_2"));
+  TL.add(hideElements("#g0101a_1"));
 
   TL.add(zoomToElement(["#r", "#s"], 100), 0);
 
@@ -21,40 +25,43 @@ function main() {
   TL.addLabel("root5");
   TL.add(root5grid());
   showGolden("g01-b");
-  TL.add(fadeRoot5(), "+=" + BEAT * 4);
+  TL.add(fadeRoot5());
 
   TL.addLabel("root2");
   TL.add(root2grid());
   showGolden("g01-c");
-  TL.add(fadeRoot2(), "+=" + BEAT * 4);
+  TL.add(fadeRoot2());
 
   TL.addLabel("squares");
   TL.add(squares());
   showGolden("g01-d");
-  TL.add(fadeSquares(), "+=" + BEAT);
+  TL.add(fadeSquares());
 
   TL.addLabel("squares3");
   TL.add(squares3(),);
   showGolden("g01-e");
-  TL.add(fadeSquares3(), "+=" + BEAT);
+  TL.add(fadeSquares3());
 
   TL.addLabel("hexagon");
   TL.add(hexagon());
   showGolden("g01-f");
-  TL.add(fadeHexagon(), "+=" + BEAT);
+  TL.add(fadeHexagon());
 
   TL.addLabel("circumTriangle");
   TL.add(circumTriangle());
   showGolden("g01-g");
-  TL.add(fadeCircumTriangle(), "+=" + BEAT);
+  TL.add(fadeCircumTriangle());
 
   TL.add(g01(), "+=" + BEAT * 2);
 
   TL.addLabel("review1");
   TL.add(review1());
 
-  TL.addLabel("review2");
-  TL.add(review2());
+  // TL.addLabel("review2");
+  // TL.add(review2());
+
+  // TL.addLabel("review3");
+  // TL.add(review3());
 
   TL.timeScale(1);
   var duration = TL.duration();
@@ -83,7 +90,7 @@ function sequence() {
 
 function showGolden(label) {
 
-  TL.add(g01());
+  TL.add(g01(), "+=" + BEAT);
   TL.addLabel(label);
   TL.add(g01remove(), "+=" + BEAT * 4);
 
@@ -101,52 +108,96 @@ function metronome(duration) {
 
 }
 
+function review1seq(poly, circle, polyPoints) {
+
+  var seqTL = new TimelineMax();
+
+  seqTL.add(review1show(poly, circle, polyPoints));
+  seqTL.add(review1hide(poly, circle), "+=" + BEAT * 4);
+
+  return seqTL;
+
+}
+
+function review1show(poly, circle, polyPoints) {
+
+  var seqTL = new TimelineMax();
+
+  seqTL.add(constructPolygon(poly, polyPoints));
+
+  // seqTL.add(unFadeElements(circle), "+=" + BEAT);
+  // seqTL.add(selectElements(circle), "-=" + BEAT);
+  //
+  seqTL.add(unFadeElements(circle), "show");
+  seqTL.add(selectElements(circle), "show");
+
+  return seqTL;
+}
+function review1hide(poly, circle) {
+
+  var seqTL = new TimelineMax();
+
+  seqTL.add(hideElements(poly));
+  seqTL.add(unSelectElements(circle), "hide");
+  seqTL.add(fadeElements(circle), "hide");
+
+  return seqTL;
+}
 
 function review1() {
 
   var seqTL = new TimelineMax();
 
-  seqTL.add(selectElements("#e"));
+  // root3
+  seqTL.add(review1seq("#t3", "#e", ["#E", "#I", "#K"]));
 
-  seqTL.add(selectElements("#c_1"), "+=2");
-  seqTL.add(unSelectElements("#e"));
+  // root5
+  seqTL.add(review1seq(["#q2", "#q4"], "#c_1", ["#S", "#T", "#U", "#V"]));
 
-  seqTL.add(selectElements("#d_2"), "+=2");
-  seqTL.add(unSelectElements("#c_1"));
+  //root2
+  seqTL.add(review1seq(["#q5"], "#d_2", ["#A_1", "#W", "#D_1", "#Z"]));
 
-  seqTL.add(selectElements("#c_2"), "+=2");
-  seqTL.add(unSelectElements("#d_2"));
+  // squares
+  seqTL.add(review1seq(["#q6", "#q7"], "#c_2", ["#F_1", "#E_1", "#B", "#E", "#C_1", "#G_1", "#A", "#E"]));
 
-  // seqTL.add( selectElements("#c_3"), "+=2" );
+  // squares3
+  seqTL.add(review1seq(["#q8"], "#c_3", ["#J_1", "#K_1", "#L_1", "#I_1"]));
 
-  seqTL.add(selectElements("#d_4"), "+=2");
-  seqTL.add(unSelectElements("#c_2"));
+  // hexagon
+  seqTL.add(review1seq(["#poly1"], "#r_3", ["#M_1", "#N_1", "#H", "#O_1"]));
 
-  seqTL.add(selectElements("#r_3"), "+=2");
-  seqTL.add(unSelectElements("#d_4"));
-
-  seqTL.add(unSelectElements("#r_3"), "+=2");
-
-
-  seqTL.add(selectElements("#e"), "+=2");
-  seqTL.add(selectElements("#c_1"), "+=2");
-  seqTL.add(selectElements("#d_2"), "+=2");
-  seqTL.add(selectElements("#c_2"), "+=2");
-  seqTL.add(selectElements("#d_4"), "+=2");
-  seqTL.add(selectElements("#r_3"), "+=2");
-
-  seqTL.add(unSelectElements("#r_3"));
-  seqTL.add(unSelectElements("#d_4"));
-  seqTL.add(unSelectElements("#c_2"));
-  seqTL.add(unSelectElements("#d_2"));
-  seqTL.add(unSelectElements("#c_1"));
-  seqTL.add(unSelectElements("#e"));
+  // circumTriangle
+  seqTL.add(review1seq(["#t4"], "#d_4", ["#C_2", "#L", "#D_2"]));
 
   return seqTL;
 
 }
 
 function review2() {
+
+    var seqTL = new TimelineMax();
+
+    //show all
+    seqTL.add(selectElements("#e"), "+=" + BEAT * 2);
+    seqTL.add(selectElements("#c_1"), "+=" + BEAT * 2);
+    seqTL.add(selectElements("#d_2"), "+=" + BEAT * 2);
+    seqTL.add(selectElements("#c_2"), "+=" + BEAT * 2);
+    seqTL.add(selectElements("#d_4"), "+=" + BEAT * 2);
+    seqTL.add(selectElements("#r_3"), "+=" + BEAT * 2);
+
+    //remove all
+    seqTL.add(unSelectElements("#r_3"));
+    seqTL.add(unSelectElements("#d_4"));
+    seqTL.add(unSelectElements("#c_2"));
+    seqTL.add(unSelectElements("#d_2"));
+    seqTL.add(unSelectElements("#c_1"));
+    seqTL.add(unSelectElements("#e"));
+
+    return seqTL;
+
+}
+
+function review3() {
 
   var seqTL = new TimelineMax();
 
@@ -166,7 +217,6 @@ function review2() {
   seqTL.add(setPolygon("#q2"));
   seqTL.add(setPolygon("#q4"));
 
-
   // root 2
   seqTL.add(selectElements("#d_2"), "+=4");
 
@@ -176,7 +226,6 @@ function review2() {
   seqTL.add(zoomToElement(["#d_2"], 50));
   seqTL.add(setPolygon("#q5"));
 
-
   // squares
   seqTL.add(selectElements("#c_2"), "+=4");
   seqTL.add(zoomToElement(["#c_2"], 50));
@@ -185,7 +234,6 @@ function review2() {
 
   seqTL.add(unSelectElements("#d_2"));
   seqTL.add(hideElements("#q5"));
-
 
   //hexagon
   seqTL.add(selectElements("#r_3"), "+=4");
@@ -215,43 +263,28 @@ function root3grid() {
 
   var seqTL = new TimelineMax();
 
-  //1
   seqTL.add(constructLine("#f", ["#A", "#E"]));
   seqTL.add(constructLine("#g", ["#B", "#E"]));
 
-  //3
   seqTL.add(constructPolygon("#t1", ["#A", "#B", "#E"]));
 
-  //1
   seqTL.add(constructLine("#h", ["#A", "#F"]));
   seqTL.add(constructLine("#i", ["#B", "#F"]));
 
-  //3
   seqTL.add(constructPolygon("#t2", ["#A", "#B", "#F"]));
 
-  //1
-  points = ["#I", "#K"];
-  // seqTL.add(setPoint(points));
-  seqTL.add(constructLine("#k", points));
-
-  //3
-  points = ["#M", "#J"];
-  // seqTL.add(setPoint(points));
-  seqTL.add(constructLine("#j", points));
+  seqTL.add(constructLine("#k", ["#I", "#K"]));
+  seqTL.add(constructLine("#j", ["#M", "#J"]));
 
   seqTL.add(hideElements(["#t1", "#t2"]));
-
 
   seqTL.add(constructPolygon("#t3", ["#E", "#I", "#K"]));
 
   seqTL.add(constructLine("#h_2", ["#B", "#I"]));
   seqTL.add(constructLine("#l", ["#A", "#K"]));
 
-  // seqTL.add(setPoint("#H"));
-
   seqTL.add(constructCircle("#e", "#m", ["#H", "#K"], "30", true));
 
-  seqTL.add(setPoint(["#N", "#L"]));
 
   seqTL.add(selectElements("#e"));
 
@@ -274,9 +307,9 @@ function fadeRoot3() {
     "#h_2",
   ];
 
+  seqTL.add(hideElements("#t3"));
   seqTL.add(unSelectElements("#e"));
   seqTL.add(fadeElements(set));
-
 
   return seqTL;
 }
@@ -284,15 +317,23 @@ function fadeRoot3() {
 function g01() {
 
   var seqTL = new TimelineMax();
+  // var set = [
+  //   "#N",
+  //   "#L",
+  //   "#A",
+  //   "#B",
+  //   "#C",
+  //   "#D",
+  // ];
+
   var set = [
-    "#N",
-    "#L",
     "#A",
     "#B",
-    "#C",
-    "#D",
+    "#N",
+    "#L",
   ];
 
+  seqTL.add(setPoint(set));
   seqTL.add(highlightPoint(set));
   seqTL.add(setGolden(set))
 
@@ -300,19 +341,17 @@ function g01() {
     "#g0101c",
     "#g0101b_1",
     "#g0101b_2",
-    "#g0101a_1",
-    "#g0101a_2",
+    // "#g0101a_1",
+    // "#g0101a_2",
   ];
-
-
 
   seqTL.add(setGolden(set))
 
   seqTL.add(drawLine("#g0101c"));
   seqTL.add(drawLine("#g0101b_2"));
   seqTL.add(drawLine("#g0101b_1"), "-=1");
-  seqTL.add(drawLine("#g0101a_2"));
-  seqTL.add(drawLine("#g0101a_1"), "-=1");
+  // seqTL.add(drawLine("#g0101a_2"));
+  // seqTL.add(drawLine("#g0101a_1"), "-=1");
 
   return seqTL;
 }
@@ -350,7 +389,6 @@ function g01remove() {
 
   seqTL.add(eraseLine("#g0101c"));
 
-  seqTL.add(hideElements("#t3"));
 
 
   return seqTL;
@@ -361,12 +399,12 @@ function root5grid() {
   var seqTL = new TimelineMax();
 
   //1-1
-  seqTL.add(constructCircle("#p", "#n_1", ["#B", "#C"], "180"));
-  seqTL.add(constructCircle("#r", "#n_1", ["#B", "#C"], "0", true));
+  seqTL.add(constructCircle("#p", "#n_1", ["#B", "#C"], "180", true));
+  seqTL.add(constructCircle("#r", "#n_1", ["#B", "#C"], "0"));
 
   //3-1
-  seqTL.add(constructCircle("#q", "#p_1", ["#A", "#D"], "0"));
-  seqTL.add(constructCircle("#s", "#p_1", ["#A", "#D"], "180", true));
+  seqTL.add(constructCircle("#q", "#p_1", ["#A", "#D"], "0", true));
+  seqTL.add(constructCircle("#s", "#p_1", ["#A", "#D"], "180"));
 
   //5-1
   seqTL.add(constructLine("#n", ["#O", "#P"]));
@@ -411,8 +449,7 @@ function fadeRoot5() {
     "#c_1",
   ];
 
-  seqTL.add(hideElements("#q2"));
-  seqTL.add(hideElements("#q4"));
+  seqTL.add(hideElements(["#q2", "#q4"]));
 
   seqTL.add(unSelectElements("#c_1"));
   seqTL.add(fadeElements(set));
@@ -430,10 +467,10 @@ function root2grid() {
   seqTL.add(constructLine("#q_1", ["#A", "#U"]));
   seqTL.add(constructLine("#r_1", ["#B", "#S"]));
 
-  seqTL.add(constructCircle("#d_2", "#d_1", ["#B_1", "#Z"], "0"));
-  seqTL.add(selectElements("#d_2"));
+  seqTL.add(constructPolygon("#q5", ["#A_1", "#W", "#D_1", "#Z"]));
 
-  seqTL.add(constructPolygon("#q5", ["#A_1", "#W", "#D_1", "#Z"]), "+=" + BEAT * 2);
+  seqTL.add(constructCircle("#d_2", "#d_1", ["#B_1", "#Z"], "0", true ));
+  seqTL.add(selectElements("#d_2"), "+=" + BEAT );
 
   return seqTL;
 
@@ -447,7 +484,6 @@ function fadeRoot2() {
     "#q_1",
     "#r_1",
     "#d_2",
-
   ];
 
   seqTL.add(hideElements("#q5"));
@@ -463,24 +499,24 @@ function squares() {
 
   var seqTL = new TimelineMax();
 
-  seqTL.add(unFadeElements(["#b", "#c"]));
-  seqTL.add(unFadeElements(["#f", "#g"]));
-  seqTL.add(unFadeElements(["#l", "#h_2"]));
+  seqTL.add(unFadeElements(["#b", "#c", "#f", "#g", "#l", "#h_2"]));
+  // seqTL.add(unFadeElements([]));
+  // seqTL.add(unFadeElements(["#l", "#h_2"]));
 
-  seqTL.add(constructLine("#i_2", ["#C", "#E"]));
+  seqTL.add(constructLine("#i_2", ["#C", "#E"]), "+=" + BEAT);
   seqTL.add(constructLine("#j_2", ["#D", "#E"]));
 
   seqTL.add(constructPolygon("#q6", ["#F_1", "#E_1", "#B", "#E"]));
-  seqTL.add(constructPolygon("#q7", ["#C_1", "#G_1", "#A", "#E"]));
+  seqTL.add(constructPolygon("#q7", ["#C_1", "#G_1", "#A", "#E"]), "-=" + BEAT * 3);
 
   seqTL.add(constructLine("#p_2", ["#E_1", "#E"]));
   seqTL.add(constructLine("#q_2", ["#G_1", "#E"]));
 
-  seqTL.add(constructCircle("#c_2", "#r_2", ["#E", "#E_1"], "11"));
+  seqTL.add(constructCircle("#c_2", "#r_2", ["#E", "#E_1"], "11", true));
+  seqTL.add(fadeElements(["#b", "#c", "#f", "#g", "#p_2", "#q_2", "#i_2", "#j_2", "#l", "#h_2"]), "+=" + BEAT);
+  seqTL.add(selectElements("#c_2"), "+=" + BEAT );
 
-  seqTL.add(fadeElements(["#b", "#c"]));
-  seqTL.add(fadeElements(["#f", "#g", "#p_2", "#q_2", "#i_2", "#j_2"]));
-  seqTL.add(fadeElements(["#l", "#h_2"]));
+  // seqTL.set("", {"":""}, "+=" + BEAT);
 
   return seqTL;
 
@@ -497,8 +533,7 @@ function fadeSquares() {
 
   ];
 
-  seqTL.add(hideElements("#q6"));
-  seqTL.add(hideElements("#q7"));
+  seqTL.add(hideElements(["#q6", "#q7"]));
 
   seqTL.add(unSelectElements("#c_2"));
   seqTL.add(fadeElements(set));
@@ -519,19 +554,17 @@ function squares3() {
 
   seqTL.add(constructLine("#n_3", ["#Z", "#C"]));
 
-
-  seqTL.add(constructCircle("#c_3", "#h_3", ["#H_1", "#D"], "-14"));
+  seqTL.add(constructCircle("#c_3", "#h_3", ["#H_1", "#D"], "-17", true));
 
   seqTL.add(constructLine("#f_3", ["#J_1", "#K_1"]));
 
-  seqTL.add(constructLine("#g_3", ["#L_1", "#I_1"]));
+  seqTL.add(constructLine("#g_3", ["#L_1", "#I_1"]), "-=" + BEAT * 2);
 
   seqTL.add(constructLine("#p_3", ["#J_1", "#L_1"]));
 
-  seqTL.add(constructLine("#q_3", ["#K_1", "#I_1"]));
+  seqTL.add(constructLine("#q_3", ["#K_1", "#I_1"]), "-=" + BEAT * 2);
 
   seqTL.add(constructPolygon("#q8", ["#J_1", "#K_1", "#L_1", "#I_1"]));
-
 
   return seqTL;
 
@@ -567,30 +600,15 @@ function hexagon() {
 
   var seqTL = new TimelineMax();
 
-  seqTL.add(setPoint("#M_1"));
-  seqTL.add(setPoint("#N_1"));
-  //
-  //
-  seqTL.add(drawCircle("#d_3"));
-  seqTL.add(drawCircle("#s_3"));
+  seqTL.add(constructCircle("#d_3", "", ["#M_1", "#H"], "30", true));
 
-  seqTL.add(setPoint("#O_1"));
-  seqTL.add(setPoint("#P_1"));
+  seqTL.add(constructCircle("#s_3", "", ["#N_1", "#H"], "150", true));
 
-  //
-  //
-  seqTL.add(drawLine("#f_4"));
+  seqTL.add(constructCircle("#r_3", "#f_4", ["#P_1", "#N_1"], "30", true));
 
-  // seqTL.add( orientCircle("#c_3", "30") );
-  seqTL.add(drawCircle("#r_3", "#f_4"));
-  // seqTL.add( orientCircle("#c_3", "0") );
+  seqTL.add(constructPolygon("#poly1", ["#M_1", "#N_1", "#H", "#O_1"]));
+
   seqTL.add(selectElements("#r_3"));
-
-  seqTL.add(eraseLine("#f_4"));
-  //
-
-  seqTL.add(setPolygon("#poly1"));
-
 
   return seqTL;
 
@@ -620,36 +638,22 @@ function circumTriangle() {
 
   var seqTL = new TimelineMax();
 
-  seqTL.add(setPolygon("#t1"));
+  seqTL.add(constructPolygon("#t1", ["#A", "#B", "#E"]));
 
-  seqTL.add(drawLine("#m_4"));
-  seqTL.add(drawLine("#n_4"));
+  seqTL.add(constructLine("#m_4", ["#B", "#J"]));
+
+  seqTL.add(constructLine("#n_4", ["#A", "#M"]));
 
   seqTL.add(setPoint("#S_1"));
 
-  seqTL.add(drawLine("#p_4"));
-  seqTL.add(orientCircle("#c_4", "30"));
-  seqTL.add(drawCircle("#c_4", "#p_4"));
-  seqTL.add(orientCircle("#c_4", "0"));
-  seqTL.add(selectElements("#c_4"));
-  seqTL.add(eraseLine("#p_4"));
-  //
-  seqTL.add(drawLine("#q_4"));
-  seqTL.add(orientCircle("#d_4", "-30"));
-  seqTL.add(drawCircle("#d_4", "#q_4"));
-  seqTL.add(orientCircle("#d_4", "0"));
-  seqTL.add(selectElements("#d_4"));
-  seqTL.add(eraseLine("#q_4"));
+  seqTL.add(constructCircle("#c_4", "#p_4", ["#S_1", "#B"], "30", true));
 
-  seqTL.add(setPoint("#C_2"));
-  seqTL.add(setPoint("#B_2"));
+  seqTL.add(constructCircle("#d_4", "#q_4", ["#S_1", "#M"], "-30", true));
+
   seqTL.add(setPoint("#E_2"));
-  seqTL.add(setPoint("#D_2"));
-
-  //
-  seqTL.add(setPolygon("#t4"));
-
-
+  seqTL.add(setPoint("#B_2"));
+1
+  seqTL.add(constructPolygon("#t4", ["#C_2", "#L", "#D_2"]));
 
   return seqTL;
 
@@ -679,8 +683,6 @@ function fadeCircumTriangle() {
 }
 
 
-
-
 function baseSequence() {
 
   var seqTL = new TimelineMax();
@@ -695,18 +697,10 @@ function baseSequence() {
   seqTL.add(drawLine("#a"));
 
   // circle b
-  seqTL.add(drawLine("#q1"));
-  seqTL.add(drawCircle("#b", "#q1")); //vesica piseces
-  seqTL.add(eraseLine("#q1"));
+  seqTL.add(constructCircle("#b", "#q1", ["#A", "#B"], "0", true));
 
   // circle c
-  seqTL.add(drawLineReverse("#q1"));
-  seqTL.add(orientCircle("#c", "180"));
-  seqTL.add(drawCircle("#c", "#q1"));
-  seqTL.add(orientCircle("#c", "0"));
-  seqTL.add(eraseLine("#q1"));
-
-  seqTL.add(unHighlightPoint(["#A", "#B"]));
+  seqTL.add(constructCircle("#c", "#q1", ["#A", "#B"], "180", false));
 
   // new points on baseline
   seqTL.add(setPoint(["#C", "#D"]));
@@ -724,9 +718,6 @@ function baseSequence() {
   seqTL.add(setPoint("#G"));
   seqTL.add(highlightPoint("#G"));
 
-  // seqTL.add( drawLine("#q3") );
-  // seqTL.add( eraseLine("#q3") );
-
   var set = [
     "#a",
     "#b",
@@ -735,7 +726,7 @@ function baseSequence() {
   ];
 
   seqTL.add(fadeElements(set), "+=" + BEAT * 2);
-  seqTL.add(unHighlightPoint("#G"));
+  seqTL.add(unHighlightPoint("#G"), "-=" + BEAT * 2);
 
   return seqTL;
 
