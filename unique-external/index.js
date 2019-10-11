@@ -68,10 +68,10 @@ function main() {
 
   console.log("duration: " + duration)
 
-  TL.add(metronome(duration), 0);
+  // TL.add(metronome(duration), 0);
 
   // TL.pause("g01");
-  TL.play("review1");
+  TL.play("");
 
 }
 
@@ -273,8 +273,8 @@ function root3grid() {
 
   seqTL.add(constructPolygon("#t2", ["#A", "#B", "#F"]));
 
-  seqTL.add(constructLine("#k", ["#I", "#K"]));
   seqTL.add(constructLine("#j", ["#M", "#J"]));
+  seqTL.add(constructLine("#k", ["#I", "#K"]));
 
   seqTL.add(hideElements(["#t1", "#t2"]));
 
@@ -284,7 +284,7 @@ function root3grid() {
   seqTL.add(constructLine("#l", ["#A", "#K"]));
 
   seqTL.add(constructCircle("#e", "#m", ["#H", "#K"], "30", true));
-  seqTL.add(selectElements("#e"));
+  seqTL.add(selectElements("#e"), "+=" + BEAT);
 
   return seqTL;
 
