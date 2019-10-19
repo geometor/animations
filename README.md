@@ -49,3 +49,8 @@ each of the unique studies above outlines a proportional system. Here we take ea
 - svg-prep.sh - creates an updated SVG then creates an embedded HTML page.
 
 ### entr
+- watch.sh uses entr to monitor svg files for changes. On change, html file for animation is updated.
+
+
+## print
+-

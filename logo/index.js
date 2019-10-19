@@ -13,7 +13,7 @@ function main() {
   showGolden("g01");
   TL.add(hideConstruction(), "+=" + (BEAT * 4) );
 
-  TL.timeScale(1);
+  TL.timeScale(4);
 
   var duration = TL.duration();
   console.log("duration: " + duration)
@@ -21,7 +21,7 @@ function main() {
   // TL.add(metronome(duration), 0);
 
   // TL.pause("g01");
-  TL.play("root3");
+  TL.play("");
 
 }
 
