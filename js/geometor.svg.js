@@ -81,6 +81,7 @@ function drawLine(id, position) {
     BEAT, {
       strokeDasharray: len + OFFSET,
       strokeDashoffset: len + OFFSET,
+      // strokeDashoffset: "100%",
     }, {
       strokeDashoffset: 0,
       ease: Expo.easeIn,
@@ -156,25 +157,35 @@ function drawLineReverse(id) {
 }
 
 function drawLineCenter(id) {
+
   var element = document.querySelector(id + " path")
-  var len = element.getTotalLength();
+  var len = Math.floor( element.getTotalLength() );
 
   var seqTL = new TimelineMax();
 
   seqTL.fromTo(
-    id,
-    BEAT, {
-      autoAlpha: 1,
-      strokeDasharray: 1,
-      strokeDashoffset: len / 2,
-      transformOrigin: "50% 50%",
+    element,
+    0, {
+      autoAlpha: 0,
     }, {
       autoAlpha: 1,
-      strokeDasharray: len,
+    }
+  ).fromTo(
+    element,
+    BEAT, {
+      strokeDasharray: "0 " + len,
+      strokeDashoffset: -len/2,
+      transformOrigin: "50% 50%",
+
+    }, {
+      strokeDasharray: len + " " + len,
       strokeDashoffset: 0,
+      ease: Expo.easeIn,
       transformOrigin: "50% 50%",
     }
   );
+
+
   return seqTL;
 }
 
@@ -352,7 +363,7 @@ function fadeElementsOld(id) {
 
   return seqTL;
 }
-function fadeElements(id) {
+function fadeElements(id, holdbeats = 2) {
   var seqTL = new TimelineMax();
 
   seqTL.set(
@@ -364,7 +375,7 @@ function fadeElements(id) {
 
   seqTL.to(
     id,
-    BEAT * 2,
+    BEAT * holdbeats,
     {
 
     }
@@ -577,13 +588,17 @@ function getStyle(oElm, strCssRule) {
 }
 
 
-function constructLine(line, points) {
+function constructLine(line, points, reverse = false) {
   var seqTL = new TimelineMax();
 
   seqTL.add(setPoint(points));
   seqTL.add(highlightPoint(points));
 
-  seqTL.add(drawLine(line));
+  if (reverse) {
+    seqTL.add(drawLineReverse(line));
+  }else {
+    seqTL.add(drawLine(line));
+  }
 
   seqTL.add(unHighlightPoint(points));
 

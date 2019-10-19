@@ -3,7 +3,7 @@
      baseProfile="full"
      xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink"
-     viewBox="0 0 1440 770"
+     viewBox="0 0 1919 949"
      >
 <rect class="bg" />
 <style>
@@ -224,325 +224,301 @@ path {
 <g id="misc">
 </g>
 <g id="base">
-<g id="b" class="circle s-a0a0a0">
-<g>
-  <path d="M 830.00 330.00 C 830.00 451.50 731.50 550.00 610.00 550.00 C 488.50 550.00 390.00 451.50 390.00 330.00 C 390.00 208.50 488.50 110.00 610.00 110.00 C 731.50 110.00 830.00 208.50 830.00 330.00 z"/>
-<title>Circle b</title>
-<desc>Circle b: Circle through B with center A</desc>
-</g> 
-</g> 
+</g>
+<g id="layer1">
 <g id="c" class="circle s-a0a0a0">
 <g>
-  <path d="M 1050.0 330.00 C 1050.0 451.50 951.50 550.00 830.00 550.00 C 708.50 550.00 610.00 451.50 610.00 330.00 C 610.00 208.50 708.50 110.00 830.00 110.00 C 951.50 110.00 1050.0 208.50 1050.0 330.00 z"/>
+  <path d="M 1367.1 407.14 C 1367.1 557.05 1245.6 678.57 1095.7 678.57 C 945.81 678.57 824.29 557.05 824.29 407.14 C 824.29 257.24 945.81 135.71 1095.7 135.71 C 1245.6 135.71 1367.1 257.24 1367.1 407.14 z"/>
 <title>Circle c</title>
 <desc>Circle c: Circle through A with center B</desc>
 </g> 
 </g> 
-<g id="a" class="line s-a0a0a0">
+<g id="b" class="circle s-a0a0a0">
 <g>
-  <path d="M -5.0000 330.00 L 1445.0 330.00"/>
-<title>Line a</title>
-<desc>Line a: Line A, B</desc>
+  <path d="M 1095.7 407.14 C 1095.7 557.05 974.19 678.57 824.29 678.57 C 674.38 678.57 552.86 557.05 552.86 407.14 C 552.86 257.24 674.38 135.71 824.29 135.71 C 974.19 135.71 1095.7 257.24 1095.7 407.14 z"/>
+<title>Circle b</title>
+<desc>Circle b: Circle through B with center A</desc>
 </g> 
 </g> 
-<g id="d" class="line s-a0a0a0">
+<g id="e" class="circle s-cc66ff">
 <g>
-  <path d="M 720.00 775.00 L 720.00 -5.0000"/>
-<title>Line d</title>
-<desc>Line d: Line E, F</desc>
-</g> 
-</g> 
-</g>
-<g id="layer1">
-<g id="f" class="line s-ff6699">
-<g>
-  <path d="M 353.08 775.00 L 803.41 -5.0000"/>
-<title>Line f</title>
-<desc>Line f: Line A, E</desc>
-</g> 
-</g> 
-<g id="g" class="line s-ff6699">
-<g>
-  <path d="M 1086.9 775.00 L 636.59 -5.0000"/>
-<title>Line g</title>
-<desc>Line g: Line B, E</desc>
-</g> 
-</g> 
-<g id="h" class="line s-ff6699">
-<g>
-  <path d="M 866.92 775.00 L 416.59 -5.0000"/>
-<title>Line h</title>
-<desc>Line h: Line A, F</desc>
-</g> 
-</g> 
-<g id="i" class="line s-ff6699">
-<g>
-  <path d="M 573.08 775.00 L 1023.4 -5.0000"/>
-<title>Line i</title>
-<desc>Line i: Line B, F</desc>
-</g> 
-</g> 
-<g id="j" class="line s-ff6699">
-<g>
-  <path d="M -5.0000 139.47 L 1445.0 139.47"/>
-<title>Line j</title>
-<desc>Line j: Line J, M</desc>
-</g> 
-</g> 
-<g id="k" class="line s-ff6699">
-<g>
-  <path d="M -5.0000 520.53 L 1445.0 520.53"/>
-<title>Line k</title>
-<desc>Line k: Line I, K</desc>
-</g> 
-</g> 
-</g>
-<g id="layer2">
-<g id="e" class="circle s-ff6699">
-<g>
-  <path d="M 974.03 393.51 C 974.03 533.81 860.30 647.54 720.00 647.54 C 579.70 647.54 465.97 533.81 465.97 393.51 C 465.97 253.21 579.70 139.47 720.00 139.47 C 860.30 139.47 974.03 253.21 974.03 393.51 z"/>
+  <path d="M 1273.4 485.50 C 1273.4 658.59 1133.1 798.92 960.00 798.92 C 786.90 798.92 646.58 658.59 646.58 485.50 C 646.58 312.40 786.90 172.08 960.00 172.08 C 1133.1 172.08 1273.4 312.40 1273.4 485.50 z"/>
 <title>Circle e</title>
 <desc>Circle e: Circle through K with center H</desc>
 </g> 
 </g> 
-<g id="l" class="line s-ff6699">
+</g>
+<g id="layer2">
+<g id="k" class="line s-cc66ff">
 <g>
-  <path d="M 29.763 -5.0000 L 1380.8 775.00"/>
-<title>Line l</title>
-<desc>Line l: Line A, K</desc>
+  <path d="M -5.0000 642.21 L 1925.0 642.21"/>
+<title>Line k</title>
+<desc>Line k: Line I, K</desc>
+</g> 
+</g> 
+<g id="i" class="line s-cc66ff">
+<g>
+  <path d="M 779.41 955.00 L 1333.7 -5.0000"/>
+<title>Line i</title>
+<desc>Line i: Line B, F</desc>
+</g> 
+</g> 
+<g id="h" class="line s-cc66ff">
+<g>
+  <path d="M 1140.6 955.00 L 586.33 -5.0000"/>
+<title>Line h</title>
+<desc>Line h: Line A, F</desc>
+</g> 
+</g> 
+<g id="g" class="line s-cc66ff">
+<g>
+  <path d="M 1412.0 955.00 L 857.76 -5.0000"/>
+<title>Line g</title>
+<desc>Line g: Line B, E</desc>
+</g> 
+</g> 
+<g id="f" class="line s-cc66ff">
+<g>
+  <path d="M 507.98 955.00 L 1062.2 -5.0000"/>
+<title>Line f</title>
+<desc>Line f: Line A, E</desc>
+</g> 
+</g> 
+<g id="a" class="line s-a0a0a0">
+<g>
+  <path d="M -5.0000 407.14 L 1925.0 407.14"/>
+<title>Line a</title>
+<desc>Line a: Line A, B</desc>
 </g> 
 </g> 
 </g>
 <g id="layer3">
 </g>
 <g id="layer4">
+<g id="m_3" class="line s-c0c0c0">
+<g>
+  <path d="M 110.43 -5.0000 L 1773.2 955.00"/>
+<title>Line m_3</title>
+<desc>Line m_3: Line A, K</desc>
+</g> 
+</g> 
+<g id="m_2" class="line s-c0c0c0">
+<g>
+  <path d="M 146.80 955.00 L 1809.6 -5.0000"/>
+<title>Line m_2</title>
+<desc>Line m_2: Line I, B</desc>
+</g> 
+</g> 
+<g id="m_1" class="line s-c0c0c0">
+<g>
+  <path d="M 960.00 955.00 L 960.00 -5.0000"/>
+<title>Line m_1</title>
+<desc>Line m_1: Line E, F</desc>
+</g> 
+</g> 
 </g>
 <g id="layer5">
 </g>
 <g id="layer6">
-</g>
-<g id="graphics">
-</g>
-<g id="sections">
-<g id="t1" class="polygon s-ff6699">
+<g id="t3" class="polygon s-cc66ff">
 <g>
-  <path d="M 610.00 330.00 L 720.00 139.47 L 830.00 330.00 z"/>
-<title>Polygon t1</title>
-<desc>Triangle t1: Polygon A, E, B</desc>
-</g> 
-</g> 
-<g id="t2" class="polygon s-ff6699">
-<g>
-  <path d="M 610.00 330.00 L 720.00 520.53 L 830.00 330.00 z"/>
-<title>Polygon t2</title>
-<desc>Triangle t2: Polygon A, F, B</desc>
-</g> 
-</g> 
-<g id="t3" class="polygon s-ff6699">
-<g>
-  <path d="M 720.00 139.47 L 500.00 520.53 L 940.00 520.53 z"/>
+  <path d="M 960.00 172.08 L 688.57 642.21 L 1231.4 642.21 z"/>
 <title>Polygon t3</title>
 <desc>Triangle t3: Polygon E, I, K</desc>
 </g> 
 </g> 
-<g id="h_2" class="line s-ff6699">
-<g>
-  <path d="M 59.237 775.00 L 1410.2 -5.0000"/>
-<title>Line h_2</title>
-<desc>Line h_2: Line I, B</desc>
+</g>
+<g id="graphics">
+<g id="m" class="segment">
+<g class="segment s-cc66ff">
+  <path d="M 960.00 485.50 L 960.00 172.08"/>
+<title>Segment m</title>
+<desc>Segment m: Segment H, E</desc>
 </g> 
 </g> 
 <g id="sAB" class="segment">
 <g class="segment s-ffffff">
-  <path d="M 610.00 330.00 L 830.00 330.00"/>
+  <path d="M 824.29 407.14 L 1095.7 407.14"/>
 <title>Segment sAB</title>
 <desc>Segment sAB: Segment A, B</desc>
 </g> 
 </g> 
 <g id="sBA" class="segment">
 <g class="segment s-ffffff">
-  <path d="M 830.00 330.00 L 610.00 330.00"/>
+  <path d="M 1095.7 407.14 L 824.29 407.14"/>
 <title>Segment sBA</title>
 <desc>Segment sBA: Segment B, A</desc>
 </g> 
 </g> 
-<g id="m" class="segment">
-<g class="segment s-ff6699">
-  <path d="M 720.00 393.51 L 940.00 520.53"/>
-<title>Segment m</title>
-<desc>Segment m: Segment H, K</desc>
+</g>
+<g id="sections">
+<g id="g0101a_1" class="segment">
+<g class="segment s-ffcc66 a">
+  <path d="M 824.29 407.14 L 656.53 407.14"/>
+<title>Segment g0101a_1</title>
+<desc>Segment g0101a_1: ABAsection(L, A, B, N)</desc>
+</g>
+<g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 740.00, 391.00)">
+<text>a</text>
+</g> 
+</g> 
+<g id="g0101a_2" class="segment">
+<g class="segment s-ffcc66 a">
+  <path d="M 1095.7 407.14 L 1263.5 407.14"/>
+<title>Segment g0101a_2</title>
+<desc>Segment g0101a_2: ABAsection(L, A, B, N)</desc>
+</g>
+<g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 1178.0, 398.00)">
+<text>a</text>
+</g> 
+</g> 
+<g id="g0101b" class="segment">
+<g class="segment s-ffcc66 b">
+  <path d="M 824.29 407.14 L 1095.7 407.14"/>
+<title>Segment g0101b</title>
+<desc>Segment g0101b: ABAsection(L, A, B, N)</desc>
+</g>
+<g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 969.00, 427.00)">
+<text>b</text>
+</g> 
+</g> 
+<g id="g0102a_1" class="segment">
+<g class="segment s-ffcc66 a">
+  <path d="M 960.00 642.21 L 876.12 787.48"/>
+<title>Segment g0102a_1</title>
+<desc>Segment g0102a_1: ABAsection(R, F, B, Q)</desc>
+</g>
+<g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 904.00, 706.00)">
+<text>a</text>
+</g> 
+</g> 
+<g id="g0102a_2" class="segment">
+<g class="segment s-ffcc66 a">
+  <path d="M 1095.7 407.14 L 1179.6 261.87"/>
+<title>Segment g0102a_2</title>
+<desc>Segment g0102a_2: ABAsection(R, F, B, Q)</desc>
+</g>
+<g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 1126.0, 322.00)">
+<text>a</text>
+</g> 
+</g> 
+<g id="g0102b" class="segment">
+<g class="segment s-ffcc66 b">
+  <path d="M 960.00 642.21 L 1095.7 407.14"/>
+<title>Segment g0102b</title>
+<desc>Segment g0102b: ABAsection(R, F, B, Q)</desc>
+</g>
+<g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 1021.0, 506.00)">
+<text>b</text>
+</g> 
+</g> 
+<g id="g0103a_1" class="segment">
+<g class="segment s-ffcc66 a">
+  <path d="M 824.29 407.14 L 740.41 261.87"/>
+<title>Segment g0103a_1</title>
+<desc>Segment g0103a_1: ABAsection(P, F, A, O)</desc>
+</g>
+<g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 796.00, 326.00)">
+<text>a</text>
+</g> 
+</g> 
+<g id="g0103a_2" class="segment">
+<g class="segment s-ffcc66 a">
+  <path d="M 960.00 642.21 L 1043.9 787.48"/>
+<title>Segment g0103a_2</title>
+<desc>Segment g0103a_2: ABAsection(P, F, A, O)</desc>
+</g>
+<g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 988.00, 722.00)">
+<text>a</text>
+</g> 
+</g> 
+<g id="g0103b" class="segment">
+<g class="segment s-ffcc66 b">
+  <path d="M 960.00 642.21 L 824.29 407.14"/>
+<title>Segment g0103b</title>
+<desc>Segment g0103b: ABAsection(P, F, A, O)</desc>
+</g>
+<g transform="matrix(1.0000, 0.0000, 0.0000, 1.0000, 897.00, 509.00)">
+<text>b</text>
 </g> 
 </g> 
 </g>
 <g id="points">
-<g id="g0101b" class="segment">
-<g class="segment s-ffcc66">
-  <path d="M 610.00 330.00 L 830.00 330.00"/>
-<title>Segment g0101b</title>
-<desc>Segment g0101b: ABAsection(L, A, B, N)</desc>
-</g> 
-</g> 
-<g id="g0101a_2" class="segment">
-<g class="segment s-ffcc66">
-  <path d="M 830.00 330.00 L 965.97 330.00"/>
-<title>Segment g0101a_2</title>
-<desc>Segment g0101a_2: ABAsection(L, A, B, N)</desc>
-</g> 
-</g> 
-<g id="g0101a_1" class="segment">
-<g class="segment s-ffcc66">
-  <path d="M 610.00 330.00 L 474.03 330.00"/>
-<title>Segment g0101a_1</title>
-<desc>Segment g0101a_1: ABAsection(L, A, B, N)</desc>
-</g> 
-</g> 
-<g id="g0102b" class="segment">
-<g class="segment s-ffcc66">
-  <path d="M 720.00 520.53 L 830.00 330.00"/>
-<title>Segment g0102b</title>
-<desc>Segment g0102b: ABAsection(R, F, B, Q)</desc>
-</g> 
-</g> 
-<g id="g0102a_2" class="segment">
-<g class="segment s-ffcc66">
-  <path d="M 830.00 330.00 L 897.98 212.25"/>
-<title>Segment g0102a_2</title>
-<desc>Segment g0102a_2: ABAsection(R, F, B, Q)</desc>
-</g> 
-</g> 
-<g id="g0102a_1" class="segment">
-<g class="segment s-ffcc66">
-  <path d="M 720.00 520.53 L 652.02 638.28"/>
-<title>Segment g0102a_1</title>
-<desc>Segment g0102a_1: ABAsection(R, F, B, Q)</desc>
-</g> 
-</g> 
-<g id="g0103b" class="segment">
-<g class="segment s-ffcc66">
-  <path d="M 720.00 520.53 L 610.00 330.00"/>
-<title>Segment g0103b</title>
-<desc>Segment g0103b: ABAsection(P, F, A, O)</desc>
-</g> 
-</g> 
-<g id="g0103a_1" class="segment">
-<g class="segment s-ffcc66">
-  <path d="M 610.00 330.00 L 542.02 212.25"/>
-<title>Segment g0103a_1</title>
-<desc>Segment g0103a_1: ABAsection(P, F, A, O)</desc>
-</g> 
-</g> 
-<g id="g0103a_2" class="segment">
-<g class="segment s-ffcc66">
-  <path d="M 720.00 520.53 L 787.98 638.28"/>
-<title>Segment g0103a_2</title>
-<desc>Segment g0103a_2: ABAsection(P, F, A, O)</desc>
-</g> 
-</g> 
 <g id="A" class="point">
-  <circle class="bottom" cx="615.00" cy="330.00" r="5" />
-  <circle class="top" cx="615.00" cy="330.00" r="5" />
+  <circle class="bottom" cx="829.29" cy="407.14" r="5" />
+  <circle class="top" cx="829.29" cy="407.14" r="5" />
 <title>Point A</title>
 <desc>Point A: Point on xAxis</desc>
 </g> 
 <g id="B" class="point">
-  <circle class="bottom" cx="835.00" cy="330.00" r="5" />
-  <circle class="top" cx="835.00" cy="330.00" r="5" />
+  <circle class="bottom" cx="1100.7" cy="407.14" r="5" />
+  <circle class="top" cx="1100.7" cy="407.14" r="5" />
 <title>Point B</title>
 <desc>Point B: Point on xAxis</desc>
 </g> 
-<g id="C" class="point">
-  <circle class="bottom" cx="395.00" cy="330.00" r="5" />
-  <circle class="top" cx="395.00" cy="330.00" r="5" />
-<title>Point C</title>
-<desc>Point C: Intersection of b and a</desc>
-</g> 
-<g id="D" class="point">
-  <circle class="bottom" cx="1055.0" cy="330.00" r="5" />
-  <circle class="top" cx="1055.0" cy="330.00" r="5" />
-<title>Point D</title>
-<desc>Point D: Intersection of c and a</desc>
-</g> 
 <g id="E" class="point">
-  <circle class="bottom" cx="725.00" cy="139.47" r="5" />
-  <circle class="top" cx="725.00" cy="139.47" r="5" />
+  <circle class="bottom" cx="965.00" cy="172.08" r="5" />
+  <circle class="top" cx="965.00" cy="172.08" r="5" />
 <title>Point E</title>
 <desc>Point E: Intersection point of b, c</desc>
 </g> 
 <g id="F" class="point">
-  <circle class="bottom" cx="725.00" cy="520.53" r="5" />
-  <circle class="top" cx="725.00" cy="520.53" r="5" />
+  <circle class="bottom" cx="965.00" cy="642.21" r="5" />
+  <circle class="top" cx="965.00" cy="642.21" r="5" />
 <title>Point F</title>
 <desc>Point F: Intersection point of b, c</desc>
 </g> 
-<g id="G" class="point">
-  <circle class="bottom" cx="725.00" cy="330.00" r="5" />
-  <circle class="top" cx="725.00" cy="330.00" r="5" />
-<title>Point G</title>
-<desc>Point G: Intersection of a and d</desc>
-</g> 
 <g id="I" class="point">
-  <circle class="bottom" cx="505.00" cy="520.53" r="5" />
-  <circle class="top" cx="505.00" cy="520.53" r="5" />
+  <circle class="bottom" cx="693.57" cy="642.21" r="5" />
+  <circle class="top" cx="693.57" cy="642.21" r="5" />
 <title>Point I</title>
 <desc>Point I: Intersection of b and f</desc>
 </g> 
 <g id="K" class="point">
-  <circle class="bottom" cx="945.00" cy="520.53" r="5" />
-  <circle class="top" cx="945.00" cy="520.53" r="5" />
+  <circle class="bottom" cx="1236.4" cy="642.21" r="5" />
+  <circle class="top" cx="1236.4" cy="642.21" r="5" />
 <title>Point K</title>
 <desc>Point K: Intersection of c and g</desc>
 </g> 
-<g id="M" class="point">
-  <circle class="bottom" cx="945.00" cy="139.47" r="5" />
-  <circle class="top" cx="945.00" cy="139.47" r="5" />
-<title>Point M</title>
-<desc>Point M: Intersection of c and i</desc>
-</g> 
-<g id="J" class="point">
-  <circle class="bottom" cx="505.00" cy="139.47" r="5" />
-  <circle class="top" cx="505.00" cy="139.47" r="5" />
-<title>Point J</title>
-<desc>Point J: Intersection of b and h</desc>
-</g> 
 <g id="H" class="point">
-  <circle class="bottom" cx="725.00" cy="393.51" r="5" />
-  <circle class="top" cx="725.00" cy="393.51" r="5" />
+  <circle class="bottom" cx="965.00" cy="485.50" r="5" />
+  <circle class="top" cx="965.00" cy="485.50" r="5" />
 <title>Point H</title>
-<desc>Point H: Intersection of l and d</desc>
+<desc>Point H: Intersection of m_3 and m_1</desc>
 </g> 
 <g id="L" class="point">
-  <circle class="bottom" cx="479.03" cy="330.00" r="5" />
-  <circle class="top" cx="479.03" cy="330.00" r="5" />
+  <circle class="bottom" cx="661.53" cy="407.14" r="5" />
+  <circle class="top" cx="661.53" cy="407.14" r="5" />
 <title>Point L</title>
 <desc>Point L: Intersection point of e, a</desc>
 </g> 
 <g id="N" class="point">
-  <circle class="bottom" cx="970.97" cy="330.00" r="5" />
-  <circle class="top" cx="970.97" cy="330.00" r="5" />
+  <circle class="bottom" cx="1268.5" cy="407.14" r="5" />
+  <circle class="top" cx="1268.5" cy="407.14" r="5" />
 <title>Point N</title>
 <desc>Point N: Intersection point of e, a</desc>
 </g> 
 <g id="O" class="point">
-  <circle class="bottom" cx="547.02" cy="212.25" r="5" />
-  <circle class="top" cx="547.02" cy="212.25" r="5" />
+  <circle class="bottom" cx="745.41" cy="261.87" r="5" />
+  <circle class="top" cx="745.41" cy="261.87" r="5" />
 <title>Point O</title>
 <desc>Point O: Intersection point of e, h</desc>
 </g> 
 <g id="P" class="point">
-  <circle class="bottom" cx="792.98" cy="638.28" r="5" />
-  <circle class="top" cx="792.98" cy="638.28" r="5" />
+  <circle class="bottom" cx="1048.9" cy="787.48" r="5" />
+  <circle class="top" cx="1048.9" cy="787.48" r="5" />
 <title>Point P</title>
 <desc>Point P: Intersection point of e, h</desc>
 </g> 
 <g id="Q" class="point">
-  <circle class="bottom" cx="902.98" cy="212.25" r="5" />
-  <circle class="top" cx="902.98" cy="212.25" r="5" />
+  <circle class="bottom" cx="1184.6" cy="261.87" r="5" />
+  <circle class="top" cx="1184.6" cy="261.87" r="5" />
 <title>Point Q</title>
 <desc>Point Q: Intersection point of e, i</desc>
 </g> 
 <g id="R" class="point">
-  <circle class="bottom" cx="657.02" cy="638.28" r="5" />
-  <circle class="top" cx="657.02" cy="638.28" r="5" />
+  <circle class="bottom" cx="881.12" cy="787.48" r="5" />
+  <circle class="top" cx="881.12" cy="787.48" r="5" />
 <title>Point R</title>
 <desc>Point R: Intersection point of e, i</desc>
 </g> 
