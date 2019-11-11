@@ -125,7 +125,7 @@ var beats = document.getElementById("beats");
 
 function tick() {
   ticks = TL.time() * BEAT;
-  measure = Math.floor(ticks/BPM)+1;
+  measure = Math.floor(ticks/BPM);
   index = Math.floor(ticks % BPM);
   time.innerHTML = measure ;
   for (i = 0; i < beats.children.length; i++) {

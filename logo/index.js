@@ -13,12 +13,12 @@ function main() {
   showGolden("g01");
   TL.add(hideConstruction(), "+=" + (BEAT * 4) );
 
-  TL.timeScale(4);
+  TL.timeScale(2);
 
   var duration = TL.duration();
   console.log("duration: " + duration)
 
-  // TL.add(metronome(duration), 0);
+  TL.add(metronome(duration), 0);
 
   // TL.pause("g01");
   TL.play("");
