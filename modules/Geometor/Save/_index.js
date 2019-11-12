@@ -1,11 +1,31 @@
 // https://stackoverflow.com/questions/23218174/how-do-i-save-export-an-svg-file-after-creating-an-svg-with-d3-js-ie-safari-an
 
 export function saveSvg(svgEl, name) {
-    svgEl.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-    var svgData = svgEl.outerHTML;
+
+    var newSvg = svgEl.cloneNode(true);
+
+    var style = document.createElement("style");
+    
+    // WebKit hack :(
+  	style.appendChild(document.createTextNode(""));
+    newSvg.appendChild(style);
+
+    let ruleList = document.styleSheets[1].cssRules;
+
+    for (let rule of ruleList) {
+      // console.log(rule.selectorText);
+      style.innerHTML += rule.cssText;
+    }
+
+
+    newSvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+
+    var svgData = newSvg.outerHTML;
     var preface = '<?xml version="1.0" standalone="no"?>\r\n';
+
     var svgBlob = new Blob([preface, svgData], {type:"image/svg+xml;charset=utf-8"});
     var svgUrl = URL.createObjectURL(svgBlob);
+
     var downloadLink = document.createElement("a");
     downloadLink.href = svgUrl;
     downloadLink.download = name;

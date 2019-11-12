@@ -1,5 +1,7 @@
-export * as Metronome from "./Metronome.js"
-export * as Controls from "./Controls.js"
+import * as Metronome from "./Metronome.js"
+export {Metronome}
+import * as Controls from "./Controls.js"
+export {Controls}
 
 // import * as G from "../_index.js"
 

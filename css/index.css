@@ -1,15 +1,12 @@
-* {
+svg * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   border: none;
-}
-
-* {
   opacity: 1;
   stroke: white;
   stroke-opacity: 0.5;
-  stroke-width: 2;
+  stroke-width: 3;
   stroke-linejoin: round;
   stroke-linecap: butt;
   fill: white;
@@ -18,10 +15,11 @@
 }
 
 .bg {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   stroke: none;
   fill: black;
+  fill-opacity: 1;
 }
 
 text {
@@ -40,11 +38,11 @@ text {
 .point circle {
   stroke: black;
   stroke-opacity: 1;
-  stroke-width: 3;
+  stroke-width: 5;
   fill: white;
   fill-opacity: 1;
   /* vector-effect: non-scaling-stroke; */
-  r: 3;
+  r: 7;
 }
 .point.highlight .bottom {
   stroke: #FFF;
@@ -94,19 +92,19 @@ text {
 }
 
 .a path {
-  stroke-width: 3;
+  stroke-width: 6;
 }
 
 .b path {
-  stroke-width: 5;
+  stroke-width: 10;
 }
 
 [class~="a+b"] path {
-  stroke-width: 8;
+  stroke-width: 16;
 }
 
 [class~="a+2b"] path {
-  stroke-width: 13;
+  stroke-width: 26;
 }
 
 .golden {

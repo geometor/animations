@@ -9,12 +9,12 @@ export function set(id, position) {
     Draw.BEAT, {
       autoAlpha: 0,
       scale: 50,
-      r: 10,
+      // r: 10,
       transformOrigin: "50% 50%",
     }, {
       autoAlpha: 1,
       scale: 1,
-      r: 5,
+      // r: 5,
       ease: Expo.easeIn,
     },
     position
