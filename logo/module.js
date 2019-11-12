@@ -1,32 +1,42 @@
 import * as G from  "../modules/Geometor/_index.js"
 
-
 var TL = new TimelineMax();;
 
 main();
 
 function main() {
 
-  document.addEventListener("keydown", keyPressCheck, false);
+  // var saveButton = document.querySelector(".save");
+  // saveButton.addEventListener("click", downloadSVG, false);
+  document.querySelector("#save").onclick = downloadSVG;
+
+
+  G.Console.set(TL)
 
   TL.add(baseSequence(), "base");
 
-  // TL.addLabel("root3")
   TL.add(root3grid(), "root3");
   showGolden("g01");
-  TL.add(hideConstruction(), "+=" + (BEAT * 4) );
+  TL.add(hideConstruction(), "+=" + (G.Draw.BEAT * 4) );
 
   TL.timeScale(2);
 
-  var duration = TL.duration();
-  console.log("duration: " + duration)
-
-  TL.add(metronome(duration), 0);
+  TL.add(G.Console.Metronome.set(TL), 0);
 
   // TL.pause("g01");
   TL.play("");
 
 }
+
+
+function downloadSVG() {
+
+  var svg = document.querySelector("svg");
+
+  G.Save.saveSvg(svg, "logo")
+
+}
+
 
 
 function baseSequence() {
@@ -40,15 +50,13 @@ function baseSequence() {
   // line a
   seqTL.add(G.Draw.constructLine("#a", ["#A", "#B"]));
 
-  // circle b
+  // circle b abd c
   seqTL.add(G.Draw.constructCircle("#b", "#sAB", ["#A", "#B"], "0", false), "vesica");
-
-  // circle c
   seqTL.add(G.Draw.constructCircle("#c", "#sBA", ["#A", "#B"], "180", false), "vesica");
 
   var set = [ "#b", "#c", ];
 
-  seqTL.add(fadeElements(set, 0));
+  seqTL.add(G.Draw.fade(set, 0));
 
   return seqTL;
 
@@ -69,7 +77,7 @@ function root3grid() {
 
   seqTL.add(G.Draw.constructLine("#k", ["#I", "#K"]), "triangle");
 
-  seqTL.add(constructPolygon("#t3", ["#E", "#I", "#K"]), "triangle");
+  seqTL.add(G.Draw.constructPolygon("#t3", ["#E", "#I", "#K"]), "triangle");
 
   // line d
   seqTL.add(G.Draw.constructLine("#m_1", ["#E", "#F"]), "medians");
@@ -77,11 +85,11 @@ function root3grid() {
   seqTL.add(G.Draw.constructLine("#m_3", ["#A", "#K"]), "medians");
 
   seqTL.add(G.Draw.constructCircle("#e", "#m", ["#H", "#E"], "-90", true));
-  seqTL.add(selectElements("#e"), "+=" + BEAT);
+  seqTL.add(G.Draw.select("#e"), "+=" + G.Draw.BEAT);
 
   var set = [ "#m_1", "#m_2", "#m_3"];
 
-  seqTL.add(fadeElements(set, 0));
+  seqTL.add(G.Draw.fade(set, 0));
 
   return seqTL;
 
@@ -106,7 +114,7 @@ function hideConstruction() {
     "#H",
   ];
 
-  seqTL.add(hideElements(set));
+  seqTL.add(G.Draw.hide(set));
 
   return seqTL;
 }
@@ -114,9 +122,9 @@ function hideConstruction() {
 
 function showGolden(label) {
 
-  TL.add(g01(), "+=" + BEAT);
+  TL.add(g01(), "+=" + G.Draw.BEAT);
   TL.addLabel(label);
-  // TL.add(g01remove(), "+=" + BEAT * 4);
+  // TL.add(g01remove(), "+=" + G.Draw.BEAT * 4);
 
 }
 
@@ -130,21 +138,13 @@ function g01() {
     "#F",
   ];
 
-  seqTL.add(setPoint(set));
-  seqTL.add(highlightPoint(set));
-  seqTL.add(setGolden(set))
+  seqTL.add(G.Draw.Points.set(set));
+  seqTL.add(G.Draw.Points.highlight(set));
+  seqTL.add(G.Draw.setGolden(set))
 
-  // var set = [
-  //   "#g0101b`",
-  //   "#g0101a_1",
-  //   "#g0101a_2",
-  // ];
-  //
-  // seqTL.add(setGolden(set))
-
-  seqTL.add(drawLineCenter("#g0101b"), "b");
-  seqTL.add(drawLineCenter("#g0102b"), "b");
-  seqTL.add(drawLineCenter("#g0103b"), "b");
+  seqTL.add(G.Draw.Lines.drawFromCenter("#g0101b"), "b");
+  seqTL.add(G.Draw.Lines.drawFromCenter("#g0102b"), "b");
+  seqTL.add(G.Draw.Lines.drawFromCenter("#g0103b"), "b");
 
   var set = [
     "#L",
@@ -155,16 +155,16 @@ function g01() {
     "#R",
   ];
 
-  seqTL.add(setPoint(set));
-  seqTL.add(highlightPoint(set));
-  seqTL.add(setGolden(set))
+  seqTL.add(G.Draw.Points.set(set));
+  seqTL.add(G.Draw.Points.highlight(set));
+  seqTL.add(G.Draw.setGolden(set))
 
-  seqTL.add(drawLine("#g0101a_2"), "a");
-  seqTL.add(drawLine("#g0101a_1"), "a");
-  seqTL.add(drawLine("#g0102a_2"), "a");
-  seqTL.add(drawLine("#g0102a_1"), "a");
-  seqTL.add(drawLine("#g0103a_2"), "a");
-  seqTL.add(drawLine("#g0103a_1"), "a");
+  seqTL.add(G.Draw.Lines.draw("#g0101a_2"), "a");
+  seqTL.add(G.Draw.Lines.draw("#g0101a_1"), "a");
+  seqTL.add(G.Draw.Lines.draw("#g0102a_2"), "a");
+  seqTL.add(G.Draw.Lines.draw("#g0102a_1"), "a");
+  seqTL.add(G.Draw.Lines.draw("#g0103a_2"), "a");
+  seqTL.add(G.Draw.Lines.draw("#g0103a_1"), "a");
 
   return seqTL;
 }

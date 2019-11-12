@@ -1,0 +1,17 @@
+.select {
+
+  path {
+    stroke-opacity: 1;
+    fill-opacity: 0.2;
+  }
+}
+
+.fade {
+  path {
+    stroke-opacity: 0.2;
+  }
+}
+
+.bisector {
+  stroke-dasharray: 13, 5, 3, 5;
+}

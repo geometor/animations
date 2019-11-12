@@ -1,3 +1,5 @@
+import * as Draw from "./_index.js"
+
 export function set(id) {
 
   var seqTL = new TimelineMax();
@@ -34,7 +36,7 @@ export function draw(id, radiusId) {
     }
   ).fromTo(
     element,
-    BEAT, {
+    Draw.BEAT, {
       strokeDasharray: len ,
       strokeDashoffset: len ,
 
@@ -45,7 +47,7 @@ export function draw(id, radiusId) {
     }
   ).to(
     element,
-    BEAT, {
+    Draw.BEAT, {
       // strokeDasharray: len ,
       strokeDashoffset: 0,
       ease: Expo.easeIn,
@@ -59,19 +61,19 @@ export function draw(id, radiusId) {
 
       // drawLine(radiusId);
       seqTL.to(radiusId,
-        BEAT , {
+        Draw.BEAT , {
           rotation: "+=180",
           svgOrigin: center,
           ease: Expo.easeIn,
 
-      }, "-=" + BEAT * 2 )
+      }, "-=" + Draw.BEAT * 2 )
       .to(radiusId,
-        BEAT , {
+        Draw.BEAT , {
           rotation: "+=180",
           svgOrigin: center,
           ease: Expo.easeIn,
 
-      }, "-=" + BEAT   );
+      }, "-=" + Draw.BEAT   );
   }
 
 

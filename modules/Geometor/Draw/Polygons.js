@@ -1,9 +1,11 @@
-function set(id) {
+import * as Draw from "./_index.js"
+
+export function set(id) {
   var seqTL = new TimelineMax();
 
   seqTL.fromTo(
     id,
-    BEAT * 2, {
+    Draw.BEAT * 2, {
       autoAlpha: 0,
       scale: 0,
       transformOrigin: "50% 50%",

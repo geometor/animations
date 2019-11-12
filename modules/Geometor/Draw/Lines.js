@@ -1,4 +1,6 @@
-function set(id) {
+import * as Draw from "./_index.js"
+
+export function set(id) {
 
   var seqTL = new TimelineMax();
 
@@ -14,7 +16,7 @@ function set(id) {
   return seqTL;
 }
 
-function draw(id, position) {
+export function draw(id, position) {
   var element = document.querySelector(id + " path")
   var len = Math.floor( element.getTotalLength() );
 
@@ -29,9 +31,9 @@ function draw(id, position) {
     }, position
   ).fromTo(
     element,
-    BEAT, {
-      strokeDasharray: len + OFFSET,
-      strokeDashoffset: len + OFFSET,
+    Draw.BEAT, {
+      strokeDasharray: len + Draw.OFFSET,
+      strokeDashoffset: len + Draw.OFFSET,
       // strokeDashoffset: "100%",
     }, {
       strokeDashoffset: 0,
@@ -42,7 +44,7 @@ function draw(id, position) {
   return seqTL;
 }
 
-function drawReverse(id) {
+export function drawReverse(id) {
   var element = document.querySelector(id + " path")
   var len = element.getTotalLength();
 
@@ -50,10 +52,10 @@ function drawReverse(id) {
 
   seqTL.fromTo(
     element,
-    BEAT, {
+    Draw.BEAT, {
       autoAlpha: 1,
-      strokeDasharray: len + OFFSET,
-      strokeDashoffset: -len - OFFSET,
+      strokeDasharray: len + Draw.OFFSET,
+      strokeDashoffset: -len - Draw.OFFSET,
       transformOrigin: "50% 50%",
     }, {
       autoAlpha: 1,
@@ -67,7 +69,7 @@ function drawReverse(id) {
   return seqTL;
 }
 
-function drawFromCenter(id) {
+export function drawFromCenter(id) {
 
   var element = document.querySelector(id + " path")
   var len = Math.floor( element.getTotalLength() );
@@ -83,7 +85,7 @@ function drawFromCenter(id) {
     }
   ).fromTo(
     element,
-    BEAT, {
+    Draw.BEAT, {
       strokeDasharray: "0 " + len,
       strokeDashoffset: -len/2,
       transformOrigin: "50% 50%",
@@ -101,7 +103,7 @@ function drawFromCenter(id) {
 }
 
 
-function erase(id) {
+export function erase(id) {
   var element = document.querySelector(id + " path")
   var len = Math.floor( element.getTotalLength() );
 
@@ -109,10 +111,10 @@ function erase(id) {
 
   seqTL.to(
     element,
-    BEAT, {
+    Draw.BEAT, {
       scale: 1,
-      strokeDasharray: len + OFFSET,
-      strokeDashoffset: len + OFFSET,
+      strokeDasharray: len + Draw.OFFSET,
+      strokeDashoffset: len + Draw.OFFSET,
       ease: Expo.easeIn,
 
     }
@@ -121,7 +123,7 @@ function erase(id) {
   return seqTL;
 }
 
-function eraseReverse(id) {
+export function eraseReverse(id) {
   var element = document.querySelector(id + " path")
   var len = Math.floor( element.getTotalLength() );
 
@@ -129,10 +131,10 @@ function eraseReverse(id) {
 
   seqTL.to(
     element,
-    BEAT, {
+    Draw.BEAT, {
       scale: 1,
-      strokeDasharray: len + OFFSET,
-      strokeDashoffset: -len - OFFSET,
+      strokeDasharray: len + Draw.OFFSET,
+      strokeDashoffset: -len - Draw.OFFSET,
       ease: Expo.easeIn,
 
     }

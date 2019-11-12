@@ -1,4 +1,11 @@
 * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+
+* {
   opacity: 1;
   stroke: white;
   stroke-opacity: 0.5;
@@ -12,13 +19,6 @@
   transition-duration: 0.5s;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  border: none;
-}
-
 .bg {
   width: 100vw;
   height: 100vh;
@@ -27,13 +27,13 @@
 }
 
 text {
+  x: 0;
+  y: 0;
+  opacity: 0;
   stroke: none;
   fill: #ffcc66;
   fill-opacity: 1;
   font-size: 1em;
-  opacity: 0;
-  x: 0;
-  y: 0;
 }
 
 path {

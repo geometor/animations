@@ -1,23 +1,26 @@
 * {
-  opacity: 1;
-  stroke: white;
-  stroke-opacity: 0.5;
-  stroke-width: 2;
-  stroke-linejoin: round;
-  stroke-linecap: butt;
-  fill: white;
-  fill-opacity: 0;
-  fill-rule: nonzero;
-  transition-property: opacity, stroke-width, stroke-opacity, fill-opacity;
-  transition-duration: 0.5s;
-}
-
-* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   border: none;
 }
+* {
+  opacity: 1;
+
+  stroke: white;
+  stroke-opacity: 0.5;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: butt;
+
+  fill: white;
+  fill-opacity: 0;
+  fill-rule: nonzero;
+
+  transition-property: opacity, stroke-width, stroke-opacity, fill-opacity;
+  transition-duration: 0.5s;
+}
+
 
 .bg {
   width: 100vw;
@@ -27,13 +30,16 @@
 }
 
 text {
+  x: 0;
+  y: 0;
+
+  opacity: 0;
+
   stroke: none;
   fill: #ffcc66;
   fill-opacity: 1.0000;
+
   font-size: 1em;
-  opacity: 0;
-  x: 0;
-  y: 0;
 }
 
 path {

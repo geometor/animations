@@ -1,0 +1,57 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
+* {
+  opacity: 1;
+
+  stroke: white;
+  stroke-opacity: 0.5;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: butt;
+
+  fill: white;
+  fill-opacity: 0;
+  fill-rule: nonzero;
+
+}
+
+
+.bg {
+  width: 100vw;
+  height: 100vh;
+  stroke: none;
+  fill: black;
+}
+
+
+text {
+  x: 0;
+  y: 0;
+
+  opacity: 0;
+
+  stroke: none;
+  fill: #ffcc66;
+  fill-opacity: 1.0000;
+
+  font-size: 1em;
+}
+
+path {
+  // vector-effect: non-scaling-stroke;
+}
+
+
+@import 'point';
+@import 'line';
+@import 'circle';
+@import 'polygon';
+@import 'segment';
+@import 'states';
+@import 'golden';
+@import 'color';

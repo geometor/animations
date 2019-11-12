@@ -1,82 +1,79 @@
-import * as Points from "./Points/_index.js"
+import * as Points from "./Points.js"
 export {Points}
-import * as Lines from "./Lines/_index.js"
+import * as Lines from "./Lines.js"
 export {Lines}
-import * as Circles from "./Circles/_index.js"
+import * as Circles from "./Circles.js"
 export {Circles}
-import * as Polygons from "./Polygons/_index.js"
+import * as Polygons from "./Polygons.js"
 export {Polygons}
 
-const OFFSET = 100;
-const BEAT = 1;
+export const OFFSET = 100;
+export const BEAT = 1;
 
-function constructLine(line, points, reverse = false) {
+export function constructLine(line, points, reverse = false) {
   var seqTL = new TimelineMax();
 
-  seqTL.add(setPoint(points));
-  seqTL.add(highlightPoint(points));
+  seqTL.add(Points.set(points));
+  seqTL.add(Points.highlight(points));
 
   if (reverse) {
-    seqTL.add(drawLineReverse(line));
+    seqTL.add(Lines.drawReverse(line));
   }else {
-    seqTL.add(drawLine(line));
+    seqTL.add(Lines.draw(line));
   }
 
-  seqTL.add(unHighlightPoint(points));
+  seqTL.add(Points.unhighlight(points));
 
   return seqTL;
 }
 
-function constructPolygon(polygon, points) {
+export function constructPolygon(polygon, points) {
   var seqTL = new TimelineMax();
 
 
-  seqTL.add(setPolygon(polygon), 0);
+  seqTL.add(Polygons.set(polygon), 0);
 
-  seqTL.add(setPoint(points), 0);
-  seqTL.add(highlightPoint(points), 2);
+  seqTL.add(Points.set(points), 0);
+  seqTL.add(Points.highlight(points), 2);
 
-  seqTL.add(unHighlightPoint(points), 3);
+  seqTL.add(Points.unhighlight(points), 3);
 
   return seqTL;
 }
 
-function constructCircle(circle, radius, points, orient = "0", reverse=false) {
+export function constructCircle(circle, radius, points, orient = "0", reverse=false) {
   var seqTL = new TimelineMax();
 
   seqTL.add(Points.set(points));
   seqTL.add(Points.highlight(points));
   if (radius) {
     if (reverse) {
-      seqTL.add(Lines.draw(radius), "-=1");
-    }else{
       seqTL.add(Lines.drawReverse(radius), "-=1");
+    }else{
+      seqTL.add(Lines.draw(radius), "-=1");
     }
   }
 
-  seqTL.add(orientCircle(circle, orient));
-  seqTL.add(drawCircle(circle, radius));
-  seqTL.add(orientCircle(circle, "0"));
+  seqTL.add(Circles.orient(circle, orient));
+  seqTL.add(Circles.draw(circle, radius));
+  seqTL.add(Circles.orient(circle, "0"));
   // seqTL.add(eraseLine(radius));
 
   if (radius) {
     if (reverse) {
-      seqTL.add(eraseLine(radius));
+      seqTL.add(Lines.eraseReverse(radius));
     }else{
-      seqTL.add(eraseLineReverse(radius));
+      seqTL.add(Lines.erase(radius));
     }
   }
 
-  seqTL.add(unHighlightPoint(points));
+  seqTL.add(Points.unhighlight(points));
 
   return seqTL;
 }
 
 
-
-
-
-function hide(id) {
+export function hide(id) {
   var seqTL = new TimelineMax();
 
   seqTL.to(
@@ -90,7 +87,7 @@ function hide(id) {
   return seqTL;
 }
 
-function fade(id, holdbeats = 2) {
+export function fade(id, holdbeats = 2) {
   var seqTL = new TimelineMax();
 
   seqTL.set(
@@ -111,7 +108,7 @@ function fade(id, holdbeats = 2) {
   return seqTL;
 }
 
-function unfade(id) {
+export function unfade(id) {
   var seqTL = new TimelineMax();
 
   seqTL.set(
@@ -124,7 +121,7 @@ function unfade(id) {
   return seqTL;
 }
 
-function clear(id) {
+export function clear(id) {
   var seqTL = new TimelineMax();
 
   seqTL.set(
@@ -137,7 +134,7 @@ function clear(id) {
   return seqTL;
 }
 
-function select(id) {
+export function select(id) {
   var seqTL = new TimelineMax();
 
   seqTL.set(
@@ -150,7 +147,7 @@ function select(id) {
   return seqTL;
 }
 
-function unSelect(id) {
+export function unselect(id) {
   var seqTL = new TimelineMax();
 
   seqTL.set(
@@ -163,7 +160,7 @@ function unSelect(id) {
   return seqTL;
 }
 
-function setGolden(id) {
+export function setGolden(id) {
   var seqTL = new TimelineMax();
 
   seqTL.set(
@@ -176,7 +173,7 @@ function setGolden(id) {
   return seqTL;
 }
 
-function unSetGolden(id) {
+export function unSetGolden(id) {
   var seqTL = new TimelineMax();
 
   seqTL.set(
@@ -190,7 +187,7 @@ function unSetGolden(id) {
 }
 
 //can take multiple items
-function zoomToElement(id, margin, scale) {
+export function zoomToElement(id, margin, scale) {
 
   var elements = document.querySelectorAll(id);
   var topX, topY, bottomX, bottomY;

@@ -17,8 +17,6 @@ body {
 
   fill-rule: nonzero;
 
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: .5s;
 }
 
 
@@ -56,8 +54,6 @@ text {
 
 path {
   // vector-effect: non-scaling-stroke;
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: 2s;
 }
 
 .select {
@@ -71,8 +67,6 @@ path {
 .fade {
   path {
     stroke-opacity: .2;
-    transition-property: opacity, stroke-width, stroke-opacity;
-    transition-duration: 2s;
   }
 }
 
@@ -80,8 +74,6 @@ path {
 
   transform: translate(-5px,0);
 
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: .25s;
 
   circle {
     stroke: white;
@@ -118,8 +110,6 @@ path {
 
 
 .line {
-  transition-property: opacity, stroke-width, stroke-opacity;
-  transition-duration: 2s;
 
   &.fade {
     path {
