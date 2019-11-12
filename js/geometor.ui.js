@@ -94,11 +94,15 @@ function keyPressCheck(e) {
           TL.progress(0);
           break;
         case 37: //left arrow
-          TL.seek( TL.getLabelBefore() );
+          var label = TL.getLabelBefore()
+          console.log(label);
+          TL.seek( label );
           tick();
           break;
         case 39: //right arrow
-          TL.seek( TL.getLabelAfter() );
+          var label = TL.getLabelAfter()
+          console.log(label);
+          TL.seek( label );
           tick();
           break;
     }
