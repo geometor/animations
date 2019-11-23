@@ -1,23 +1,22 @@
-$factor: 2;
 
 .a path {
-  stroke-width: 3 * $factor;
+  stroke-width: 3 * $segment_factor;
 }
 
 .b path {
-  stroke-width: 5 * $factor;
+  stroke-width: 5 * $segment_factor;
 }
 
 [class~="a+b"] path {
-  stroke-width: 8 * $factor;
+  stroke-width: 8 * $segment_factor;
 }
 
 [class~="a+2b"] path {
-  stroke-width: 13 * $factor;
+  stroke-width: 13 * $segment_factor;
 }
 
 .golden {
-  stroke: #C90;
+  stroke: $gold-color;
   stroke-opacity: 1;
 }
 
