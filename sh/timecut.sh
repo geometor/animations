@@ -1,7 +1,7 @@
 #!/bin/sh
 D=$(date +"%Y%m%d-%T")
 
-node node_modules/timecut/cli.js "$1/$1.svg.html" \
+node node_modules/timecut/cli.js "$1/index.html" \
   --viewport=1920,1080 \
   --fps=16\
   --duration=18 \
