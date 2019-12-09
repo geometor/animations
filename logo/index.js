@@ -1,5 +1,8 @@
 var TL = new TimelineMax();;
 
+const BPM = 240;
+const BEAT = 60/BPM;
+
 main();
 
 function main() {
@@ -9,11 +12,11 @@ function main() {
   TL.add(baseSequence());
 
   TL.addLabel("root3")
-  TL.add(root3grid());
+  TL.add(root3grid(), "root3");
   showGolden("g01");
   TL.add(hideConstruction(), "+=" + (BEAT * 4) );
 
-  TL.timeScale(2);
+  // TL.timeScale(4);
 
   var duration = TL.duration();
   console.log("duration: " + duration)
@@ -28,7 +31,7 @@ function main() {
 function metronome(duration) {
 
   var seqTL = new TimelineMax({
-    repeat: Math.floor(duration)
+    repeat: Math.floor(duration / BEAT)
   });
 
   seqTL.call(tick, [], this, BEAT);
