@@ -92,19 +92,19 @@ text {
 }
 
 .a path {
-  stroke-width: 6;
+  stroke-width: 7.5;
 }
 
 .b path {
-  stroke-width: 10;
+  stroke-width: 12.5;
 }
 
 [class~="a+b"] path {
-  stroke-width: 16;
+  stroke-width: 20;
 }
 
 [class~="a+2b"] path {
-  stroke-width: 26;
+  stroke-width: 32.5;
 }
 
 .golden {

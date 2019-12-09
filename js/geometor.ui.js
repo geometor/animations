@@ -68,11 +68,11 @@ function keyPressCheck(e) {
     console.log('Control Down');
     switch (e.which) {
         case 37: //left arrow
-          TL.seek( Math.floor(TL.time())-1 );
+          TL.seek( Math.floor(TL.time())-BEAT );
           tick();
           break;
         case 39: //right arrow
-          TL.seek( Math.floor(TL.time())+1 );
+          TL.seek( Math.floor(TL.time())+BEAT );
           tick();
           break;
     }
@@ -123,14 +123,14 @@ function toggleAnimation() {
   TL.paused(!TL.paused());
 }
 
-var BPM = 4;
+var beatsPerMeasure = 4;
 var time = document.getElementById("time");
 var beats = document.getElementById("beats");
 
 function tick() {
-  ticks = TL.time() * BEAT;
-  measure = Math.floor(ticks/BPM);
-  index = Math.floor(ticks % BPM);
+  ticks = TL.time() / BEAT;
+  measure = Math.floor(ticks/beatsPerMeasure);
+  index = Math.floor(ticks % beatsPerMeasure);
   time.innerHTML = measure ;
   for (i = 0; i < beats.children.length; i++) {
     beats.children[i].classList.remove("select");

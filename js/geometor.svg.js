@@ -1,5 +1,4 @@
 const OFFSET = 100;
-const BEAT = 1;
 
 function hideAllElements() {
 
@@ -612,9 +611,9 @@ function constructPolygon(polygon, points) {
   seqTL.add(setPolygon(polygon), 0);
 
   seqTL.add(setPoint(points), 0);
-  seqTL.add(highlightPoint(points), 2);
+  seqTL.add(highlightPoint(points), BEAT * 2);
 
-  seqTL.add(unHighlightPoint(points), 3);
+  seqTL.add(unHighlightPoint(points), BEAT * 3);
 
   return seqTL;
 }
@@ -626,9 +625,9 @@ function constructCircle(circle, radius, points, orient = "0", reverse=false) {
   seqTL.add(highlightPoint(points));
   if (radius) {
     if (reverse) {
-      seqTL.add(drawLine(radius), "-=1");
+      seqTL.add(drawLine(radius), "-=" + BEAT);
     }else{
-      seqTL.add(drawLineReverse(radius), "-=1");
+      seqTL.add(drawLineReverse(radius), "-=" + BEAT);
     }
   }
 
