@@ -1,1 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+}
 
+html,
+body {
+  /* background: #000000; */
+  background: none;
+  font-family: "Orbitron";
+  /* font-weight: bold; */
+}
+
+.screen {
+  width: 100vw;
+  height: 100vh;
+  color: #CCC;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  /* align-content: center; */
+  position: relative;
+}
+
+h1 {
+  /* background: rgba(10, 10, 10, .8); */
+  margin: 1em;
+  padding: 1em;
+  text-align: center;
+  font-size: 140px;
+  line-height: 2;
+  letter-spacing: .2em;
+  padding-left: 1.2em;
+  opacity: 1;
+  position: absolute;
+}
+
+._typewriter_ {
+  border-right: solid #fff 2px;
+  margin: 2px;
+}
+
+h1.youtube {
+  font-size: 80px;
+  /* line-height: 2; */
+  letter-spacing: .1em;
+  padding-left: 1.1em;
+}
+
+h1.geometor {
+  font-size: 160px;
+}
+
+h1.morse {
+  /* font-size: 160px; */
+  font-family: "morse";
+  letter-spacing: .3em;
+  padding-left: 1.3em;
+}
