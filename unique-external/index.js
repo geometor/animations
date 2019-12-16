@@ -1,5 +1,8 @@
 var TL = new TimelineMax();;
 
+const BPM = 240;
+const BEAT = 60/BPM;
+
 main();
 
 function main() {
@@ -68,7 +71,7 @@ function main() {
 
   console.log("duration: " + duration)
 
-  // TL.add(metronome(duration), 0);
+  TL.add(metronome(duration), 0);
 
   // TL.pause("g01");
   TL.play("");
