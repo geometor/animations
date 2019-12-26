@@ -1,7 +1,6 @@
 const OFFSET = 100;
 
 function hideAllElements() {
-
   var seqTL = new TimelineMax();
 
   seqTL.set(".line,.point,.circle,.polygon,.segment,.sector", {
@@ -12,7 +11,6 @@ function hideAllElements() {
 }
 
 function setPoint(id, position) {
-
   var seqTL = new TimelineMax();
 
   seqTL.fromTo(
@@ -35,7 +33,6 @@ function setPoint(id, position) {
 }
 
 function highlightPoint(id) {
-
   var seqTL = new TimelineMax();
 
   seqTL.set(
@@ -49,7 +46,6 @@ function highlightPoint(id) {
 }
 
 function unHighlightPoint(id) {
-
   var seqTL = new TimelineMax();
 
   seqTL.set(
@@ -156,7 +152,6 @@ function drawLineReverse(id) {
 }
 
 function drawLineCenter(id) {
-
   var element = document.querySelector(id + " path")
   var len = Math.floor( element.getTotalLength() );
 
@@ -189,7 +184,6 @@ function drawLineCenter(id) {
 }
 
 function setLines(id) {
-
   var seqTL = new TimelineMax();
 
   seqTL.fromTo(
@@ -205,7 +199,6 @@ function setLines(id) {
 }
 
 function setCircle(id) {
-
   var seqTL = new TimelineMax();
 
   seqTL.fromTo(
@@ -243,17 +236,14 @@ function setPolygon(id) {
 }
 
 function getCenter(element) {
-
   var cx = parseInt(element.getBBox().x) + parseInt(element.getBBox().width / 2);
   var cy = parseInt(element.getBBox().y) + parseInt(element.getBBox().height / 2);
   cx += 1;
   cy += 1;
   return cx + ' ' + cy;
-
 }
 
 function drawCircle(id, radiusId) {
-
   var element = document.querySelector(id + " path");
   var len = Math.floor( element.getTotalLength() );
 
@@ -311,12 +301,9 @@ function drawCircle(id, radiusId) {
 
 
   return seqTL;
-
 }
 
-
 function orientCircle(id, direction) {
-
   var element = document.querySelector(id + " path" );
 
   var center = getCenter(element) ;
@@ -332,7 +319,6 @@ function orientCircle(id, direction) {
   );
 
   return seqTL;
-
 }
 
 function hideElements(id) {
@@ -463,7 +449,6 @@ function unSetGolden(id) {
 
 //can take multiple items
 function zoomToElement(id, margin, scale) {
-
   var elements = document.querySelectorAll(id);
   var topX, topY, bottomX, bottomY;
   var start = true;
@@ -528,7 +513,6 @@ function zoomToElement(id, margin, scale) {
     ;
 
   return seqTL;
-
 }
 
 function dumpComputedStyles(id) {
@@ -585,7 +569,6 @@ function getStyle(oElm, strCssRule) {
   }
   return strValue;
 }
-
 
 function constructLine(line, points, reverse = false) {
   var seqTL = new TimelineMax();

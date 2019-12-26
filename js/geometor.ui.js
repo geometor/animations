@@ -107,7 +107,6 @@ function keyPressCheck(e) {
           break;
     }
   }
-
 }
 
 function toggleMenu() {
