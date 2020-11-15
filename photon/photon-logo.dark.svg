@@ -5,24 +5,26 @@
    xmlns="http://www.w3.org/2000/svg">
   <style type="text/css">
     #bg {
-      fill: black;
+      fill: #222;
       stroke: none;
     }
     #diamonds {
-      fill: white;
+      fill: #444;
       stroke: none;
     }
     #diamonds > g:nth-child(2n+0) {
-    /* fill: black;*/
+    /* fill: #222;*/
     }
     #d02, #d04, #d06 {
-      fill: black;
+      fill: #222;
+      stroke: none;
     }
     #heptadecagon {
-      fill: black;
+      fill: #222;
+      stroke: none;
     }
     #lines {
-      stroke: white;
+      stroke: #444;
       stroke-width: 1;
       stroke-miterlimit: 4;
       stroke-dasharray: none;
