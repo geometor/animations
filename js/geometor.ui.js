@@ -68,11 +68,16 @@ function keyPressCheck(e) {
     console.log('Control Down');
     switch (e.which) {
         case 37: //left arrow
-          TL.seek( Math.floor(TL.time())-BEAT );
+          var ts = TL.time()-BEAT; 
+          TL.seek( ts );
+          console.log(ts);
           tick();
           break;
         case 39: //right arrow
-          TL.seek( Math.floor(TL.time())+BEAT );
+          // var ts = Math.floor(TL.time())+BEAT; 
+          var ts = TL.time()+BEAT; 
+          TL.seek( ts );
+          console.log(ts);
           tick();
           break;
     }
