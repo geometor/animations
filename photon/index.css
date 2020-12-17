@@ -1,17 +1,4 @@
-[id^="sg-g0"] .segment path {
-  stroke-opacity: 0.8;
-  opacity: 0.8;
-}
-[id^="sg-g0"] text {
-  stroke-opacity: 0.8;
-  opacity: 0.8;
-}
-
-#A .bottom path{
-  stroke-opacity: 0.8;
-  opacity: 0.8;
-}
-#B .bottom path{
-  stroke-opacity: 0.8;
-  opacity: 0.8;
+path{
+  fill-opacity: 1;
+  opacity: 1;
 }
