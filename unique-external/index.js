@@ -7,6 +7,7 @@ main();
 
 function main() {
 
+  console.log("main start");
 
   document.addEventListener("keydown", keyPressCheck, false);
   // TL.eventCallback("onUpdate", updateSlider);
