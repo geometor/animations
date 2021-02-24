@@ -67,27 +67,12 @@ function keyPressCheck(e) {
 
     console.log('Control Down');
     switch (e.which) {
-        case 37: //left arrow
-          var ts = TL.time()-BEAT; 
-          TL.seek( ts );
-          console.log(ts);
-          tick();
-          break;
-        case 39: //right arrow
-          // var ts = Math.floor(TL.time())+BEAT; 
-          var ts = TL.time()+BEAT; 
-          TL.seek( ts );
-          console.log(ts);
-          tick();
-          break;
     }
 
   } else {
 
     switch (e.which) {
         case 13: //enter
-            toggleAnimation();
-            break;
         case 32: //space
             toggleAnimation();
             break;
@@ -95,16 +80,29 @@ function keyPressCheck(e) {
         case 109: //M
           toggleMenu();
           break;
-        case 38: //up arrow
+        case 38, 48: //up arrow, 0
           TL.progress(0);
           break;
-        case 37: //left arrow
+        case 75: //k - one beat back
+          var ts = TL.time()-BEAT; 
+          TL.seek( ts );
+          console.log(ts);
+          tick();
+          break;
+        case 74: //j - one beat forward
+          // var ts = Math.floor(TL.time())+BEAT; 
+          var ts = TL.time()+BEAT; 
+          TL.seek( ts );
+          console.log(ts);
+          tick();
+          break;
+        case 37, 72: //left arrow, h - prev label
           var label = TL.getLabelBefore()
           console.log(label);
           TL.seek( label );
           tick();
           break;
-        case 39: //right arrow
+        case 39, 76: //right arrow, l - next label
           var label = TL.getLabelAfter()
           console.log(label);
           TL.seek( label );

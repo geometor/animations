@@ -1,6 +1,6 @@
 var TL = new TimelineMax();;
 
-const BPM = 240;
+const BPM = 120 ;
 const BEAT = 60/BPM;
 
 main();
@@ -12,14 +12,14 @@ function main() {
   document.addEventListener("keydown", keyPressCheck, false);
   // TL.eventCallback("onUpdate", updateSlider);
 
-  TL.add(setLines("#g0101a_2"));
-  TL.add(setLines("#g0101a_1"));
-  TL.add(hideElements("#g0101a_2"));
-  TL.add(hideElements("#g0101a_1"));
+  // TL.add(setLines("#g0101a_2"));
+  // TL.add(setLines("#g0101a_1"));
+  // TL.add(hideElements("#g0101a_2"));
+  // TL.add(hideElements("#g0101a_1"));
 
   TL.add(zoomToElement(["#r", "#s"], 100), 0);
 
-  TL.add(baseSequence(), 3);
+  TL.add(baseSequence(), 0);
 
   TL.addLabel("root3")
   TL.add(root3grid());
@@ -59,13 +59,13 @@ function main() {
   TL.add(g01(), "+=" + BEAT * 2);
 
   TL.addLabel("review1");
-  TL.add(review1());
+  review1();
 
-  // TL.addLabel("review2");
-  // TL.add(review2());
+  TL.addLabel("review2");
+  TL.add(review2());
 
-  // TL.addLabel("review3");
-  // TL.add(review3());
+  TL.addLabel("review3");
+  TL.add(review3());
 
   TL.timeScale(1);
   var duration = TL.duration();
@@ -112,15 +112,11 @@ function metronome(duration) {
 
 }
 
-function review1seq(poly, circle, polyPoints) {
+function review1seq(label, poly, circle, polyPoints) {
 
-  var seqTL = new TimelineMax();
-
-  seqTL.add(review1show(poly, circle, polyPoints));
-  seqTL.add(review1hide(poly, circle), "+=" + BEAT * 4);
-
-  return seqTL;
-
+  TL.add(review1show(poly, circle, polyPoints));
+  TL.addLabel("review1 " + label);
+  TL.add(review1hide(poly, circle), "+=" + BEAT * 4);
 }
 
 function review1show(poly, circle, polyPoints) {
@@ -128,15 +124,12 @@ function review1show(poly, circle, polyPoints) {
   var seqTL = new TimelineMax();
 
   seqTL.add(constructPolygon(poly, polyPoints));
-
-  // seqTL.add(unFadeElements(circle), "+=" + BEAT);
-  // seqTL.add(selectElements(circle), "-=" + BEAT);
-  //
-  seqTL.add(unFadeElements(circle), "+=" + BEAT);
+  seqTL.add(constructCircle(circle, "#m", ["#H", "#K"], "30", true));
   seqTL.add(selectElements(circle), "+=" + BEAT);
 
   return seqTL;
 }
+
 function review1hide(poly, circle) {
 
   var seqTL = new TimelineMax();
@@ -150,30 +143,34 @@ function review1hide(poly, circle) {
 
 function review1() {
 
-  var seqTL = new TimelineMax();
+  TL.add(root3gridreview());
+  TL.addLabel("review1-root3")
+  TL.add(fadeRoot3(), "+=" + BEAT);
 
-  // root3
-  seqTL.add(review1seq("#t3", "#e", ["#E", "#I", "#K"]));
+  TL.add(root5gridreview());
+  TL.addLabel("review1-root5");
+  TL.add(fadeRoot5(), "+=" + BEAT);
 
-  // root5
-  seqTL.add(review1seq(["#q2", "#q4"], "#c_1", ["#S", "#T", "#U", "#V"]));
+  TL.add(root2gridreview());
+  TL.addLabel("review1-root2");
+  TL.add(fadeRoot2(), "+=" + BEAT);
 
-  //root2
-  seqTL.add(review1seq(["#q5"], "#d_2", ["#A_1", "#W", "#D_1", "#Z"]));
+  TL.add(squaresreview());
+  TL.addLabel("review1-squares");
+  TL.add(fadeSquares(), "+=" + BEAT);
 
-  // squares
-  seqTL.add(review1seq(["#q6", "#q7"], "#c_2", ["#F_1", "#E_1", "#B", "#E", "#C_1", "#G_1", "#A", "#E"]));
-
-  // squares3
-  seqTL.add(review1seq(["#q8"], "#c_3", ["#J_1", "#K_1", "#L_1", "#I_1"]));
-
-  // hexagon
-  seqTL.add(review1seq(["#poly1"], "#r_3", ["#M_1", "#N_1", "#H", "#O_1"]));
-
-  // circumTriangle
-  seqTL.add(review1seq(["#t4"], "#d_4", ["#C_2", "#L", "#D_2"]));
-
-  return seqTL;
+  // review1seq("squares3",
+    // ["#q8"], 
+    // "#c_3", 
+    // ["#J_1", "#K_1", "#L_1", "#I_1"]);
+  // review1seq("hexagon",
+    // ["#poly1"], 
+    // "#r_3", 
+    // ["#M_1", "#N_1", "#H", "#O_1"]);
+  // review1seq("circumTriangle",
+    // ["#t4"], 
+    // "#d_4", 
+    // ["#C_2", "#L", "#D_2"]);
 
 }
 
@@ -316,23 +313,30 @@ function fadeRoot3() {
   return seqTL;
 }
 
+function root3gridreview() {
+
+  var seqTL = new TimelineMax();
+
+  seqTL.add(constructPolygon("#t3", ["#E", "#I", "#K"]));
+
+  // seqTL.add(unFadeElements(["#e"]));
+  seqTL.add(constructCircle("#e", "#m", ["#H", "#K"], "30", true));
+  seqTL.add(selectElements("#e"), "+=" + BEAT);
+
+  return seqTL;
+
+}
+
 function g01() {
 
   var seqTL = new TimelineMax();
-  // var set = [
-  //   "#N",
-  //   "#L",
-  //   "#A",
-  //   "#B",
-  //   "#C",
-  //   "#D",
-  // ];
-
   var set = [
-    "#A",
-    "#B",
     "#N",
     "#L",
+    "#A",
+    "#B",
+    "#C",
+    "#D",
   ];
 
   seqTL.add(setPoint(set));
@@ -343,17 +347,17 @@ function g01() {
     "#g0101c",
     "#g0101b_1",
     "#g0101b_2",
-    // "#g0101a_1",
-    // "#g0101a_2",
+    "#g0101a_1",
+    "#g0101a_2",
   ];
 
   seqTL.add(setGolden(set))
 
-  seqTL.add(drawLine("#g0101c"));
+  seqTL.add(drawLineCenter("#g0101c"));
   seqTL.add(drawLine("#g0101b_2"));
-  seqTL.add(drawLine("#g0101b_1"), "-=1");
-  // seqTL.add(drawLine("#g0101a_2"));
-  // seqTL.add(drawLine("#g0101a_1"), "-=1");
+  seqTL.add(drawLine("#g0101b_1"), "-=" + BEAT);
+  seqTL.add(drawLine("#g0101a_2"));
+  seqTL.add(drawLine("#g0101a_1"), "-=" + BEAT);
 
   return seqTL;
 }
@@ -366,8 +370,8 @@ function g01remove() {
     "#L",
     "#A",
     "#B",
-    // "#C",
-    // "#D",
+    "#C",
+    "#D",
   ];
 
   seqTL.add(unSetGolden(set))
@@ -377,19 +381,19 @@ function g01remove() {
     "#g0101c",
     "#g0101b_1",
     "#g0101b_2",
-    // "#g0101a_1",
-    // "#g0101a_2",
+    "#g0101a_1",
+    "#g0101a_2",
   ];
 
   seqTL.add(unSetGolden(set))
 
-  // seqTL.add(eraseLine("#g0101a_2"));
-  // seqTL.add(eraseLine("#g0101a_1"), "-=1");
+  seqTL.add(eraseLine("#g0101a_2"));
+  seqTL.add(eraseLine("#g0101a_1"), "-=" + BEAT);
 
   seqTL.add(eraseLine("#g0101b_2"));
   seqTL.add(eraseLine("#g0101b_1"), "-=" + BEAT);
 
-  seqTL.add(eraseLine("#g0101c"));
+  seqTL.add(eraseLineCenter("#g0101c"));
 
   return seqTL;
 }
@@ -454,6 +458,20 @@ function fadeRoot5() {
 
 }
 
+function root5gridreview() {
+
+  var seqTL = new TimelineMax();
+
+  seqTL.add(constructPolygon("#q2", ["#A", "#B", "#S", "#U"]));
+  seqTL.add(constructPolygon("#q4", ["#A", "#B", "#T", "#V"]), "-=" + BEAT * 3);
+
+  // seqTL.add(unFadeElements(["#c_1"]));
+  seqTL.add(constructCircle("#c_1", "#m_1", ["#G", "#U"], "-62.5", true));
+  seqTL.add(selectElements("#c_1"));
+
+  return seqTL;
+
+}
 
 function root2grid() {
 
@@ -491,6 +509,25 @@ function fadeRoot2() {
 
 }
 
+function root2gridreview() {
+  // showGolden("g01-d");
+
+  var seqTL = new TimelineMax();
+
+  // seqTL.add(constructLine("#q_1", ["#A", "#U"]));
+
+  // seqTL.add(constructLine("#r_1", ["#B", "#S"]));
+
+  seqTL.add(constructPolygon("#q5", ["#A_1", "#W", "#D_1", "#Z"]));
+
+  // seqTL.add(unFadeElements(["#d_2"]));
+  seqTL.add(constructCircle("#d_2", "#d_1", ["#B_1", "#Z"], "0", true ));
+  seqTL.add(selectElements("#d_2") );
+
+  return seqTL;
+
+}
+
 function squares() {
 
   var seqTL = new TimelineMax();
@@ -512,8 +549,6 @@ function squares() {
   seqTL.add(fadeElements(["#b", "#c", "#f", "#g", "#p_2", "#q_2", "#i_2", "#j_2", "#l", "#h_2"]), "+=" + BEAT);
   seqTL.add(selectElements("#c_2") );
 
-  // seqTL.set("", {"":""}, "+=" + BEAT);
-
   return seqTL;
 
 }
@@ -533,6 +568,33 @@ function fadeSquares() {
 
   seqTL.add(unSelectElements("#c_2"));
   seqTL.add(fadeElements(set));
+
+  return seqTL;
+
+}
+
+function squaresreview() {
+
+  var seqTL = new TimelineMax();
+
+  // seqTL.add(unFadeElements([]));
+  // seqTL.add(unFadeElements(["#l", "#h_2"]));
+
+  // seqTL.add(constructLine("#i_2", ["#C", "#E"]), "+=" + BEAT);
+  // seqTL.add(constructLine("#j_2", ["#D", "#E"]));
+
+  seqTL.add(constructPolygon("#q6", ["#F_1", "#E_1", "#B", "#E"]));
+  seqTL.add(constructPolygon("#q7", ["#C_1", "#G_1", "#A", "#E"]), "-=" + BEAT * 3);
+
+  // seqTL.add(constructLine("#p_2", ["#E_1", "#E"]));
+  // seqTL.add(constructLine("#q_2", ["#G_1", "#E"]));
+
+  seqTL.add(unFadeElements(["#c_2"]));
+  seqTL.add(constructCircle("#c_2", "#r_2", ["#E", "#E_1"], "11", true));
+  seqTL.add(fadeElements(["#b", "#c", "#f", "#g", "#p_2", "#q_2", "#i_2", "#j_2", "#l", "#h_2"]), "+=" + BEAT);
+  seqTL.add(selectElements("#c_2") );
+
+  // seqTL.set("", {"":""}, "+=" + BEAT);
 
   return seqTL;
 

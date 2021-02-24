@@ -183,6 +183,30 @@ function drawLineCenter(id) {
   return seqTL;
 }
 
+function eraseLineCenter(id) {
+  var element = document.querySelector(id + " path")
+  var len = Math.floor( element.getTotalLength() );
+
+  var seqTL = new TimelineMax();
+
+  seqTL.fromTo(
+    element,
+    BEAT, {
+      strokeDasharray: len + " " + len,
+      strokeDashoffset: 0,
+      transformOrigin: "50% 50%",
+    }, {
+      strokeDasharray: "0 " + len,
+      strokeDashoffset: -len/2,
+      ease: Expo.easeIn,
+      transformOrigin: "50% 50%",
+    }
+  )
+
+  return seqTL;
+}
+
+
 function setLines(id) {
   var seqTL = new TimelineMax();
 
@@ -263,17 +287,8 @@ function drawCircle(id, radiusId) {
       strokeDashoffset: len ,
 
     }, {
-      strokeDashoffset: len/2,
-      ease: Expo.easeIn,
-
-    }
-  ).to(
-    element,
-    BEAT, {
-      // strokeDasharray: len ,
       strokeDashoffset: 0,
-      ease: Expo.easeIn,
-
+      ease: Expo.easeInOut,
     }
   );
 
@@ -284,21 +299,12 @@ function drawCircle(id, radiusId) {
       // drawLine(radiusId);
       seqTL.to(radiusId,
         BEAT , {
-          rotation: "+=180",
+          rotation: "+=360",
           svgOrigin: center,
-          ease: Expo.easeIn,
+          ease: Expo.easeInOut,
 
-      }, "-=" + BEAT * 2 )
-      .to(radiusId,
-        BEAT , {
-          rotation: "+=180",
-          svgOrigin: center,
-          ease: Expo.easeIn,
-
-      }, "-=" + BEAT   );
+      }, "-=" + BEAT  )
   }
-
-
 
   return seqTL;
 }
@@ -614,6 +620,7 @@ function constructCircle(circle, radius, points, orient = "0", reverse=false) {
     }
   }
 
+  seqTL.add(unFadeElements(circle));
   seqTL.add(orientCircle(circle, orient));
   seqTL.add(drawCircle(circle, radius));
   seqTL.add(orientCircle(circle, "0"));

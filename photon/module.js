@@ -1,12 +1,12 @@
 import * as G from  "../modules/Geometor/_index.js"
 
 var TL = gsap.timeline();;
-const TICK = .03125;
+// const TICK = .03125;
+const TICK = .1;
 
 main();
 
 function main() {
-
   setRings();
 
   pulseRings();
@@ -15,32 +15,13 @@ function main() {
   final();
 
   TL.play("");
-
 }
-
 
 function final(){
   showRing("#d07");
   showRing("#d05");
   showRing("#d03");
   showRing("#d01");
-}
-
-function pulse_old() {
-  showRing("#d07");
-  showRing("#d06");
-  hideRing("#d07", "-="+(TICK / 2));
-  showRing("#d05");
-  hideRing("#d06", "-="+(TICK / 2));
-  showRing("#d04");
-  hideRing("#d05", "-="+(TICK / 2));
-  showRing("#d03");
-  hideRing("#d04", "-="+(TICK / 2));
-  showRing("#d02");
-  hideRing("#d03", "-="+(TICK / 2));
-  showRing("#d01");
-  hideRing("#d02", "-="+(TICK / 2));
-  hideRing("#d01");
 }
 
 function setRings(){
@@ -52,49 +33,40 @@ function setRings(){
   setRing("#d02");
   setRing("#d01");
 }
+
 function setRing(id, offset) {
   var seqTL = gsap.timeline();
   seqTL.set(
     id,
     {
-      autoAlpha: 0,
-      fill: "#FFFFFF",
-      // ease: Expo.easeOut,
+      fill: "#000000",
     }
   );
   TL.add(seqTL, offset);
 }
 
 function pulseRings(){
+  var offset = "-="+(TICK * 3);
   pulseRing("#d07");
-  pulseRing("#d06", "-="+(TICK));
-  pulseRing("#d05", "-="+(TICK));
-  pulseRing("#d04", "-="+(TICK));
-  pulseRing("#d03", "-="+(TICK));
-  pulseRing("#d02", "-="+(TICK));
-  pulseRing("#d01", "-="+(TICK));
+  pulseRing("#d06", offset);
+  pulseRing("#d05", offset);
+  pulseRing("#d04", offset);
+  pulseRing("#d03", offset);
+  pulseRing("#d02", offset);
+  pulseRing("#d01", offset);
 }
 
 function pulseRing(id, offset) {
   var seqTL = gsap.timeline();
   seqTL.to(
-      id,
-      TICK, {
-        autoAlpha: 1,
-        // fill: "#FFFFFF",
-        // ease: Expo.easeIn,
-      })
-    .to(
-      id,
-      TICK *3, {
-        autoAlpha: 1,
-      });
+    id,
+    TICK *3, {
+      fill: "#FFFFFF",
+    });
   seqTL.to(
     id,
-    TICK , {
-      autoAlpha: 0,
-      // fill: "#000",
-      // ease: Expo.easeOut,
+    TICK *3, {
+      fill: "#000",
     }
   );
   TL.add(seqTL, offset);
@@ -106,7 +78,6 @@ function showRing(id, offset) {
     TICK , {
       autoAlpha: 1,
       fill: "#FFF",
-      // ease: Expo.easeIn,
     },
     offset
   );
@@ -117,7 +88,6 @@ function hideRing(id, offset) {
     id,
     TICK , {
       autoAlpha: 0,
-      // fill: "#000",
       // ease: Expo.easeOut,
     },
     offset
