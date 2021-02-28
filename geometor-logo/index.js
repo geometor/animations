@@ -1,6 +1,6 @@
 var TL = new TimelineMax();;
 
-const BPM = 240;
+const BPM = 120;
 const BEAT = 60/BPM;
 
 main();
