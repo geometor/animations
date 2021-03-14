@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<svg version="1.1" baseProfile="full"
+xmlns="http://www.w3.org/2000/svg"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:ev="http://www.w3.org/2001/xml-events" x="0px" y="0px"
+width="1218px" height="860px" viewBox="0 0 1218 860">
+  <style>
+.golden { stroke: #DA0; stroke-opacity: 0.4; fill: #DA0; } 
+.selected { stroke: #69C; stroke-opacity: 0.4; fill: #69C; } 
+.point { stroke: black; stroke-width: 1.5; fill: white; }
+.point > path:nth-child(1) { stroke: black;  fill: none; }
+.point > path:nth-child(2) { stroke: black; stroke-width: 1.5;  fill: white; }
+.point.golden > path:nth-child(1) { stroke-width: 12;   stroke: #DA0; stroke-opacity: 0.4; fill: #DA0;  }
+.point.golden > path:nth-child(2) { stroke: black; stroke-width: 1.5; stroke-opacity: 1; fill: white; }
+.point.selected > path:nth-child(1) { stroke-width: 12;   stroke: #69C; stroke-opacity: 0.4; fill: #DA0;  }
+.point.selected > path:nth-child(2) { stroke: black; stroke-width: 1.5; stroke-opacity: 1; fill: white; }
+.line { stroke: #93C; stroke-width: 1.5; stroke-opacity: 1; stroke-dasharray: 1.5 3;  } 
+.line.selected { stroke: #69C; }
+.line.highlight { stroke-dasharray: none; stroke-width: 3; }
+.circle {fill: none; stroke: #93C; stroke-width: 1.5; stroke-opacity: 1; stroke-dasharray: 1.5 3; }
+.polygon { stroke-width: 5; stroke-linejoin: round;  fill: #93C; fill-opacity: .1; } 
+.bisector { stroke-dasharray: 1.5, 3, 5, 3; }
+.segment {} 
+.segment.golden > path:nth-child(2) { stroke: none;  }
+.a { stroke-width: 4; } 
+.b { stroke-width: 8; } 
+.c { stroke-width: 12; } 
+.d { stroke-width: 16; } 
+#base .circle { stroke: #777; }
+#base .line { stroke: #777; }
+  </style>
+  <g stroke-linejoin="miter" stroke-dashoffset="0.0000"
+  stroke-dasharray="none" stroke-width="1.0000"
+  stroke-miterlimit="10.000" stroke-linecap="square">
+    <g id="misc"></g>
+    <g id="base">
+      <g class="circle">
+        <path d="M 673.11 397.95 C 673.11 468.76 615.70 526.16 544.89 526.16 C 474.09 526.16 416.68 468.76 416.68 397.95 C 416.68 327.14 474.09 269.74 544.89 269.74 C 615.70 269.74 673.11 327.14 673.11 397.95 z" />
+        <desc>Circle c: Circle through B with center A</desc>
+      </g>
+      <g class="circle">
+        <path d="M 801.32 397.95 C 801.32 468.76 743.91 526.16 673.11 526.16 C 602.30 526.16 544.89 468.76 544.89 397.95 C 544.89 327.14 602.30 269.74 673.11 269.74 C 743.91 269.74 801.32 327.14 801.32 397.95 z" />
+        <desc>Circle d: Circle through A with center B</desc>
+      </g>
+      <g class="line">
+        <path d="M -5.0000 397.95 L 1223.0 397.95" />
+        <desc>Line a: Line A, B</desc>
+      </g>
+    </g>
+    <g id="main">
+      <g class="line bisector">
+        <path d="M 609.00 865.00 L 609.00 -5.0000" />
+        <desc>Line b: Line D, C</desc>
+      </g>
+      <g class="line">
+        <path d="M 814.55 865.00 L 312.25 -5.0000" />
+        <desc>Line h: Line A, C</desc>
+      </g>
+      <g class="line">
+        <path d="M 403.45 865.00 L 905.75 -5.0000" />
+        <desc>Line i: Line B, C</desc>
+      </g>
+      <g class="line">
+        <path d="M -5.0000 286.91 L 1223.0 286.91" />
+        <desc>Line k: Line H, I</desc>
+      </g>
+    </g>
+    <g id="layer8">
+      <g fill-opacity=".14902" fill-rule="evenodd" stroke="none"
+      fill="#93C">
+        <path d="M 609.00 286.91 L 480.79 508.98 L 737.21 508.98 z" />
+        <desc>Triangle t1: Polygon D, J, K</desc>
+      </g>
+      <g fill-opacity=".20000" fill-rule="evenodd" stroke="none"
+      fill="#66ccff">
+        <path d="M 609.00 286.91 L 505.28 329.32 L 465.66 397.95 L 480.79 508.98 L 569.38 577.60 L 648.62 577.60 L 737.21 508.98 L 752.34 397.95 L 712.72 329.32 z" />
+        <desc>Polygon y9: Polygon D, O, M, J, R, P, K, N, Q</desc>
+      </g>
+      <g class="circle">
+        <path d="M 757.04 434.96 C 757.04 516.72 690.76 583.00 609.00 583.00 C 527.24 583.00 460.96 516.72 460.96 434.96 C 460.96 353.20 527.24 286.91 609.00 286.91 C 690.76 286.91 757.04 353.20 757.04 434.96 z" />
+        <desc>Circle e: Circle through K with center L</desc>
+      </g>
+      <g class="line">
+        <path d="M 275.24 865.00 L 777.54 -5.0000" />
+        <desc>Line f: Line A, D</desc>
+      </g>
+      <g class="line">
+        <path d="M 942.76 865.00 L 440.46 -5.0000" />
+        <desc>Line g: Line B, D</desc>
+      </g>
+      <g class="line">
+        <path d="M -5.0000 508.98 L 1223.0 508.98" />
+        <desc>Line j: Line J, K</desc>
+      </g>
+      <g class="line bisector">
+        <path d="M -5.0000 789.45 L 1223.0 80.465" />
+        <desc>Line l: Line J, B</desc>
+      </g>
+      <g class="line bisector">
+        <path d="M -5.0000 80.465 L 1223.0 789.45" />
+        <desc>Line m: Line K, A</desc>
+      </g>
+    </g>
+    <g id="layer9">
+      <g class="point">
+        <path d="M 548.89 397.95 C 548.89 400.16 547.10 401.95 544.89 401.95 C 542.69 401.95 540.89 400.16 540.89 397.95 C 540.89 395.74 542.69 393.95 544.89 393.95 C 547.10 393.95 548.89 395.74 548.89 397.95 z" />
+        <path d="M 548.89 397.95 C 548.89 400.16 547.10 401.95 544.89 401.95 C 542.69 401.95 540.89 400.16 540.89 397.95 C 540.89 395.74 542.69 393.95 544.89 393.95 C 547.10 393.95 548.89 395.74 548.89 397.95 z" />
+        <desc>Point A: Point on xAxis</desc>
+      </g>
+      <g class="point">
+        <path d="M 677.11 397.95 C 677.11 400.16 675.31 401.95 673.11 401.95 C 670.90 401.95 669.11 400.16 669.11 397.95 C 669.11 395.74 670.90 393.95 673.11 393.95 C 675.31 393.95 677.11 395.74 677.11 397.95 z" />
+        <path d="M 677.11 397.95 C 677.11 400.16 675.31 401.95 673.11 401.95 C 670.90 401.95 669.11 400.16 669.11 397.95 C 669.11 395.74 670.90 393.95 673.11 393.95 C 675.31 393.95 677.11 395.74 677.11 397.95 z" />
+        <desc>Point B: Point on xAxis</desc>
+      </g>
+      <g class="point selected">
+        <path d="M 613.00 286.91 C 613.00 289.12 611.21 290.91 609.00 290.91 C 606.79 290.91 605.00 289.12 605.00 286.91 C 605.00 284.70 606.79 282.91 609.00 282.91 C 611.21 282.91 613.00 284.70 613.00 286.91 z" />
+        <path d="M 613.00 286.91 C 613.00 289.12 611.21 290.91 609.00 290.91 C 606.79 290.91 605.00 289.12 605.00 286.91 C 605.00 284.70 606.79 282.91 609.00 282.91 C 611.21 282.91 613.00 284.70 613.00 286.91 z" />
+        <desc>Point D: Intersection point of c, d</desc>
+      </g>
+      <g class="point">
+        <path d="M 613.00 508.98 C 613.00 511.19 611.21 512.98 609.00 512.98 C 606.79 512.98 605.00 511.19 605.00 508.98 C 605.00 506.77 606.79 504.98 609.00 504.98 C 611.21 504.98 613.00 506.77 613.00 508.98 z" />
+        <path d="M 613.00 508.98 C 613.00 511.19 611.21 512.98 609.00 512.98 C 606.79 512.98 605.00 511.19 605.00 508.98 C 605.00 506.77 606.79 504.98 609.00 504.98 C 611.21 504.98 613.00 506.77 613.00 508.98 z" />
+        <desc>Point C: Intersection point of c, d</desc>
+      </g>
+      <g class="point">
+        <path d="M 613.00 397.95 C 613.00 400.16 611.21 401.95 609.00 401.95 C 606.79 401.95 605.00 400.16 605.00 397.95 C 605.00 395.74 606.79 393.95 609.00 393.95 C 611.21 393.95 613.00 395.74 613.00 397.95 z" />
+        <path d="M 613.00 397.95 C 613.00 400.16 611.21 401.95 609.00 401.95 C 606.79 401.95 605.00 400.16 605.00 397.95 C 605.00 395.74 606.79 393.95 609.00 393.95 C 611.21 393.95 613.00 395.74 613.00 397.95 z" />
+        <desc>Point E: Intersection of a and b</desc>
+      </g>
+      <g class="point selected">
+        <path d="M 484.79 508.98 C 484.79 511.19 483.00 512.98 480.79 512.98 C 478.58 512.98 476.79 511.19 476.79 508.98 C 476.79 506.77 478.58 504.98 480.79 504.98 C 483.00 504.98 484.79 506.77 484.79 508.98 z" />
+        <path d="M 484.79 508.98 C 484.79 511.19 483.00 512.98 480.79 512.98 C 478.58 512.98 476.79 511.19 476.79 508.98 C 476.79 506.77 478.58 504.98 480.79 504.98 C 483.00 504.98 484.79 506.77 484.79 508.98 z" />
+        <desc>Point J: Intersection of c and f</desc>
+      </g>
+      <g class="point selected">
+        <path d="M 741.21 508.98 C 741.21 511.19 739.42 512.98 737.21 512.98 C 735.00 512.98 733.21 511.19 733.21 508.98 C 733.21 506.77 735.00 504.98 737.21 504.98 C 739.42 504.98 741.21 506.77 741.21 508.98 z" />
+        <path d="M 741.21 508.98 C 741.21 511.19 739.42 512.98 737.21 512.98 C 735.00 512.98 733.21 511.19 733.21 508.98 C 733.21 506.77 735.00 504.98 737.21 504.98 C 739.42 504.98 741.21 506.77 741.21 508.98 z" />
+        <desc>Point K: Intersection of d and g</desc>
+      </g>
+      <g class="point">
+        <path d="M 613.00 434.96 C 613.00 437.17 611.21 438.96 609.00 438.96 C 606.79 438.96 605.00 437.17 605.00 434.96 C 605.00 432.75 606.79 430.96 609.00 430.96 C 611.21 430.96 613.00 432.75 613.00 434.96 z" />
+        <path d="M 613.00 434.96 C 613.00 437.17 611.21 438.96 609.00 438.96 C 606.79 438.96 605.00 437.17 605.00 434.96 C 605.00 432.75 606.79 430.96 609.00 430.96 C 611.21 430.96 613.00 432.75 613.00 434.96 z" />
+        <desc>Point L: Intersection of l and m</desc>
+      </g>
+      <g class="point selected">
+        <path d="M 469.66 397.95 C 469.66 400.16 467.87 401.95 465.66 401.95 C 463.45 401.95 461.66 400.16 461.66 397.95 C 461.66 395.74 463.45 393.95 465.66 393.95 C 467.87 393.95 469.66 395.74 469.66 397.95 z" />
+        <path d="M 469.66 397.95 C 469.66 400.16 467.87 401.95 465.66 401.95 C 463.45 401.95 461.66 400.16 461.66 397.95 C 461.66 395.74 463.45 393.95 465.66 393.95 C 467.87 393.95 469.66 395.74 469.66 397.95 z" />
+        <desc>Point M: Intersection point of e, a</desc>
+      </g>
+      <g class="point selected">
+        <path d="M 756.34 397.95 C 756.34 400.16 754.55 401.95 752.34 401.95 C 750.13 401.95 748.34 400.16 748.34 397.95 C 748.34 395.74 750.13 393.95 752.34 393.95 C 754.55 393.95 756.34 395.74 756.34 397.95 z" />
+        <path d="M 756.34 397.95 C 756.34 400.16 754.55 401.95 752.34 401.95 C 750.13 401.95 748.34 400.16 748.34 397.95 C 748.34 395.74 750.13 393.95 752.34 393.95 C 754.55 393.95 756.34 395.74 756.34 397.95 z" />
+        <desc>Point N: Intersection point of e, a</desc>
+      </g>
+      <g class="point selected">
+        <path d="M 509.28 329.32 C 509.28 331.53 507.48 333.32 505.28 333.32 C 503.07 333.32 501.28 331.53 501.28 329.32 C 501.28 327.12 503.07 325.32 505.28 325.32 C 507.48 325.32 509.28 327.12 509.28 329.32 z" />
+        <path d="M 509.28 329.32 C 509.28 331.53 507.48 333.32 505.28 333.32 C 503.07 333.32 501.28 331.53 501.28 329.32 C 501.28 327.12 503.07 325.32 505.28 325.32 C 507.48 325.32 509.28 327.12 509.28 329.32 z" />
+        <desc>Point O: Intersection point of e, h</desc>
+      </g>
+      <g class="point selected">
+        <path d="M 652.62 577.60 C 652.62 579.81 650.83 581.60 648.62 581.60 C 646.41 581.60 644.62 579.81 644.62 577.60 C 644.62 575.39 646.41 573.60 648.62 573.60 C 650.83 573.60 652.62 575.39 652.62 577.60 z" />
+        <path d="M 652.62 577.60 C 652.62 579.81 650.83 581.60 648.62 581.60 C 646.41 581.60 644.62 579.81 644.62 577.60 C 644.62 575.39 646.41 573.60 648.62 573.60 C 650.83 573.60 652.62 575.39 652.62 577.60 z" />
+        <desc>Point P: Intersection point of e, h</desc>
+      </g>
+      <g class="point selected">
+        <path d="M 716.72 329.32 C 716.72 331.53 714.93 333.32 712.72 333.32 C 710.52 333.32 708.72 331.53 708.72 329.32 C 708.72 327.12 710.52 325.32 712.72 325.32 C 714.93 325.32 716.72 327.12 716.72 329.32 z" />
+        <path d="M 716.72 329.32 C 716.72 331.53 714.93 333.32 712.72 333.32 C 710.52 333.32 708.72 331.53 708.72 329.32 C 708.72 327.12 710.52 325.32 712.72 325.32 C 714.93 325.32 716.72 327.12 716.72 329.32 z" />
+        <desc>Point Q: Intersection point of e, i</desc>
+      </g>
+      <g class="point selected">
+        <path d="M 573.38 577.60 C 573.38 579.81 571.59 581.60 569.38 581.60 C 567.17 581.60 565.38 579.81 565.38 577.60 C 565.38 575.39 567.17 573.60 569.38 573.60 C 571.59 573.60 573.38 575.39 573.38 577.60 z" />
+        <path d="M 573.38 577.60 C 573.38 579.81 571.59 581.60 569.38 581.60 C 567.17 581.60 565.38 579.81 565.38 577.60 C 565.38 575.39 567.17 573.60 569.38 573.60 C 571.59 573.60 573.38 575.39 573.38 577.60 z" />
+        <desc>Point R: Intersection point of e, i</desc>
+      </g>
+    </g>
+  </g>
+</svg>
