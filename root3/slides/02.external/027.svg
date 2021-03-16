@@ -102,27 +102,27 @@ width="1218px" height="860px" viewBox="0 0 1218 860">
         <path d="M -5.0000 80.465 L 1223.0 789.45" />
         <desc>Line m: Line K, A</desc>
       </g>
-      <g class="line">
+      <g class="line selected">
         <path d="M -5.0000 537.97 L 1223.0 35.860" />
         <desc>Line n: Line D, O</desc>
       </g>
-      <g class="line">
+      <g class="line selected">
         <path d="M -5.0000 762.52 L 985.86 -5.0000" />
         <desc>Line p: Line D, M</desc>
       </g>
-      <g class="line">
+      <g class="line selected">
         <path d="M 530.21 865.00 L 648.79 -5.0000" />
         <desc>Line q: Line D, R</desc>
       </g>
-      <g class="line">
+      <g class="line selected">
         <path d="M 687.79 865.00 L 569.21 -5.0000" />
         <desc>Line r: Line D, P</desc>
       </g>
-      <g class="line">
+      <g class="line selected">
         <path d="M 232.14 -5.0000 L 1223.0 762.52" />
         <desc>Line s: Line D, N</desc>
       </g>
-      <g class="line">
+      <g class="line selected">
         <path d="M -5.0000 35.860 L 1223.0 537.97" />
         <desc>Line t: Line D, Q</desc>
       </g>
@@ -142,27 +142,27 @@ width="1218px" height="860px" viewBox="0 0 1218 860">
         <path d="M -5.0000 528.67 L 1223.0 187.60" />
         <desc>Line q_1: Line Q, M</desc>
       </g>
-      <g class="line">
+      <g class="line selected">
         <path d="M 529.31 865.00 L 410.74 -5.0000" />
         <desc>Line r_1: Line J, M</desc>
       </g>
-      <g class="line">
+      <g class="line selected">
         <path d="M 432.27 865.00 L 550.84 -5.0000" />
         <desc>Line s_1: Line J, O</desc>
       </g>
-      <g class="line">
+      <g class="line selected">
         <path d="M 21.171 865.00 L 1144.3 -5.0000" />
         <desc>Line t_1: Line J, Q</desc>
       </g>
-      <g class="line">
+      <g class="line selected">
         <path d="M -5.0000 707.61 L 1223.0 205.50" />
         <desc>Line a_1: Line J, N</desc>
       </g>
-      <g class="line">
+      <g class="line selected">
         <path d="M -5.0000 310.35 L 1223.0 812.46" />
         <desc>Line b_1: Line J, P</desc>
       </g>
-      <g class="line">
+      <g class="line selected">
         <path d="M -5.0000 132.69 L 940.41 865.00" />
         <desc>Line c_1: Line J, R</desc>
       </g>

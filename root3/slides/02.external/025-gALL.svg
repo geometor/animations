@@ -29,6 +29,10 @@ width="1218px" height="860px" viewBox="0 0 1218 860">
 #base .circle { stroke: #777; }
 #base .line { stroke: #777; }
   </style>
+  <style>
+.segment.golden > path:nth-child(2) { fill: none;  }
+  </style>
+    
   <g stroke-linejoin="miter" stroke-dashoffset="0.0000"
   stroke-dasharray="none" stroke-width="1.0000"
   stroke-miterlimit="10.000" stroke-linecap="square">

@@ -51,10 +51,10 @@ function main() {
   showGolden("g01-f");
   TL.add(fadeHexagon(), "+=" + BEAT);
 
-  TL.addLabel("circumTriangle");
-  TL.add(circumTriangle());
-  showGolden("g01-g");
-  TL.add(fadeCircumTriangle(), "+=" + BEAT);
+  // TL.addLabel("circumTriangle");
+  // TL.add(circumTriangle());
+  // showGolden("g01-g");
+  // TL.add(fadeCircumTriangle(), "+=" + BEAT);
 
   TL.add(g01(), "+=" + BEAT * 2);
 
@@ -137,9 +137,9 @@ function review1() {
   TL.addLabel("review1-hexagon");
   TL.add(fadeHexagon(), "+=" + BEAT * 4);
 
-  TL.add(circumTrianglereview());
-  TL.addLabel("review1-circumTriangle");
-  TL.add(fadeCircumTriangle(), "+=" + BEAT * 4);
+  // TL.add(circumTrianglereview());
+  // TL.addLabel("review1-circumTriangle");
+  // TL.add(fadeCircumTriangle(), "+=" + BEAT * 4);
 }
 
 function review2() {
@@ -214,9 +214,9 @@ function review3() {
   seqTL.add(hideElements("#q7"));
 
   // circumtriangle
-  seqTL.add(selectElements("#d_4"), "+=4");
-  seqTL.add(zoomToElement(["#d_4"], 50));
-  seqTL.add(setPolygon("#t4"));
+  // seqTL.add(selectElements("#d_4"), "+=4");
+  // seqTL.add(zoomToElement(["#d_4"], 50));
+  // seqTL.add(setPolygon("#t4"));
 
   seqTL.add(unSelectElements("#r_3"));
   seqTL.add(hideElements("#poly1"));
@@ -642,72 +642,72 @@ function hexagonreview() {
 }
 
 
-function circumTriangle() {
+// function circumTriangle() {
 
-  var seqTL = new TimelineMax();
+  // var seqTL = new TimelineMax();
 
-  seqTL.add(constructPolygon("#t1", ["#A", "#B", "#E"]));
-
-  seqTL.add(constructLine("#m_4", ["#B", "#J"]));
-  seqTL.add(constructLine("#n_4", ["#A", "#M"]), "-=" + BEAT * 2);
-
-  seqTL.add(constructCircle("#c_4", "#p_4", ["#S_1", "#B"], "30", true));
-
-  seqTL.add(constructCircle("#d_4", "#q_4", ["#S_1", "#M"], "-30", true), "circle");
-
-  seqTL.add(setPoint("#E_2"), "circle");
-  seqTL.add(setPoint("#B_2"), "circle");
-1
-  seqTL.add(constructPolygon("#t4", ["#C_2", "#L", "#D_2"]));
-
-  return seqTL;
-
-}
-
-function fadeCircumTriangle() {
-
-  var seqTL = new TimelineMax();
-
-  var set = [
-    "#c_4",
-    "#d_4",
-    "#m_4",
-    "#n_4",
-  ];
-
-  seqTL.add(hideElements("#t1"));
-  seqTL.add(hideElements("#t4"));
-
-  seqTL.add(unSelectElements("#c_4"));
-  seqTL.add(unSelectElements("#d_4"));
-  seqTL.add(fadeElements(set));
-
-  return seqTL;
-}
-
-function circumTrianglereview() {
-
-  var seqTL = new TimelineMax();
-
-  seqTL.add(constructPolygon("#t1", ["#A", "#B", "#E"]));
+  // seqTL.add(constructPolygon("#t1", ["#A", "#B", "#E"]));
 
   // seqTL.add(constructLine("#m_4", ["#B", "#J"]));
+  // seqTL.add(constructLine("#n_4", ["#A", "#M"]), "-=" + BEAT * 2);
 
-  // seqTL.add(constructLine("#n_4", ["#A", "#M"]));
+  // seqTL.add(constructCircle("#c_4", "#p_4", ["#S_1", "#B"], "30", true));
 
-  // seqTL.add(setPoint("#S_1"));
-
-  seqTL.add(constructCircle("#c_4", "#p_4", ["#S_1", "#B"], "30", true));
-
-  seqTL.add(constructCircle("#d_4", "#q_4", ["#S_1", "#M"], "-30", true), "circle");
+  // seqTL.add(constructCircle("#d_4", "#q_4", ["#S_1", "#M"], "-30", true), "circle");
 
   // seqTL.add(setPoint("#E_2"), "circle");
   // seqTL.add(setPoint("#B_2"), "circle");
-1
-  seqTL.add(constructPolygon("#t4", ["#C_2", "#L", "#D_2"]));
 
-  return seqTL;
-}
+  // seqTL.add(constructPolygon("#t4", ["#C_2", "#L", "#D_2"]));
+
+  // return seqTL;
+
+// }
+
+// function fadeCircumTriangle() {
+
+  // var seqTL = new TimelineMax();
+
+  // var set = [
+    // "#c_4",
+    // "#d_4",
+    // "#m_4",
+    // "#n_4",
+  // ];
+
+  // seqTL.add(hideElements("#t1"));
+  // seqTL.add(hideElements("#t4"));
+
+  // seqTL.add(unSelectElements("#c_4"));
+  // seqTL.add(unSelectElements("#d_4"));
+  // seqTL.add(fadeElements(set));
+
+  // return seqTL;
+// }
+
+// function circumTrianglereview() {
+
+  // var seqTL = new TimelineMax();
+
+  // seqTL.add(constructPolygon("#t1", ["#A", "#B", "#E"]));
+
+  // // seqTL.add(constructLine("#m_4", ["#B", "#J"]));
+
+  // // seqTL.add(constructLine("#n_4", ["#A", "#M"]));
+
+  // // seqTL.add(setPoint("#S_1"));
+
+  // seqTL.add(constructCircle("#c_4", "#p_4", ["#S_1", "#B"], "30", true));
+
+  // seqTL.add(constructCircle("#d_4", "#q_4", ["#S_1", "#M"], "-30", true), "circle");
+
+  // // seqTL.add(setPoint("#E_2"), "circle");
+  // // seqTL.add(setPoint("#B_2"), "circle");
+// 1
+  // seqTL.add(constructPolygon("#t4", ["#C_2", "#L", "#D_2"]));
+
+  // return seqTL;
+// }
 
 function baseSequence() {
 

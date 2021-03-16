@@ -73,14 +73,14 @@ path {
 }
 .point.highlight .bottom {
   stroke: #FFF;
-  stroke-width: 20;
+  stroke-width: 15;
   stroke-opacity: 0.2;
   /* r: 20; */
 }
 .point.golden .bottom {
   stroke: #C90;
   stroke-width: 15;
-  stroke-opacity: 1;
+  stroke-opacity: .6;
   /* r: 20; */
 }
 .point.select .bottom {
@@ -139,8 +139,8 @@ path {
 
 .segment path {
   stroke: #C90;
-  stroke-width: 5;
-  stroke-opacity: 1;
+  stroke-width: 6;
+  stroke-opacity: .6;
 }
 
 .a path {
@@ -161,7 +161,7 @@ path {
 
 .golden {
   stroke: #C90;
-  stroke-opacity: 1;
+  stroke-opacity: .6;
 }
 
 .golden text {
@@ -170,8 +170,8 @@ path {
 }
 
 .s-ff6699 path {
-  stroke: #ff6699;
-  fill: #ff6699;
+  stroke: #93C;
+  fill: #93C;
 }
 
 .s-66ccff path {
@@ -180,8 +180,8 @@ path {
 }
 
 .s-cc66ff path {
-  stroke: #cc66ff;
-  fill: #cc66ff;
+  stroke: #F69;
+  fill: #F69;
 }
 
 .s-99ff00 path {
