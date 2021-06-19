@@ -1,0 +1,214 @@
+<?xml version="1.0" standalone="no"?>
+<mlt LC_NUMERIC="C" version="6.25.0" title="Shotcut version 21.02.27" producer="main_bin">
+  <profile description="automatic" width="1920" height="1080" progressive="1" sample_aspect_num="1" sample_aspect_den="1" display_aspect_num="1920" display_aspect_den="1080" frame_rate_num="24" frame_rate_den="1" colorspace="709"/>
+  <producer id="producer0" in="00:00:00.000" out="00:00:07.958">
+    <property name="length">00:00:08.000</property>
+    <property name="eof">pause</property>
+    <property name="resource">video/photon-logo.20210321-16:54:46.mp4</property>
+    <property name="audio_index">-1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="creation_time">2021-03-21T23:55:36</property>
+    <property name="shotcut:hash">cb6c9a84a9024902a58dfb6018a7f76a</property>
+    <property name="ignore_points">0</property>
+    <property name="shotcut:caption">photon-logo.20210321-16:54:46.mp4</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
+  <producer id="producer1" in="00:00:00.000" out="00:00:23.833">
+    <property name="length">00:00:23.875</property>
+    <property name="eof">pause</property>
+    <property name="resource">/home/phi/Projects/sandbox/bells/out/20201117-130340-tinkle.mp3</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="creation_time">2020-11-17T21:04:48</property>
+    <property name="shotcut:hash">7ba7aed49836d8dbdb243dbc758aa882</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
+  <producer id="producer2" in="00:00:00.000" out="00:00:10.333">
+    <property name="length">00:00:10.375</property>
+    <property name="eof">pause</property>
+    <property name="resource">/home/phi/Projects/sandbox/bells/out/20201117-131922-ding.mp3</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="creation_time">2020-11-17T21:19:48</property>
+    <property name="shotcut:hash">6304bfe0db5ab160aaaba7ce900aa407</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+    <property name="ignore_points">1</property>
+    <property name="shotcut:caption">20201117-131922-ding.mp3</property>
+  </producer>
+  <producer id="producer3" in="00:00:00.000" out="00:00:32.833">
+    <property name="length">00:00:32.875</property>
+    <property name="eof">pause</property>
+    <property name="resource">/home/phi/Projects/sandbox/bells/out/20201117-132245-b2.mp3</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="creation_time">2020-11-17T21:25:12</property>
+    <property name="shotcut:hash">ab8d5501081fc608434ce1e0bf5d6b82</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+    <property name="ignore_points">1</property>
+    <property name="shotcut:caption">20201117-132245-b2.mp3</property>
+  </producer>
+  <playlist id="main_bin">
+    <property name="xml_retain">1</property>
+    <entry producer="producer0" in="00:00:00.000" out="00:00:07.958"/>
+    <entry producer="producer1" in="00:00:00.000" out="00:00:23.833"/>
+    <entry producer="producer2" in="00:00:00.000" out="00:00:10.333"/>
+    <entry producer="producer3" in="00:00:00.000" out="00:00:32.833"/>
+  </playlist>
+  <producer id="black" in="00:00:00.000" out="00:00:07.917">
+    <property name="length">00:00:07.958</property>
+    <property name="eof">pause</property>
+    <property name="resource">0</property>
+    <property name="aspect_ratio">1</property>
+    <property name="mlt_service">color</property>
+    <property name="mlt_image_format">rgb24a</property>
+    <property name="set.test_audio">0</property>
+  </producer>
+  <playlist id="background">
+    <entry producer="black" in="00:00:00.000" out="00:00:07.917"/>
+  </playlist>
+  <producer id="producer4" in="00:00:00.000" out="00:00:07.958">
+    <property name="length">00:00:08.000</property>
+    <property name="eof">pause</property>
+    <property name="resource">video/photon-logo.20210321-16:54:46.mp4</property>
+    <property name="audio_index">-1</property>
+    <property name="video_index">0</property>
+    <property name="mute_on_pause">0</property>
+    <property name="mlt_service">avformat-novalidate</property>
+    <property name="seekable">1</property>
+    <property name="aspect_ratio">1</property>
+    <property name="creation_time">2021-03-21T23:55:36</property>
+    <property name="shotcut:hash">cb6c9a84a9024902a58dfb6018a7f76a</property>
+    <property name="ignore_points">0</property>
+    <property name="shotcut:caption">photon-logo.20210321-16:54:46.mp4</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
+  <playlist id="playlist0">
+    <property name="shotcut:video">1</property>
+    <property name="shotcut:name">V1</property>
+    <entry producer="producer4" in="00:00:00.042" out="00:00:07.958"/>
+  </playlist>
+  <producer id="producer5" in="00:00:00.000" out="00:00:10.375">
+    <property name="length">00:00:10.417</property>
+    <property name="eof">pause</property>
+    <property name="resource">2.3:/home/phi/Projects/sandbox/bells/out/20201117-130340-tinkle.mp3</property>
+    <property name="aspect_ratio">1</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="mute_on_pause">1</property>
+    <property name="warp_speed">2.3</property>
+    <property name="warp_resource">/home/phi/Projects/sandbox/bells/out/20201117-130340-tinkle.mp3</property>
+    <property name="mlt_service">timewarp</property>
+    <property name="shotcut:producer">avformat</property>
+    <property name="video_delay">0</property>
+    <property name="shotcut:hash">7ba7aed49836d8dbdb243dbc758aa882</property>
+    <property name="shotcut:caption">20201117-130340-tinkle.mp3 (2.3x)</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
+  <playlist id="playlist1">
+    <property name="shotcut:audio">1</property>
+    <property name="shotcut:name">A1</property>
+    <entry producer="producer5" in="00:00:06.833" out="00:00:09.042"/>
+    <filter id="filter0" out="00:00:07.917">
+      <property name="mlt_service">ladspa.1216</property>
+      <property name="0">30</property>
+      <property name="1">7.5</property>
+      <property name="2">0.5</property>
+      <property name="3">0.75</property>
+      <property name="4">0</property>
+      <property name="5">-10</property>
+      <property name="6">-17.5</property>
+      <property name="instances">2</property>
+    </filter>
+    <filter id="filter1" out="00:00:07.917">
+      <property name="window">75</property>
+      <property name="max_gain">20dB</property>
+      <property name="level">2.5</property>
+      <property name="mlt_service">volume</property>
+    </filter>
+  </playlist>
+  <producer id="producer6" in="00:00:00.000" out="00:00:05.167">
+    <property name="length">00:00:05.208</property>
+    <property name="eof">pause</property>
+    <property name="resource">2:/home/phi/Projects/sandbox/bells/out/20201117-131922-ding.mp3</property>
+    <property name="aspect_ratio">1</property>
+    <property name="seekable">1</property>
+    <property name="audio_index">0</property>
+    <property name="video_index">-1</property>
+    <property name="mute_on_pause">1</property>
+    <property name="warp_speed">2</property>
+    <property name="warp_resource">/home/phi/Projects/sandbox/bells/out/20201117-131922-ding.mp3</property>
+    <property name="mlt_service">timewarp</property>
+    <property name="shotcut:producer">avformat</property>
+    <property name="video_delay">0</property>
+    <property name="shotcut:hash">6304bfe0db5ab160aaaba7ce900aa407</property>
+    <property name="shotcut:caption">20201117-131922-ding.mp3 (2x)</property>
+    <property name="global_feed">1</property>
+    <property name="xml">was here</property>
+  </producer>
+  <playlist id="playlist2">
+    <property name="shotcut:audio">1</property>
+    <property name="shotcut:name">A2</property>
+    <blank length="00:00:01.292"/>
+    <entry producer="producer6" in="00:00:00.000" out="00:00:05.167"/>
+  </playlist>
+  <tractor id="tractor0" title="Shotcut version 21.02.27" global_feed="1" in="00:00:00.000" out="00:00:07.917">
+    <property name="shotcut">1</property>
+    <property name="shotcut:scaleFactor">5.91638</property>
+    <property name="shotcut:projectAudioChannels">2</property>
+    <property name="shotcut:projectFolder">0</property>
+    <property name="shotcut:trackHeight">48</property>
+    <track producer="background"/>
+    <track producer="playlist0"/>
+    <track producer="playlist1" hide="video"/>
+    <track producer="playlist2" hide="video"/>
+    <transition id="transition0">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition1">
+      <property name="a_track">0</property>
+      <property name="b_track">1</property>
+      <property name="version">0.9</property>
+      <property name="mlt_service">frei0r.cairoblend</property>
+      <property name="threads">0</property>
+      <property name="disable">1</property>
+    </transition>
+    <transition id="transition2">
+      <property name="a_track">0</property>
+      <property name="b_track">2</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+    <transition id="transition3">
+      <property name="a_track">0</property>
+      <property name="b_track">3</property>
+      <property name="mlt_service">mix</property>
+      <property name="always_active">1</property>
+      <property name="sum">1</property>
+    </transition>
+  </tractor>
+</mlt>

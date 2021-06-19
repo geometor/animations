@@ -1,7 +1,7 @@
 #!/bin/sh
 D=$(date +"%Y%m%d-%T")
 FPS=24
-DURATION=10
+DURATION=8
 
 node node_modules/timecut/cli.js "http://constructions.local/$1" \
   --viewport=1920,1080 \

@@ -2,7 +2,7 @@ import * as G from  "../modules/Geometor/_index.js"
 
 var TL = gsap.timeline();;
 // const TICK = .03125;
-const TICK = .1;
+const TICK = .03;
 
 main();
 
@@ -14,6 +14,9 @@ function main() {
   pulseRings();
   final();
 
+  var duration = TL.duration();
+  console.log("duration: " + duration)
+
   TL.play("");
 }
 
@@ -22,6 +25,10 @@ function final(){
   showRing("#d05");
   showRing("#d03");
   showRing("#d01");
+  fadeRing("#d07");
+  fadeRing("#d05");
+  fadeRing("#d03");
+  fadeRing("#d01");
 }
 
 function setRings(){
@@ -61,7 +68,7 @@ function pulseRing(id, offset) {
   seqTL.to(
     id,
     TICK *3, {
-      fill: "#FFFFFF",
+      fill: "#CCC",
     });
   seqTL.to(
     id,
@@ -78,6 +85,16 @@ function showRing(id, offset) {
     TICK , {
       autoAlpha: 1,
       fill: "#FFF",
+    },
+    offset
+  );
+}
+
+function fadeRing(id, offset) {
+  TL.to(
+    id,
+    TICK * 20 , {
+      fill: "#444",
     },
     offset
   );
