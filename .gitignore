@@ -1,3 +1,4 @@
 node_modules
 timecut
 tags
+.venv/
