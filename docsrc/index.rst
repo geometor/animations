@@ -1,13 +1,14 @@
-=======================
-Geometric Constructions
-=======================
+:site_title: Geometric Animations
 
-Systematic compass-and-straightedge constructions, proportional systems, and interactive SVG studies of golden sections.
+.. container:: author-overline
 
-Overview
---------
+   semantic digital archive • interactive studio
 
-``constructions`` documents geometric models and proportional systems exploring unique golden sections across classical and root-system geometries. Each construction isolates exact geometric incidences and sequences for print, web, and animation.
+====================
+Geometric Animations
+====================
+
+``geometor/animations`` is the dynamic construction and animation studio of the interconnected `GEOMETOR <https://geometor.com/books/>`_ semantic digital archive. It documents systematic compass-and-straightedge constructions and proportional systems exploring unique golden sections across classical and root-system geometries, isolating exact geometric incidences for print, web, and dynamic SVG playback.
 
 Proportional Systems & Studies
 ------------------------------
