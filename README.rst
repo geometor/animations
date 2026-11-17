@@ -3,6 +3,11 @@ GEOMETOR • animations
 
 **Visit the Online Archive:** https://geometor.github.io/animations/
 
+.. image:: docsrc/_static/hero.png
+   :alt: GEOMETOR • constructions featured geometric construction
+   :target: https://geometor.github.io/animations/
+   :align: center
+
 **Geometric Animations • Proportional golden-section studies & root lattices**
 
 Mission
