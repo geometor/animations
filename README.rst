@@ -18,10 +18,10 @@ Mission
 Capabilities & Interactive Docs
 -------------------------------
 
-- **`Geometric Animations <https://geometor.github.io/animations/>`_** — Systematic compass-and-straightedge constructions and animated proportional studies.
-- **`Three Golden Sections <https://geometor.github.io/animations/>`_** — Foundational studies isolating unique constructions where baselines section into golden proportions.
-- **`Root 3 & Root 5 Systems <https://geometor.github.io/animations/>`_** — Proportional lattice investigations within square-root and diagonal grids.
-- **`Star Polygons & Cyclic Systems <https://geometor.github.io/animations/>`_** — Cyclic star patterns and harmonic segment divisions.
+- `Geometric Animations <https://geometor.github.io/animations/>`_ — Systematic compass-and-straightedge constructions and animated proportional studies.
+- `Three Golden Sections <https://geometor.github.io/animations/>`_ — Foundational studies isolating unique constructions where baselines section into golden proportions.
+- `Root 3 & Root 5 Systems <https://geometor.github.io/animations/>`_ — Proportional lattice investigations within square-root and diagonal grids.
+- `Star Polygons & Cyclic Systems <https://geometor.github.io/animations/>`_ — Cyclic star patterns and harmonic segment divisions.
 
 Repository Contents
 -------------------
