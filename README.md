@@ -1,56 +1,35 @@
+<a href="https://geometor.github.io/constructions/"><img src="docsrc/_static/logo.png" alt="GEOMETOR • constructions Medallion" align="right" width="150"></a>
 
-# constructions
+# GEOMETOR • animations
 
-This is the current production environment for the GEOMETOR project.
+**Visit the Online Archive:** https://geometor.github.io/animations/
 
-We are taking geometric models constructed in Geogrbra and exporting them into a custom SVG format so we can control the style and sequencing for print, web and animation.
+<p align="center">
+  <a href="https://geometor.github.io/animations/"><img src="docsrc/_static/hero.png" alt="GEOMETOR • constructions featured geometric construction"></a>
+</p>
 
-This is primarily to document to the current research and to prepare for the continued development of GEOMETOR Explorer.
+**Geometric Animations • Proportional golden-section studies & root lattices**
 
-Various aspects of styling and animation control will be largely portable to the new platform.
+## Mission
 
-There are a number of constructions evolving from our quest to seek the patterns of golden sections within certain proportional systems.
+`geometor/animations` is part of the interconnected [GEOMETOR](https://geometor.com) semantic digital archive. It provides systematic compass-and-straightedge constructions, proportional studies, and step-by-step vector animations investigating unique golden sections across classical and root-system geometries. By isolating exact geometric incidences and sequences for print, web, and dynamic SVG playback, it liberates proportional discoveries into calibrated visual demonstrations across the GEOMETOR corpus.
 
-here are the current projects:
+## Capabilities & Interactive Docs
 
-## Base
-Base Template for Geogebra Constructions. Initial elements and custom tools read for a new construction.
+- [Geometric Animations](https://geometor.github.io/animations/) — Systematic compass-and-straightedge constructions and animated proportional studies.
+- [Three Golden Sections](https://geometor.github.io/animations/) — Foundational studies isolating unique constructions where baselines section into golden proportions.
+- [Root 3 & Root 5 Systems](https://geometor.github.io/animations/) — Proportional lattice investigations within square-root and diagonal grids.
+- [Star Polygons & Cyclic Systems](https://geometor.github.io/animations/) — Cyclic star patterns and harmonic segment divisions.
 
+## Repository Contents
 
-## Unique External Golden Sections
+- `docsrc/` — RST technical documentation and construction studies compiled by [PHOTON publish](https://github.com/photon-platform/publish).
 
-This is a series seeking to find the unique constructions that lead to the baseline passiong thru the starting point being sectioned on either side of the unit in a Golden Section
+## Local Build & Verification
 
-## Unique Internal Golden Sections
+```bash
+publish build
+```
+## Part of the GEOMETOR Knowledge Archive
 
-these are constructions that lead to a Golden Section within the unit
-
-star patterns
-
-## Systems
-
-each of the unique studies above outlines a proportional system. Here we take each of these systems for a deeper look.
-
-### Root 3
-
-### Root 5
-
-
-## tools
-
-### Geogebra
-- Build model
-- Export svg
-- Geogebra tools and scripts
-
-
-### sed
-- process SVG
-- svg-prep.sh - creates an updated SVG then creates an embedded HTML page.
-
-### entr
-- watch.sh uses entr to monitor svg files for changes. On change, html file for animation is updated.
-
-
-## print
--
+Explore all **74 Book Codices** and **11 Mathematical Catalogs** at https://geometor.com/books/.
