@@ -3,6 +3,12 @@ GEOMETOR • animations
 
 **Visit the Online Archive:** https://geometor.github.io/animations/
 
+.. image:: docsrc/_static/logo.png
+   :alt: GEOMETOR • constructions Medallion
+   :target: https://geometor.github.io/constructions/
+   :width: 180px
+   :align: center
+
 .. image:: docsrc/_static/hero.png
    :alt: GEOMETOR • constructions featured geometric construction
    :target: https://geometor.github.io/animations/
