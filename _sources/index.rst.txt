@@ -8,6 +8,10 @@
 Geometric Animations
 ====================
 
+.. image:: _static/medallion.svg
+   :alt: Geometric Animations Medallion
+   :class: repo-medallion-hero
+
 ``geometor/animations`` is the dynamic construction and animation studio of the interconnected `GEOMETOR <https://geometor.com/books/>`_ semantic digital archive. It documents systematic compass-and-straightedge constructions and proportional systems exploring unique golden sections across classical and root-system geometries, isolating exact geometric incidences for print, web, and dynamic SVG playback.
 
 Proportional Systems & Studies
